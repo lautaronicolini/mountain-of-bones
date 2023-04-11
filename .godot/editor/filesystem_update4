@@ -1,0 +1,9 @@
+res://frontend/character.tscn
+res://frontend/props/health_bar_theme.tres
+res://frontend/node_2d.tscn
+res://frontend/event_manager.tscn
+res://frontend/event_display.tscn
+res://frontend/event_option.tscn
+res://frontend/tile.tscn
+res://frontend/combat_scene.tscn
+res://frontend/health_bar.tscn

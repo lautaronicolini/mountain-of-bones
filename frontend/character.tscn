@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu2uiplgemcou"]
+
+[ext_resource type="Script" path="res://backend/character_script.gd" id="1_waj8l"]
+[ext_resource type="Texture2D" uid="uid://clsiq2d27ljtl" path="res://frontend/props/archer.png" id="2_hjo0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fil4j"]
+size = Vector2(7, 7)
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_waj8l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(0.100397, 0.100397)
+texture = ExtResource("2_hjo0c")
+
+[node name="CollitionCharacter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollitionCharacter"]
+shape = SubResource("RectangleShape2D_fil4j")

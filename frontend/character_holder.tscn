@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct7kbr3auo4a7"]
+
+[ext_resource type="Script" path="res://backend/character_holder_script.gd" id="1_1b7we"]
+[ext_resource type="Texture2D" uid="uid://fdf4oahhylgk" path="res://frontend/props/character menu tile (archer).png" id="1_ispp3"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_6hskg"]
+[ext_resource type="Texture2D" uid="uid://clsiq2d27ljtl" path="res://frontend/props/archer.png" id="3_xa7eo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_825ie"]
+font = ExtResource("2_6hskg")
+font_size = 84
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsn8a"]
+size = Vector2(333, 488)
+
+[node name="CharacterHolder" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1b7we")
+
+[node name="ChMove" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 137.0
+offset_right = 495.0
+offset_bottom = 255.0
+text = "49"
+label_settings = SubResource("LabelSettings_825ie")
+vertical_alignment = 1
+
+[node name="ChLife" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 249.0
+offset_right = 495.0
+offset_bottom = 367.0
+text = "49"
+label_settings = SubResource("LabelSettings_825ie")
+vertical_alignment = 1
+
+[node name="ChSpriteHolder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 290.0
+offset_top = 373.0
+offset_right = 330.0
+offset_bottom = 413.0
+scale = Vector2(4.87752, 4.16233)
+
+[node name="Sprite2D" type="Sprite2D" parent="ChSpriteHolder"]
+position = Vector2(20.5022, 0)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_xa7eo")
+
+[node name="CharTile" type="Sprite2D" parent="."]
+position = Vector2(388, 383)
+texture = ExtResource("1_ispp3")
+
+[node name="ChSelect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChSelect"]
+position = Vector2(388.5, 345)
+shape = SubResource("RectangleShape2D_hsn8a")
+
+[connection signal="input_event" from="ChSelect" to="." method="_on_ch_select_input_event"]

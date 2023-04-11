@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnotpfv32vrxx"]
+
+[ext_resource type="Script" path="res://backend/event manager/event_option_script.gd" id="1_kp8l3"]
+[ext_resource type="Texture2D" uid="uid://j8rxwog8xbei" path="res://frontend/props/choose_character_background.png" id="1_w2tuw"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_itv20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_biaia"]
+font = ExtResource("2_itv20")
+font_size = 50
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1tqo"]
+size = Vector2(493, 177.5)
+
+[node name="EventOption" type="Node2D"]
+position = Vector2(318, 314)
+script = ExtResource("1_kp8l3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.430722, 0.226372)
+texture = ExtResource("1_w2tuw")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.5
+offset_top = -81.0
+offset_right = 221.5
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "No hay tiempo que
+perder, tu busque-
+da continua."
+label_settings = SubResource("LabelSettings_biaia")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(6, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_h1tqo")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

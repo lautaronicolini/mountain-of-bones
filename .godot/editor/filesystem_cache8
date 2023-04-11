@@ -1,0 +1,49 @@
+2a60927148abd1d33b818b535e306557
+::res://::1681243449
+icon.svg::CompressedTexture2D::413668579322073813::1679234116::1679234127::1::::<><>::
+Leonardo_Diffusion_Pixel_art_mountain_retro_background_for_vid_1.jpg::CompressedTexture2D::7274399460426756938::1681226036::1681226038::1::::<><>::
+LICENSE.md::TextFile::-1::1681243354::0::1::::<><>::
+logo v1.png::CompressedTexture2D::1062322387361935006::1679235492::1680027136::1::::<><>::
+README.md::TextFile::-1::1681243354::0::1::::<><>::
+::res://backend/::1681243382
+boardview_script.gd::GDScript::-1::1681240342::0::1::::<>Node2D<>::
+character_holder_script.gd::GDScript::-1::1680803848::0::1::::<>Control<>::
+character_script.gd::GDScript::-1::1681239197::0::1::::<>Node2D<>::
+character_selection_script.gd::GDScript::-1::1680808778::0::1::::<>Node2D<>::
+combat_scene_script.gd::GDScript::-1::1681232115::0::1::::<>Node2D<>::
+map_character_script.gd::GDScript::-1::1680811478::0::1::::<>PathFollow2D<>::
+sprite_script.gd::GDScript::-1::1680100753::0::1::::<>RefCounted<>::
+tile_script.gd::GDScript::-1::1680811462::0::1::::<>Area2D<>::
+::res://backend/event manager/::1681243382
+event_display_script.gd::GDScript::-1::1680895241::0::1::::<>Node2D<>::
+event_manager_script.gd::GDScript::-1::1680893805::0::1::::<>Node2D<>::
+event_option_script.gd::GDScript::-1::1681068633::0::1::::<>Node2D<>::
+::res://backend/event manager/events/::1681243382
+event_script.gd::GDScript::-1::1680893443::0::1::::Event<>Node<>::
+rock_avalanche_event_script.gd::GDScript::-1::1681240915::0::1::::<>Event<>::
+slip_on_ice_event_script.gd::GDScript::-1::1681240909::0::1::::<>Event<>::
+::res://frontend/::1681243381
+character.tscn::PackedScene::3847165187141464216::1681242090::0::1::::<><>::res://backend/character_script.gd<>uid://clsiq2d27ljtl
+character_holder.tscn::PackedScene::6173099376539086404::1680808632::0::1::::<><>::res://backend/character_holder_script.gd<>uid://fdf4oahhylgk<>uid://bu5bpxl6utbrq<>uid://clsiq2d27ljtl
+choose_character_scene.tscn::PackedScene::1649191898395258400::1680808778::0::1::::<><>::res://backend/character_selection_script.gd<>uid://j8rxwog8xbei<>uid://ct7kbr3auo4a7
+combat_scene.tscn::PackedScene::2913776823112226505::1681242091::0::1::::<><>::res://backend/combat_scene_script.gd<>uid://bj4ca5d8acjt<>uid://bu2uiplgemcou<>uid://0qgbbwsrg7dx
+event_display.tscn::PackedScene::7619534101357126901::1681242090::0::1::::<><>::res://backend/event manager/event_display_script.gd<>uid://j8rxwog8xbei<>uid://bu5bpxl6utbrq
+event_manager.tscn::PackedScene::8541430910233372023::1681242090::0::1::::<><>::res://backend/event manager/event_manager_script.gd<>res://backend/event manager/events/rock_avalanche_event_script.gd<>res://backend/event manager/events/slip_on_ice_event_script.gd
+event_option.tscn::PackedScene::5715378329375358465::1681242091::0::1::::<><>::res://backend/event manager/event_option_script.gd<>uid://j8rxwog8xbei<>uid://bu5bpxl6utbrq
+health_bar.tscn::PackedScene::1788117310116145277::1681242091::0::1::::<><>::uid://rgabw4lp5pa1
+node_2d.tscn::PackedScene::9059576936634056191::1681242896::0::1::::<><>::res://backend/boardview_script.gd<>uid://dbv1kcsf7b1by<>res://backend/map_character_script.gd<>uid://kgx55fghcksa<>uid://bu2uiplgemcou<>uid://bu5bpxl6utbrq<>uid://xq47j0y4xc7q<>uid://c1gdhmp81kcqd<>uid://7h30lld8lcae<>uid://dtxseb078400j
+tile.tscn::PackedScene::2262238956271078292::1681242091::0::1::::<><>::uid://c1gdhmp81kcqd<>res://backend/tile_script.gd
+::res://frontend/props/::1681243381
+archer.png::CompressedTexture2D::5582593179657074093::1680015650::1680802853::1::::<><>::
+boot_icon.png::CompressedTexture2D::7752190918249577140::1680805815::1680805908::1::::<><>::
+character menu tile (archer).png::CompressedTexture2D::357493460094676114::1680216147::1680802853::1::::<><>::
+choose_character_background.png::CompressedTexture2D::700898498221688476::1680212523::1680802853::1::::<><>::
+fight_scene_background.jpg::CompressedTexture2D::1294109923018802968::1681230931::1681231347::1::::<><>::
+fight_scene_background_alt.jpg::CompressedTexture2D::90532654327148093::1681231200::1681231346::1::::<><>::
+frame.png::CompressedTexture2D::1031368637715895734::1680805905::1680805908::1::::<><>::
+health_bar_theme.tres::Theme::1205599594998876502::1681237555::0::1::::<><>::uid://bu5bpxl6utbrq
+heart_icon.png::CompressedTexture2D::715726351262042124::1680805762::1680805799::1::::<><>::
+Minecraft.ttf::FontFile::3852217619442757198::1680216915::1680802852::1::::<><>::
+mountain bg.png::CompressedTexture2D::1823658312539783790::1680032686::1680802852::1::::<><>::
+soldier.png::CompressedTexture2D::3823983163360012042::1680229366::1680802853::1::::<><>::
+tile.png::CompressedTexture2D::6610332875021814011::1681227891::1681227901::1::::<><>::

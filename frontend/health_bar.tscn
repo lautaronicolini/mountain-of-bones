@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://0qgbbwsrg7dx"]
+
+[ext_resource type="Theme" uid="uid://rgabw4lp5pa1" path="res://frontend/props/health_bar_theme.tres" id="1_a7gwk"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 43.0
+offset_right = 328.0
+offset_bottom = 86.0
+theme = ExtResource("1_a7gwk")
+theme_override_font_sizes/font_size = 16
+value = 100.0

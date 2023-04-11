@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhrpqjhwmm76l"]
+
+[ext_resource type="Script" path="res://backend/combat_scene_script.gd" id="1_kx4jc"]
+[ext_resource type="Texture2D" uid="uid://bj4ca5d8acjt" path="res://frontend/props/fight_scene_background_alt.jpg" id="2_phfyb"]
+[ext_resource type="PackedScene" uid="uid://bu2uiplgemcou" path="res://frontend/character.tscn" id="3_1bg2w"]
+[ext_resource type="PackedScene" uid="uid://0qgbbwsrg7dx" path="res://frontend/health_bar.tscn" id="4_kt6v4"]
+
+[node name="CombatScene" type="Node2D"]
+position = Vector2(580, 313)
+script = ExtResource("1_kx4jc")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_phfyb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 96)
+zoom = Vector2(1.125, 1.125)
+
+[node name="Character" parent="." instance=ExtResource("3_1bg2w")]
+position = Vector2(-172, 262)
+scale = Vector2(6, 6)
+texture_path = "res://frontend/props/soldier.png"
+
+[node name="Character2" parent="." instance=ExtResource("3_1bg2w")]
+position = Vector2(170, 262)
+scale = Vector2(-6, 6)
+texture_path = "res://frontend/props/soldier.png"
+
+[node name="HealthBar" parent="." instance=ExtResource("4_kt6v4")]
+offset_left = -315.0
+offset_top = 145.0
+offset_right = -315.0
+offset_bottom = 145.0
+scale = Vector2(0.68146, 0.68146)
+
+[node name="HealthBar2" parent="." instance=ExtResource("4_kt6v4")]
+offset_left = 33.0
+offset_top = 141.0
+offset_right = 33.0
+offset_bottom = 141.0
+scale = Vector2(0.681, 0.681)

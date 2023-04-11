@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtxseb078400j"]
+
+[ext_resource type="Script" path="res://backend/event manager/event_manager_script.gd" id="1_bv4ns"]
+[ext_resource type="Script" path="res://backend/event manager/events/rock_avalanche_event_script.gd" id="2_gmh7h"]
+[ext_resource type="Script" path="res://backend/event manager/events/slip_on_ice_event_script.gd" id="3_l2e4e"]
+
+[node name="EventManager" type="Node2D"]
+script = ExtResource("1_bv4ns")
+
+[node name="RockAvalanche" type="Node2D" parent="."]
+script = ExtResource("2_gmh7h")
+
+[node name="SlipOnIce" type="Node2D" parent="."]
+script = ExtResource("3_l2e4e")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgs7u4d6hm7d6"]
+
+[ext_resource type="Script" path="res://backend/event manager/event_display_script.gd" id="1_43fo5"]
+[ext_resource type="Texture2D" uid="uid://j8rxwog8xbei" path="res://frontend/props/choose_character_background.png" id="1_47uwp"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_j2s7q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_durse"]
+font = ExtResource("2_j2s7q")
+font_size = 50
+
+[node name="EventDisplay" type="Node2D"]
+position = Vector2(-62, -36)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_43fo5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(561.5, 325)
+scale = Vector2(1.00631, 0.824273)
+texture = ExtResource("1_47uwp")
+
+[node name="DescriptionLabel" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 52.0
+offset_right = 107.0
+offset_bottom = 75.0
+text = "Encontras un torreon abandonado, la
+puerta esta cerrada pero se ve deteriora- 
+da por el paso del tiempo."
+label_settings = SubResource("LabelSettings_durse")
