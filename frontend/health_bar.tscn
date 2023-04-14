@@ -17,5 +17,4 @@ offset_top = 43.0
 offset_right = 328.0
 offset_bottom = 86.0
 theme = ExtResource("1_a7gwk")
-theme_override_font_sizes/font_size = 16
 value = 100.0

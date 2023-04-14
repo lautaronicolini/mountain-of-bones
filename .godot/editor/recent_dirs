@@ -1,6 +1,7 @@
-res://backend/event manager/events
-res://frontend/props
 res://frontend
 res://backend
+res://frontend/props
+res://backend/event manager/events
+res://test
 res://backend/event manager
 res://

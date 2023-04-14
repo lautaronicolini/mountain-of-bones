@@ -24,7 +24,7 @@ texture_path = "res://frontend/props/soldier.png"
 [node name="Character2" parent="." instance=ExtResource("3_1bg2w")]
 position = Vector2(170, 262)
 scale = Vector2(-6, 6)
-texture_path = "res://frontend/props/soldier.png"
+texture_path = "res://frontend/props/skele.png"
 
 [node name="HealthBar" parent="." instance=ExtResource("4_kt6v4")]
 offset_left = -315.0

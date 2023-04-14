@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtxseb078400j"]
+[gd_scene load_steps=6 format=3 uid="uid://dtxseb078400j"]
 
 [ext_resource type="Script" path="res://backend/event manager/event_manager_script.gd" id="1_bv4ns"]
 [ext_resource type="Script" path="res://backend/event manager/events/rock_avalanche_event_script.gd" id="2_gmh7h"]
 [ext_resource type="Script" path="res://backend/event manager/events/slip_on_ice_event_script.gd" id="3_l2e4e"]
+[ext_resource type="Script" path="res://backend/event manager/events/loot_tower_event_script.gd" id="4_l2xqx"]
+[ext_resource type="Script" path="res://backend/event manager/events/information_event_script.gd" id="5_24d1k"]
 
 [node name="EventManager" type="Node2D"]
 script = ExtResource("1_bv4ns")
@@ -12,3 +14,18 @@ script = ExtResource("2_gmh7h")
 
 [node name="SlipOnIce" type="Node2D" parent="."]
 script = ExtResource("3_l2e4e")
+
+[node name="LootTower" type="Node2D" parent="."]
+script = ExtResource("4_l2xqx")
+
+[node name="LootedGold" type="Node2D" parent="LootTower"]
+script = ExtResource("5_24d1k")
+info_description = "Encontras 12 monedas."
+event_type = "Looted Gold"
+option_description = "Que suerte!"
+
+[node name="GoYourWay" type="Node2D" parent="LootTower"]
+script = ExtResource("5_24d1k")
+info_description = "Decidis no perder mas tiempo"
+event_type = "Go Your Way"
+option_description = "Ok"

@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="Montaña de huesos"
-run/main_scene="res://frontend/node_2d.tscn"
+run/main_scene="res://frontend/main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://logo v1.png"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")

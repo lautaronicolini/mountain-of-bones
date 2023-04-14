@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6gaqoeip2fc8"]
+
+[ext_resource type="Script" path="res://backend/intro_script.gd" id="1_qoqgt"]
+[ext_resource type="Texture2D" uid="uid://c6wu86o1a2tl5" path="res://frontend/props/Leonardo_Diffusion_Pixel_art_mountain_retro_background_for_vid_2.jpg" id="1_xqm5l"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_2w7pe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oat45"]
+font = ExtResource("2_2w7pe")
+font_size = 24
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_xavev"]
+default_font = ExtResource("2_2w7pe")
+default_font_size = 33
+
+[node name="Intro" type="Node2D"]
+position = Vector2(0, -40)
+scale = Vector2(1.13543, 1.13543)
+script = ExtResource("1_qoqgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(504, 375)
+texture = ExtResource("1_xqm5l")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 13.2108
+offset_top = 52.8433
+offset_right = 930.211
+offset_bottom = 484.843
+scale = Vector2(1.07083, 1.07083)
+text = "Cuenta la leyenda de una montaña mas vieja que el tiempo mismo, protegida
+por un poder misterioso, ya que su entrada solo es accesible durante poco
+tiempo, una vez  cada quinientos años.
+
+Escritos antiguos repartidos por todo el mundo relatan
+sobre el poder obtenido solo por los pocos que alcanzaron 
+la cima.
+
+Esa brecha ha llegado, muchos aventureros y forajidos de todas partes
+buscan los secretos de su interior. 
+
+Muchos peligros acechan la montaña y cuando llegue el momento de la 
+verdad, solo unos pocos alcanzaran la cima
+
+Esta es la historia de uno de ellos..."
+label_settings = SubResource("LabelSettings_oat45")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 721.0
+offset_top = 496.0
+offset_right = 974.0
+offset_bottom = 592.0
+theme = SubResource("Theme_xavev")
+text = "Continuar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

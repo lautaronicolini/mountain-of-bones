@@ -1,5 +1,6 @@
-res://frontend/character.tscn
 res://frontend/props/health_bar_theme.tres
+res://test/test.tscn
+res://frontend/character.tscn
 res://frontend/node_2d.tscn
 res://frontend/event_manager.tscn
 res://frontend/event_display.tscn
@@ -7,3 +8,23 @@ res://frontend/event_option.tscn
 res://frontend/tile.tscn
 res://frontend/combat_scene.tscn
 res://frontend/health_bar.tscn
+res://test/unit/test.gd
+res://backend/event manager/events/slip_on_ice_event_script.gd
+res://backend/event manager/events/loot_tower_event_script.gd
+res://backend/event manager/events/event_script.gd
+res://backend/event manager/event_option_script.gd
+res://backend/boardview_script.gd
+res://frontend/logger_script.gd
+res://backend/event manager/events/rock_avalanche_event_script.gd
+res://backend/character_script.gd
+res://logs/log.txt
+res://backend/event manager/event_display_script.gd
+res://backend/event manager/events/information_event_script.gd
+res://backend/event manager/event_manager_script.gd
+res://backend/tile_script.gd
+res://default_bus_layout.tres
+res://frontend/intro.tscn
+res://backend/intro_script.gd
+res://frontend/boardview.tscn
+res://frontend/camera_script.gd
+res://frontend/main.tscn

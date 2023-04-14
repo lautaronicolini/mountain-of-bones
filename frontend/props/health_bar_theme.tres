@@ -34,6 +34,6 @@ ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
 ProgressBar/colors/font_outline_color = Color(1, 1, 1, 1)
 ProgressBar/colors/font_shadow_color = Color(0, 0, 0, 1)
 ProgressBar/constants/outline_size = 0
-ProgressBar/font_sizes/font_size = 84
+ProgressBar/font_sizes/font_size = 32
 ProgressBar/styles/background = SubResource("StyleBoxFlat_fx35d")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_8hx7i")
