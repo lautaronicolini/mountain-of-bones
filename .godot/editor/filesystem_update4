@@ -28,3 +28,5 @@ res://backend/intro_script.gd
 res://frontend/boardview.tscn
 res://frontend/camera_script.gd
 res://frontend/main.tscn
+res://addons/gut/gui/GutSceneTheme.tres
+res://frontend/choose_character_scene.tscn

@@ -1,6 +1,6 @@
 extends Node
 
-@export var log_file_path = "res://logs/log.txt"
+@onready var log_file_path = "user://log.txt"
 
 func save(content):
 	var file = FileAccess.open(log_file_path, FileAccess.READ_WRITE)
