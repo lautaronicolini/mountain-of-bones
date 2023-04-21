@@ -19,23 +19,37 @@ zoom = Vector2(1.125, 1.125)
 [node name="Character" parent="." instance=ExtResource("3_1bg2w")]
 position = Vector2(-172, 262)
 scale = Vector2(6, 6)
+life_points = 10
+max_life_points = 10
+movement_points = 2
 texture_path = "res://frontend/props/soldier.png"
 
 [node name="Character2" parent="." instance=ExtResource("3_1bg2w")]
 position = Vector2(170, 262)
 scale = Vector2(-6, 6)
+life_points = 12
+max_life_points = 12
+movement_points = 1
 texture_path = "res://frontend/props/skele.png"
 
-[node name="HealthBar" parent="." instance=ExtResource("4_kt6v4")]
+[node name="HealthBar" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_kt6v4")]
 offset_left = -315.0
 offset_top = 145.0
 offset_right = -315.0
 offset_bottom = 145.0
 scale = Vector2(0.68146, 0.68146)
+character = NodePath("../Character")
 
-[node name="HealthBar2" parent="." instance=ExtResource("4_kt6v4")]
+[node name="HealthBar2" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_kt6v4")]
 offset_left = 33.0
 offset_top = 141.0
 offset_right = 33.0
 offset_bottom = 141.0
 scale = Vector2(0.681, 0.681)
+character = NodePath("../Character2")
+
+[node name="ActionContainer" type="VBoxContainer" parent="."]
+offset_left = -325.0
+offset_top = -104.0
+offset_right = -50.0
+offset_bottom = 141.0

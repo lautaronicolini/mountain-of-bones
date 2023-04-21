@@ -1,15 +1,8 @@
 extends Node2D
 
-@export var life_points = 0:
-	get:
-		return life_points
-	set(value):
-		life_points = value
-@export var movement_points = 0:
-	get:
-		return movement_points
-	set(value):
-		movement_points = value
+@export var life_points = 0
+@export var max_life_points = 0
+@export var movement_points = 0
 @export var gold = 0
 var _movement_points_left = 0
 @export var current_tile = 0
@@ -24,6 +17,7 @@ signal gold_updated
 
 func initialize(lp, mp, sprite_path):
 	life_points = lp
+	max_life_points = lp
 	movement_points = mp
 	texture_path = sprite_path
 	_movement_points_left = mp

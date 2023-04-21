@@ -1,11 +1,13 @@
 extends Node2D
 
+var damaged = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	$Character.get_actions()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if !damaged:
+		damaged = true
+		$Character.receive_damage(4)

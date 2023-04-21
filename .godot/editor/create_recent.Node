@@ -1,3 +1,6 @@
+Control
+VBoxContainer
+BoxContainer
 Button
 Node2D
 AudioStreamPlayer2D
@@ -10,10 +13,8 @@ CollisionShape2D
 Area2D
 Path2D
 GutTest
-Control
 ProgressBar
 HBoxContainer
-VBoxContainer
 Container
 GridContainer
 Polygon2D
