@@ -1,7 +1,12 @@
-extends Node2D
+extends Control
 
 class_name Action
 
-func initialize(action_function, description):
-	$Button.pressed.connect(action_function)
-	$Button.set_text(description)
+var action_function
+var description
+var parameters
+
+func _init(_action_function, _description, _parameters = []):
+	action_function = _action_function
+	description = _description
+	parameters = _parameters

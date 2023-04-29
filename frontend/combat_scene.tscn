@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhrpqjhwmm76l"]
+[gd_scene load_steps=4 format=3 uid="uid://bhrpqjhwmm76l"]
 
 [ext_resource type="Script" path="res://backend/combat_scene_script.gd" id="1_kx4jc"]
 [ext_resource type="Texture2D" uid="uid://bj4ca5d8acjt" path="res://frontend/props/fight_scene_background_alt.jpg" id="2_phfyb"]
-[ext_resource type="PackedScene" uid="uid://bu2uiplgemcou" path="res://frontend/character.tscn" id="3_1bg2w"]
 [ext_resource type="PackedScene" uid="uid://0qgbbwsrg7dx" path="res://frontend/health_bar.tscn" id="4_kt6v4"]
 
 [node name="CombatScene" type="Node2D"]
@@ -16,40 +15,28 @@ texture = ExtResource("2_phfyb")
 position = Vector2(0, 96)
 zoom = Vector2(1.125, 1.125)
 
-[node name="Character" parent="." instance=ExtResource("3_1bg2w")]
-position = Vector2(-172, 262)
-scale = Vector2(6, 6)
-life_points = 10
-max_life_points = 10
-movement_points = 2
-texture_path = "res://frontend/props/soldier.png"
-
-[node name="Character2" parent="." instance=ExtResource("3_1bg2w")]
-position = Vector2(170, 262)
-scale = Vector2(-6, 6)
-life_points = 12
-max_life_points = 12
-movement_points = 1
-texture_path = "res://frontend/props/skele.png"
-
-[node name="HealthBar" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_kt6v4")]
+[node name="HealthBar" parent="." instance=ExtResource("4_kt6v4")]
 offset_left = -315.0
 offset_top = 145.0
 offset_right = -315.0
 offset_bottom = 145.0
 scale = Vector2(0.68146, 0.68146)
-character = NodePath("../Character")
 
-[node name="HealthBar2" parent="." node_paths=PackedStringArray("character") instance=ExtResource("4_kt6v4")]
+[node name="HealthBar2" parent="." instance=ExtResource("4_kt6v4")]
 offset_left = 33.0
 offset_top = 141.0
 offset_right = 33.0
 offset_bottom = 141.0
 scale = Vector2(0.681, 0.681)
-character = NodePath("../Character2")
 
 [node name="ActionContainer" type="VBoxContainer" parent="."]
-offset_left = -325.0
-offset_top = -104.0
-offset_right = -50.0
-offset_bottom = 141.0
+offset_left = -182.0
+offset_top = 88.0
+offset_right = -102.0
+offset_bottom = 145.0
+pivot_offset = Vector2(231, 189)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

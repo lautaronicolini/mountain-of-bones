@@ -13,25 +13,28 @@ var character
 func _ready():
 	logger.flush()
 
-func _on_character_select_character_chosen(selected_character):
+func _on_character_select_character_chosen(selected_character_scene):
+	var selected_character = selected_character_scene.character
 	logger.log("Personaje elegido. Vida: " + str(selected_character.life_points) + " - Puntos de movimiento: " + str(selected_character.movement_points))
-	selected_character.set_position(Vector2(-1,-9))
 	selected_character.set_logger(logger)
-	path_follow_node.set_character(selected_character)
-	
+	path_follow_node.set_character(selected_character_scene)
+	selected_character_scene.set_position(Vector2(-1,-9))
+		
 	var camera = Camera2D.new()
 	camera.set_enabled(false)
 	camera.set_position_smoothing_enabled(true)
 	camera.set_position_smoothing_speed(5)
 	camera.set_zoom(Vector2(3.324, 3.324))
-	selected_character.add_child(camera)
+	selected_character_scene.add_child(camera)
 	
 	selected_character.damage_received.connect(update_life_gui)
+	selected_character.dead.connect(restart_game)
 	selected_character.out_of_sight.connect(camera_follow_character)
 	selected_character.gold_updated.connect(update_gold_gui)
 	character = selected_character
 	update_life_gui()
 	update_gold_gui()
+	path_follow_node.toggle_movement()
 	start_turn()
 	
 func update_life_gui():
@@ -63,7 +66,7 @@ func _on_timer_timeout():
 
 func camera_follow_character():
 	start_camera.set_enabled(false)
-	character.get_child(2).set_enabled(true)
+	path_follow_node.get_child(1).get_child(1).set_enabled(true)
 	gui.hide()
 	$Outro/Timer.start()
 
@@ -71,6 +74,9 @@ func _on_move_button_pressed():
 	start_turn()
 
 func _on_reiniciar_pressed():
+	restart_game()
+	
+func restart_game():
 	get_tree().get_root().add_child(load("res://frontend/intro.tscn").instantiate())
 	queue_free()
 

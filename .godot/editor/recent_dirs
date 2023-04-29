@@ -1,8 +1,9 @@
-res://backend
+res://backend/event manager/events
+res://backend/character_classes
 res://frontend
+res://backend
 res://
 C:/Users/Lautaro/Desktop/Montaña de huesos
 res://frontend/props
-res://backend/event manager/events
 res://test
 res://backend/event manager

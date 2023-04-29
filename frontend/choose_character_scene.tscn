@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://xq47j0y4xc7q"]
+[gd_scene load_steps=6 format=3 uid="uid://rq382y6yiwho"]
 
 [ext_resource type="Script" path="res://backend/character_selection_script.gd" id="1_4q0c5"]
 [ext_resource type="Texture2D" uid="uid://j8rxwog8xbei" path="res://frontend/props/choose_character_background.png" id="2_gr3fo"]
 [ext_resource type="PackedScene" uid="uid://ct7kbr3auo4a7" path="res://frontend/character_holder.tscn" id="3_tl103"]
+[ext_resource type="Script" path="res://backend/character_classes/archer_class.gd" id="4_i2b4m"]
+[ext_resource type="Script" path="res://backend/character_classes/soldier_class.gd" id="5_yjwi0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4q0c5")
@@ -25,5 +27,11 @@ text = "⭯"
 [node name="Character2Holder" parent="." instance=ExtResource("3_tl103")]
 offset_left = 418.0
 offset_right = 458.0
+
+[node name="ArcherClass" type="Node2D" parent="."]
+script = ExtResource("4_i2b4m")
+
+[node name="SoldierClass" type="Node2D" parent="."]
+script = ExtResource("5_yjwi0")
 
 [connection signal="pressed" from="Button" to="." method="_on_refresh_pressed"]

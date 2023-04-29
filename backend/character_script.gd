@@ -1,35 +1,39 @@
 extends Node2D
 
+class_name Character
+
 @export var life_points = 0
-@export var max_life_points = 0
 @export var movement_points = 0
+@export var max_life = 0
+@export var min_life = 0
+@export var max_movement_points = 0
+@export var min_movement_points = 0
 @export var gold = 0
-var _movement_points_left = 0
 @export var current_tile = 0
-@export var texture_path = ""
+@export var strength = 0
+@export var sprite_path = ""
+@export var items = []
+var enemy
+var _movement_points_left = 0
 var logger
-@onready var sprite = $Sprite2D
-@onready var collition_area = $CollitionCharacter/CollisionShape2D
+var rng = RandomNumberGenerator.new()
+
+var actions = [Action.new(attack,"Atacar")]
 
 signal damage_received
 signal out_of_sight
 signal gold_updated
+signal healed
+signal dead
 
-func initialize(lp, mp, sprite_path):
-	life_points = lp
-	max_life_points = lp
-	movement_points = mp
-	texture_path = sprite_path
-	_movement_points_left = mp
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	collition_area = $CollitionCharacter
-	set_character_texture(texture_path)
-
-func set_character_texture(texture_to_set):
-	texture_path = texture_to_set
-	sprite.set_texture(load(texture_to_set))
+func _init():
+	rng.randomize()
+	var character_move_points = rng.randi_range(min_movement_points, max_movement_points)
+	var character_life_points = rng.randi_range(min_life, max_life)
+	life_points = character_life_points
+	max_life = character_life_points
+	movement_points = character_move_points
+	_movement_points_left = character_move_points
 
 func set_logger(_logger):
 	logger = _logger
@@ -37,22 +41,44 @@ func set_logger(_logger):
 func receive_damage(amount):
 	life_points = life_points - amount
 	emit_signal("damage_received")
+	if life_points <= 0:
+		emit_signal("dead")
 
+func heal(amount):
+	if life_points + amount > max_life:
+		life_points = max_life
+	else:
+		life_points = life_points + amount
+	emit_signal("healed")
+	
 func loot_gold(amount):
 	gold += amount
 	emit_signal("gold_updated")
-	
-func _physics_process(_delta):
-	if !collition_area.get_overlapping_areas().is_empty():
-		var collitioned_tile = collition_area.get_overlapping_areas()[0]
-		if !collitioned_tile.has_been_passed():
-			collitioned_tile.mark_as_passed()
-			_movement_points_left -= 1
-			current_tile += 1
-			if current_tile >= 4:
-				emit_signal("out_of_sight")
-			elif _movement_points_left == 0:
-				logger.log("Casillero actual: " + str(current_tile))
-				collitioned_tile.spawn_event(self)
-				get_parent()._speed = 0
-				_movement_points_left = movement_points
+
+func loot_item(item):
+	items.append(item)
+
+func attack():
+	rng.randomize()
+	var bonus = rng.randi_range(0, 2)
+	enemy.receive_damage(bonus + strength)
+
+func set_enemy(_enemy):
+	enemy = _enemy
+
+func update_post_movement():
+	_movement_points_left -= 1
+	current_tile += 1
+
+func reset_move_points():
+	_movement_points_left = movement_points
+
+func consume_item(item):
+	item.apply_effect(self)
+	items.erase(item)
+
+func get_actions():
+	var result = actions.duplicate()
+	for item in items:
+		result.append(Action.new(consume_item, item.action_description, [item]))
+	return result

@@ -9,9 +9,9 @@ signal character_chosen
 
 func set_character(ch):
 	character = ch
-	mp_label.set_text(str(ch.movement_points))
-	lp_label.set_text(str(ch.life_points))
-	sprite.set_texture(load(ch.texture_path))
+	mp_label.set_text(str(ch.character.movement_points))
+	lp_label.set_text(str(ch.character.life_points))
+	sprite.set_texture(load(ch.character.sprite_path))
 
 func _on_ch_select_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
