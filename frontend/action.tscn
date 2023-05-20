@@ -11,5 +11,7 @@ script = ExtResource("1_d6jrm")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
+tooltip_text = "Example tooltip
+"
 theme = SubResource("Theme_rg7lr")
 text = "ActionText"

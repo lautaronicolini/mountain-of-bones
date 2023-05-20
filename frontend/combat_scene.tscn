@@ -36,7 +36,8 @@ offset_right = -102.0
 offset_bottom = 145.0
 pivot_offset = Vector2(231, 189)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="DisableActionsTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DisableActionsTimer" to="." method="_on_timer_timeout"]

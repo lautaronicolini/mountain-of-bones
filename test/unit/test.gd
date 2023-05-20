@@ -22,7 +22,16 @@ func test_assert_when_character_loots_item_new_action_added():
 	var action_found = false
 	var potion = PotionOfLife.new()
 	_char.loot_item(potion)
+	#actions.map de descripcion y revisar que esa lista contenga esta descripcion "Consumir Pocion"
 	var actions = _char.get_actions()
 	for action in actions:
 		action_found = action.description == "Consumir Pocion"
 	assert_true(action_found)
+
+func test_assert_when_character_consumes_potion_gets_healed():
+	var potion = PotionOfLife.new()
+	_char.loot_item(potion)
+	_char.receive_damage(10)
+	var life_after_damage = _char.life_points
+	_char.consume_item(_char.items[0])
+	assert_lt(life_after_damage, _char.life_points)

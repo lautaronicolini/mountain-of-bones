@@ -1,12 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu2uiplgemcou"]
+[gd_scene load_steps=7 format=3 uid="uid://01sfvluvxleh"]
 
 [ext_resource type="Script" path="res://frontend/character_display.gd" id="1_0tqyn"]
+[ext_resource type="Shader" path="res://frontend/shaders/damaged.gdshader" id="1_ljuxb"]
 [ext_resource type="Texture2D" uid="uid://clsiq2d27ljtl" path="res://frontend/props/archer.png" id="2_hjo0c"]
 
+[sub_resource type="Curve2D" id="Curve2D_of2lw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, -2.38419e-06, 53)
+}
+point_count = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxgpl"]
+shader = ExtResource("1_ljuxb")
+shader_parameter/on = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dxl6"]
+size = Vector2(17, 10.5)
+
 [node name="Character" type="Node2D"]
+position = Vector2(0, -6)
 script = ExtResource("1_0tqyn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -4)
+[node name="Path2D" type="Path2D" parent="."]
+rotation = -1.5708
+curve = SubResource("Curve2D_of2lw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = 1.5708
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
+material = SubResource("ShaderMaterial_wxgpl")
+position = Vector2(0, -3)
 scale = Vector2(0.100397, 0.100397)
 texture = ExtResource("2_hjo0c")
+
+[node name="DamageAnimationTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="RayEffectSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-10, -24)
+
+[node name="ShieldSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(5, 19)
+
+[node name="ArrowSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(8, 8)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 10)
+shape = SubResource("RectangleShape2D_1dxl6")
+
+[connection signal="timeout" from="DamageAnimationTimer" to="." method="_on_timer_timeout"]

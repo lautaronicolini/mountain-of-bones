@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://hejet005bghe"]
+
+[ext_resource type="Texture2D" uid="uid://kgx55fghcksa" path="res://frontend/props/heart_icon.png" id="1_xkjt8"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_k5rcu"]
+[ext_resource type="Theme" uid="uid://rgabw4lp5pa1" path="res://frontend/props/health_bar_theme.tres" id="3_vhrec"]
+[ext_resource type="Texture2D" uid="uid://cdwc5k4ioj0x6" path="res://frontend/props/coin_icon.png" id="4_ln1ic"]
+[ext_resource type="PackedScene" uid="uid://bxdopdhlbkuxo" path="res://frontend/experience_bar.tscn" id="5_c8ild"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1x7l"]
+font = ExtResource("2_k5rcu")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0.45098, 0.721569, 0.960784, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_51r5h"]
+font = ExtResource("2_k5rcu")
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+outline_color = Color(0.352941, 0.498039, 0.658824, 1)
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -150.0
+offset_top = -83.0
+offset_right = -150.0
+offset_bottom = -82.0
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(16, 14.375)
+scale = Vector2(0.269802, 0.269802)
+texture = ExtResource("1_xkjt8")
+
+[node name="LifeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 2.0
+offset_right = 70.0
+offset_bottom = 37.0
+text = "49
+"
+label_settings = SubResource("LabelSettings_m1x7l")
+
+[node name="TurnLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 89.0
+offset_top = 12.0
+offset_right = 248.0
+offset_bottom = 35.0
+text = "Comienza el turno: 0"
+label_settings = SubResource("LabelSettings_51r5h")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 65.0
+offset_right = 78.0
+offset_bottom = 90.0
+theme = ExtResource("3_vhrec")
+text = "Avanzar"
+
+[node name="Gold" type="Sprite2D" parent="."]
+position = Vector2(17, 47)
+scale = Vector2(0.115091, 0.115091)
+texture = ExtResource("4_ln1ic")
+
+[node name="GoldLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = 70.0
+offset_bottom = 68.0
+text = "49
+"
+label_settings = SubResource("LabelSettings_m1x7l")
+
+[node name="Reiniciar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 99.0
+offset_right = 79.0
+offset_bottom = 124.0
+theme = ExtResource("3_vhrec")
+text = "Reiniciar"
+
+[node name="ExperienceBar" parent="." instance=ExtResource("5_c8ild")]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 163.0
+offset_right = 1062.0
+offset_bottom = 227.0

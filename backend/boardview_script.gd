@@ -12,6 +12,10 @@ var character
 
 func _ready():
 	logger.flush()
+	gui.get_node("Button").pressed.connect(start_turn)
+	gui.get_node("Reiniciar").pressed.connect(restart_game)
+	gui.get_node("Timer").timeout.connect(_on_timer_timeout)
+
 
 func _on_character_select_character_chosen(selected_character_scene):
 	var selected_character = selected_character_scene.character
@@ -19,7 +23,7 @@ func _on_character_select_character_chosen(selected_character_scene):
 	selected_character.set_logger(logger)
 	path_follow_node.set_character(selected_character_scene)
 	selected_character_scene.set_position(Vector2(-1,-9))
-		
+	
 	var camera = Camera2D.new()
 	camera.set_enabled(false)
 	camera.set_position_smoothing_enabled(true)
@@ -28,9 +32,9 @@ func _on_character_select_character_chosen(selected_character_scene):
 	selected_character_scene.add_child(camera)
 	
 	selected_character.damage_received.connect(update_life_gui)
-	selected_character.dead.connect(restart_game)
 	selected_character.out_of_sight.connect(camera_follow_character)
 	selected_character.gold_updated.connect(update_gold_gui)
+	gui.get_node("ExperienceBar").request_connect(selected_character)
 	character = selected_character
 	update_life_gui()
 	update_gold_gui()
@@ -66,7 +70,7 @@ func _on_timer_timeout():
 
 func camera_follow_character():
 	start_camera.set_enabled(false)
-	path_follow_node.get_child(1).get_child(1).set_enabled(true)
+	path_follow_node.get_child(1).get_child(-1).set_enabled(true)
 	gui.hide()
 	$Outro/Timer.start()
 

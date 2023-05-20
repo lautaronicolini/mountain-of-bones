@@ -1,19 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://che78b4g65x5h"]
+[gd_scene load_steps=18 format=3 uid="uid://che78b4g65x5h"]
 
 [ext_resource type="Script" path="res://backend/boardview_script.gd" id="1_kyahc"]
 [ext_resource type="Texture2D" uid="uid://dbv1kcsf7b1by" path="res://Leonardo_Diffusion_Pixel_art_mountain_retro_background_for_vid_1.jpg" id="2_rn4n4"]
 [ext_resource type="Script" path="res://backend/map_character_script.gd" id="3_jcx7a"]
 [ext_resource type="Texture2D" uid="uid://cmqkbi8wcqcm7" path="res://frontend/props/mopntian.png" id="3_pq3du"]
-[ext_resource type="Texture2D" uid="uid://kgx55fghcksa" path="res://frontend/props/heart_icon.png" id="3_wnp2q"]
-[ext_resource type="PackedScene" uid="uid://bu2uiplgemcou" path="res://frontend/character.tscn" id="4_8rogh"]
+[ext_resource type="PackedScene" uid="uid://01sfvluvxleh" path="res://frontend/character.tscn" id="4_8rogh"]
 [ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="4_dckp6"]
 [ext_resource type="PackedScene" uid="uid://rq382y6yiwho" path="res://frontend/choose_character_scene.tscn" id="5_lrotp"]
 [ext_resource type="Texture2D" uid="uid://c1gdhmp81kcqd" path="res://frontend/props/tile.png" id="5_o7lry"]
 [ext_resource type="PackedScene" uid="uid://7h30lld8lcae" path="res://frontend/tile.tscn" id="5_sgbkq"]
+[ext_resource type="PackedScene" uid="uid://hejet005bghe" path="res://frontend/gui.tscn" id="7_ail0v"]
 [ext_resource type="PackedScene" uid="uid://dtxseb078400j" path="res://frontend/event_manager.tscn" id="8_2w223"]
 [ext_resource type="Theme" uid="uid://rgabw4lp5pa1" path="res://frontend/props/health_bar_theme.tres" id="11_1hpbp"]
 [ext_resource type="Script" path="res://frontend/logger_script.gd" id="12_5kuiy"]
-[ext_resource type="Texture2D" uid="uid://cdwc5k4ioj0x6" path="res://frontend/props/coin_icon.png" id="12_t1f8c"]
 
 [sub_resource type="Curve2D" id="Curve2D_vb01e"]
 _data = {
@@ -22,20 +21,7 @@ _data = {
 point_count = 7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1831"]
-size = Vector2(7, 7)
-
-[sub_resource type="LabelSettings" id="LabelSettings_m1x7l"]
-font = ExtResource("4_dckp6")
-font_size = 32
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
-outline_color = Color(0.45098, 0.721569, 0.960784, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_51r5h"]
-font = ExtResource("4_dckp6")
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
-outline_color = Color(0.352941, 0.498039, 0.658824, 1)
+size = Vector2(5.5, 4.5)
 
 [sub_resource type="Curve2D" id="Curve2D_k548d"]
 _data = {
@@ -73,7 +59,7 @@ position = Vector2(-1, -9)
 [node name="CollitionCharacter" type="Area2D" parent="Path2D/PathFollow2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/CollitionCharacter"]
-position = Vector2(0, -7)
+position = Vector2(-0.75, -8.25)
 shape = SubResource("RectangleShape2D_o1831")
 
 [node name="SpriteTile2" type="Sprite2D" parent="Path2D"]
@@ -99,74 +85,7 @@ position = Vector2(21, 13)
 scale = Vector2(-0.832158, -0.154884)
 zoom = Vector2(3.324, 3.324)
 
-[node name="GUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -150.0
-offset_top = -83.0
-offset_right = -150.0
-offset_bottom = -82.0
-
-[node name="Heart" type="Sprite2D" parent="GUI"]
-position = Vector2(16, 14.375)
-scale = Vector2(0.269802, 0.269802)
-texture = ExtResource("3_wnp2q")
-
-[node name="LifeLabel" type="Label" parent="GUI"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 2.0
-offset_right = 70.0
-offset_bottom = 37.0
-text = "49
-"
-label_settings = SubResource("LabelSettings_m1x7l")
-
-[node name="TurnLabel" type="Label" parent="GUI"]
-visible = false
-layout_mode = 0
-offset_left = 89.0
-offset_top = 12.0
-offset_right = 248.0
-offset_bottom = 35.0
-text = "Comienza el turno: 0"
-label_settings = SubResource("LabelSettings_51r5h")
-
-[node name="Timer" type="Timer" parent="GUI"]
-wait_time = 1.5
-
-[node name="Button" type="Button" parent="GUI"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 65.0
-offset_right = 78.0
-offset_bottom = 90.0
-theme = ExtResource("11_1hpbp")
-text = "Avanzar"
-
-[node name="Gold" type="Sprite2D" parent="GUI"]
-position = Vector2(17, 47)
-scale = Vector2(0.115091, 0.115091)
-texture = ExtResource("12_t1f8c")
-
-[node name="GoldLabel" type="Label" parent="GUI"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 33.0
-offset_right = 70.0
-offset_bottom = 68.0
-text = "49
-"
-label_settings = SubResource("LabelSettings_m1x7l")
-
-[node name="Reiniciar" type="Button" parent="GUI"]
-layout_mode = 0
-offset_left = 257.0
-offset_top = 155.0
-offset_right = 333.0
-offset_bottom = 180.0
-theme = ExtResource("11_1hpbp")
-text = "Reiniciar"
+[node name="GUI" parent="." instance=ExtResource("7_ail0v")]
 
 [node name="CharacterSelect" parent="." instance=ExtResource("5_lrotp")]
 position = Vector2(-64, -44)
@@ -266,9 +185,6 @@ text = "Reiniciar"
 [connection signal="trigger_random_event" from="Path2D/Tile3" to="EventManager" method="_on_trigger_random_event"]
 [connection signal="trigger_random_event" from="Path2D/Tile4" to="EventManager" method="_on_trigger_random_event"]
 [connection signal="trigger_random_event" from="Path2D/Tile5" to="EventManager" method="_on_trigger_random_event"]
-[connection signal="timeout" from="GUI/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="GUI/Button" to="." method="_on_move_button_pressed"]
-[connection signal="pressed" from="GUI/Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="character_chosen" from="CharacterSelect" to="CharacterSelect" method="_on_character_chosen"]
 [connection signal="trigger_random_event" from="Path2D2/Tile2" to="EventManager" method="_on_trigger_random_event"]
 [connection signal="trigger_random_event" from="Path2D2/Tile3" to="EventManager" method="_on_trigger_random_event"]

@@ -29,6 +29,7 @@ func trigger_battle_scene():
 
 func player_won_outcome():
 	options_array[0].close_display()
+	character.gain_xp(2)
 	get_children()[0].execute_event(character, main_scene)
 
 func enemy_won_outcome():
