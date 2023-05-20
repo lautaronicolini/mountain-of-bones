@@ -32,8 +32,10 @@ func _on_character_select_character_chosen(selected_character_scene):
 	selected_character_scene.add_child(camera)
 	
 	selected_character.damage_received.connect(update_life_gui)
+	selected_character.healed.connect(update_life_gui)
 	selected_character.out_of_sight.connect(camera_follow_character)
 	selected_character.gold_updated.connect(update_gold_gui)
+	selected_character.leveled_up.connect(show_treat_tree)
 	gui.get_node("ExperienceBar").request_connect(selected_character)
 	character = selected_character
 	update_life_gui()
@@ -86,3 +88,7 @@ func restart_game():
 
 func _show_restart_button():
 	$Outro/Reiniciar.show()
+
+func show_treat_tree():
+	$EventManager.trigger_level_up_event(character)
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hejet005bghe"]
+[gd_scene load_steps=11 format=3 uid="uid://hejet005bghe"]
 
 [ext_resource type="Texture2D" uid="uid://kgx55fghcksa" path="res://frontend/props/heart_icon.png" id="1_xkjt8"]
 [ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_k5rcu"]
@@ -18,6 +18,24 @@ font = ExtResource("2_k5rcu")
 font_color = Color(0, 0, 0, 1)
 outline_size = 4
 outline_color = Color(0.352941, 0.498039, 0.658824, 1)
+
+[sub_resource type="Theme" id="Theme_w8dxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d202l"]
+bg_color = Color(0.6, 0.6, 0.6, 0.580392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0nt8"]
+bg_color = Color(0.854902, 0.494118, 0.282353, 1)
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -90,7 +108,10 @@ text = "Reiniciar"
 
 [node name="ExperienceBar" parent="." instance=ExtResource("5_c8ild")]
 layout_mode = 0
-offset_left = 38.0
+offset_left = 30.0
 offset_top = 163.0
-offset_right = 1062.0
+offset_right = 1054.0
 offset_bottom = 227.0
+theme = SubResource("Theme_w8dxf")
+theme_override_styles/background = SubResource("StyleBoxFlat_d202l")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s0nt8")

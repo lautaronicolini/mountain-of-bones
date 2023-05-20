@@ -33,8 +33,8 @@ func set_battle(character):
 		emit_signal("enemy_won"))
 	enemy.dead.connect(func () : 
 		queue_free()
+		player.current_display = get_node("/root/BoardViewScene/Path2D/PathFollow2D").character_scene
 		emit_signal("player_won"))
-	
 	$HealthBar.request_connect(player)
 	$HealthBar2.request_connect(enemy)
 	load_actions()

@@ -6,6 +6,7 @@ var type
 var description
 var option_scene = "res://frontend/event_option.tscn"
 var options_array = []
+@export var disabled = false
 
 func execute_event(character, scene_node):
 	pass

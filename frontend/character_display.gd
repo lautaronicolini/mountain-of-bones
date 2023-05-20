@@ -16,6 +16,7 @@ func set_sprite():
 func set_character(_character):
 	character = _character
 	character.damage_received.connect(got_damaged)
+	character.current_display = self
 
 func connect_item_animations():
 	character.item_consumed.connect(item_animation)

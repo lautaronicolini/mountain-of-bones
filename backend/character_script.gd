@@ -17,6 +17,7 @@ class_name Character
 @export var level = 1
 @export var experience_points = 0
 var enemy
+var current_display
 var _movement_points_left = 0
 var logger
 var rng = RandomNumberGenerator.new()
@@ -32,6 +33,7 @@ signal xp_updated
 signal healed
 signal dead
 signal item_consumed
+signal leveled_up
 
 func _init():
 	rng.randomize()
@@ -98,4 +100,5 @@ func gain_xp(amount_gained):
 	if experience_points >= xp_needed_by_level[level]:
 		experience_points -= xp_needed_by_level[level]
 		level += 1
+		emit_signal("leveled_up")
 	emit_signal("xp_updated")

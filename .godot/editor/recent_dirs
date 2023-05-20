@@ -1,9 +1,9 @@
 res://frontend/props
-res://frontend/animations
+res://backend/event manager/events
 res://frontend
+res://frontend/animations
 res://backend
 res://frontend/shaders
-res://backend/event manager/events
 res://backend/character_classes
 res://
 C:/Users/Lautaro/Desktop/Montaña de huesos
