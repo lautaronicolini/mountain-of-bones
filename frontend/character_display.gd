@@ -35,6 +35,7 @@ func action_animation(action):
 func item_animation(item):
 	item.animation_effect(self)
 
+#GENERAR METODO PARAMETRIZABLE PARA ESTOS CASOS
 func ray_of_light():
 	var ray = load("res://frontend/animations/retractile_ray.tscn").instantiate()
 	add_child(ray)
@@ -51,6 +52,7 @@ func shoot_arrow():
 	var arrow = load("res://frontend/animations/Arrow.tscn").instantiate()
 	arrow.set_position($ArrowSpawnPoint.get_position())
 	add_child(arrow)
+#########
 
 func _on_timer_timeout():
 	sprite.material.set_shader_parameter("on", false)
