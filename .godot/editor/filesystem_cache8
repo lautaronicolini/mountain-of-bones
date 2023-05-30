@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1684693710
+::res://::1685397455
 .gut_editor_config.json::JSON::-1::1684590899::0::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::2107939885983547411::1684426369::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1681529553::0::1::::<><>::
@@ -7,7 +7,7 @@ icon.svg::CompressedTexture2D::413668579322073813::1679234116::1679234127::1::::
 Leonardo_Diffusion_Pixel_art_mountain_retro_background_for_vid_1.jpg::CompressedTexture2D::7274399460426756938::1681226036::1681226038::1::::<><>::
 LICENSE.md::TextFile::-1::1681243354::0::1::::<><>::
 logo v1.png::CompressedTexture2D::1062322387361935006::1679235492::1680027136::1::::<><>::
-README.md::TextFile::-1::1681243354::0::1::::<><>::
+README.md::TextFile::-1::1684782773::0::1::::<><>::
 ::res://addons/::1681253099
 ::res://addons/gut/::1682723986
 autofree.gd::GDScript::-1::1681253099::0::1::::<>RefCounted<>::
@@ -142,11 +142,11 @@ base_item.gd::GDScript::-1::1684537900::0::1::::BaseItem<>Node<>::
 potion_of_life_item.gd::GDScript::-1::1684537884::0::1::::PotionOfLife<>BaseItem<>::
 ::res://backend/treats/::1684548161
 treat.gd::GDScript::-1::1684548161::0::1::::Treat<>Node<>::
-::res://frontend/::1684590900
+::res://frontend/::1685398945
 action.tscn::PackedScene::3058236784775524485::1684538895::0::1::::<><>::uid://bu5bpxl6utbrq<>res://frontend/action_display_script.gd
 action_display_script.gd::GDScript::-1::1684533286::0::1::::<>Control<>::
 boardview.tscn::PackedScene::5274422756473980223::1684566743::0::1::::<><>::res://backend/boardview_script.gd<>uid://dbv1kcsf7b1by<>res://backend/map_character_script.gd<>uid://cmqkbi8wcqcm7<>uid://01sfvluvxleh<>uid://bu5bpxl6utbrq<>uid://rq382y6yiwho<>uid://c1gdhmp81kcqd<>uid://7h30lld8lcae<>uid://hejet005bghe<>uid://dtxseb078400j<>uid://rgabw4lp5pa1<>res://frontend/logger_script.gd
-character.tscn::PackedScene::1809497868316574595::1684590899::0::1::::<><>::res://frontend/character_display.gd<>res://frontend/shaders/damaged.gdshader<>uid://clsiq2d27ljtl
+character.tscn::PackedScene::1809497868316574595::1685398945::0::1::::<><>::res://frontend/character_display.gd<>res://frontend/shaders/damaged.gdshader<>uid://clsiq2d27ljtl
 character_display.gd::GDScript::-1::1684590504::0::1::::<>Node2D<>::
 character_holder.tscn::PackedScene::6173099376539086404::1684518657::0::1::::<><>::res://backend/character_holder_script.gd<>uid://fdf4oahhylgk<>uid://bu5bpxl6utbrq<>uid://clsiq2d27ljtl
 choose_character_scene.tscn::PackedScene::1228000849554499700::1684566270::0::1::::<><>::res://backend/character_selection_script.gd<>uid://j8rxwog8xbei<>uid://ct7kbr3auo4a7<>res://backend/character_classes/archer_class.gd<>res://backend/character_classes/soldier_class.gd
@@ -155,24 +155,26 @@ event_display.tscn::PackedScene::7619534101357126901::1681577869::0::1::::<><>::
 event_manager.tscn::PackedScene::8541430910233372023::1684566270::0::1::::<><>::res://backend/event manager/event_manager_script.gd<>res://backend/event manager/events/rock_avalanche_event_script.gd<>res://backend/event manager/events/loot_tower_event_script.gd<>res://backend/event manager/events/information_event_script.gd<>res://backend/event manager/events/magic_font_event.gd<>res://backend/event manager/events/enemy_soldier_battle_script.gd<>res://backend/event manager/events/level_up_event.gd<>res://backend/event manager/events/game_over_event.gd
 event_option.tscn::PackedScene::5715378329375358465::1681577883::0::1::::<><>::res://backend/event manager/event_option_script.gd<>uid://j8rxwog8xbei<>uid://bu5bpxl6utbrq
 experience_bar.tscn::PackedScene::4007834214322553452::1684518657::0::1::::<><>::res://backend/experience_bar.gd<>uid://bu5bpxl6utbrq
-gui.tscn::PackedScene::500134050332768850::1684590899::0::1::::<><>::uid://kgx55fghcksa<>uid://bu5bpxl6utbrq<>uid://rgabw4lp5pa1<>uid://cdwc5k4ioj0x6<>uid://bxdopdhlbkuxo
+gui.tscn::PackedScene::500134050332768850::1685398945::0::1::::<><>::uid://kgx55fghcksa<>uid://bu5bpxl6utbrq<>uid://rgabw4lp5pa1<>uid://cdwc5k4ioj0x6<>uid://bxdopdhlbkuxo
 health_bar.tscn::PackedScene::1788117310116145277::1684566271::0::1::::<><>::res://backend/health_bar.gd<>uid://rgabw4lp5pa1
 intro.tscn::PackedScene::4574690417589657153::1681577869::0::1::::<><>::res://backend/intro_script.gd<>uid://c6wu86o1a2tl5<>uid://bu5bpxl6utbrq
 logger_script.gd::GDScript::-1::1681529452::0::1::::<>Node<>::
-main.tscn::PackedScene::3678618088719518564::1684590899::0::1::::<><>::uid://b6gaqoeip2fc8<>uid://dnrempx7son8p
+main.tscn::PackedScene::3678618088719518564::1685398945::0::1::::<><>::uid://b6gaqoeip2fc8<>uid://dnrempx7son8p
 tile.tscn::PackedScene::2262238956271078292::1684561259::0::1::::<><>::uid://c1gdhmp81kcqd<>res://backend/tile_script.gd
-treat_tree_display.tscn::PackedScene::2800901522028603365::1684590900::0::1::::<><>::res://frontend/treat_tree_display_script.gd<>uid://digiwloibnj75<>uid://gto5vixhfn56
+treat_tree_display.tscn::PackedScene::2800901522028603365::1685398945::0::1::::<><>::res://frontend/treat_tree_display_script.gd<>uid://digiwloibnj75<>uid://gto5vixhfn56
 treat_tree_display_script.gd::GDScript::-1::1684590720::0::1::::<>Node2D<>::
 treat_tree_node.gd::GDScript::-1::1684562382::0::1::::<>Sprite2D<>::
-treat_tree_node_display.tscn::PackedScene::7733684689865415930::1684590899::0::1::::<><>::uid://gy7gg5vauo77<>res://frontend/treat_tree_node.gd<>uid://c4wxcbxl1v5yl<>uid://rgabw4lp5pa1
-::res://frontend/animations/::1684590899
+treat_tree_node_display.tscn::PackedScene::7733684689865415930::1685398945::0::1::::<><>::uid://gy7gg5vauo77<>res://frontend/treat_tree_node.gd<>uid://c4wxcbxl1v5yl<>uid://rgabw4lp5pa1
+::res://frontend/animations/::1685398945
 Arrow.gd::GDScript::-1::1684540277::0::1::::<>Node2D<>::
-Arrow.tscn::PackedScene::3054135456373104609::1684590899::0::1::::<><>::res://frontend/animations/Arrow.gd<>uid://j7dgb0c128f1
+Arrow.tscn::PackedScene::3054135456373104609::1685398945::0::1::::<><>::res://frontend/animations/Arrow.gd<>uid://j7dgb0c128f1
 raise_shield.gd::GDScript::-1::1684533585::0::1::::<>Node2D<>::
-raise_shield.tscn::PackedScene::8376794294487839305::1684590899::0::1::::<><>::uid://bjltkm5lb60y0<>res://frontend/animations/raise_shield.gd
+raise_shield.tscn::PackedScene::8376794294487839305::1685398945::0::1::::<><>::uid://bjltkm5lb60y0<>res://frontend/animations/raise_shield.gd
 retractile_ray.gd::GDScript::-1::1684435322::0::1::::<>Node2D<>::
-retractile_ray.tscn::PackedScene::8834429499226383422::1684590899::0::1::::<><>::res://frontend/animations/retractile_ray.gd<>res://frontend/shaders/holy_ray.gdshader
-::res://frontend/props/::1684566248
+retractile_ray.tscn::PackedScene::8834429499226383422::1685398945::0::1::::<><>::res://frontend/animations/retractile_ray.gd<>res://frontend/shaders/holy_ray.gdshader
+::res://frontend/props/::1685400484
+ANTHONY(gold border).png::CompressedTexture2D::7553690320696200896::1685400669::1685401229::1::::<><>::
+ANTHONY.png::CompressedTexture2D::9048565613485251786::1685395513::1685397456::1::::<><>::
 archer.png::CompressedTexture2D::5582593179657074093::1680015650::1680802853::1::::<><>::
 archerdamage-export.png::CompressedTexture2D::4327081612003150970::1681335200::1681335223::1::::<><>::
 archer_icon.png::CompressedTexture2D::5619091920149856908::1684564574::1684564577::1::::<><>::
@@ -189,7 +191,7 @@ fight_scene_background_alt.jpg::CompressedTexture2D::90532654327148093::16812312
 frame.png::CompressedTexture2D::1031368637715895734::1680805905::1680805908::1::::<><>::
 frame_filled.png::CompressedTexture2D::461260967274577479::1684562165::1684562167::1::::<><>::
 gain_health_icon.png::CompressedTexture2D::2208764869665440726::1684565116::1684565120::1::::<><>::
-health_bar_theme.tres::Theme::1205599594998876502::1684566248::0::1::::<><>::uid://bu5bpxl6utbrq
+health_bar_theme.tres::Theme::1205599594998876502::1685397461::0::1::::<><>::uid://bu5bpxl6utbrq
 heart_icon.png::CompressedTexture2D::715726351262042124::1680805762::1680805799::1::::<><>::
 Leonardo_Diffusion_Pixel_art_mountain_retro_background_for_vid_2.jpg::CompressedTexture2D::6995386752842232824::1681506624::1681506624::1::::<><>::
 Minecraft.ttf::FontFile::3852217619442757198::1680216915::1680802852::1::::<><>::
@@ -205,8 +207,8 @@ square.png::CompressedTexture2D::472632148896765784::1684556480::1684556486::1::
 tile.png::CompressedTexture2D::6610332875021814011::1681227891::1681227901::1::::<><>::
 Trite Match (1).mp3::AudioStreamMP3::6389970720881460531::1681507963::1681508042::1::::<><>::
 Trite Match.wav::AudioStreamWAV::8107076562549972725::1681480038::1681508221::1::::<><>::
-::res://frontend/shaders/::1684559866
-damaged.gdshader::Shader::-1::1684559866::0::1::::<><>::
+::res://frontend/shaders/::1685397461
+damaged.gdshader::Shader::-1::1685397461::0::1::::<><>::
 holy_ray.gdshader::Shader::-1::1684100807::0::1::::<><>::
 ::res://logs/::1681328674
 log.txt::TextFile::-1::1681513056::0::1::::<><>::

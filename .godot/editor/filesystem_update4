@@ -1,29 +1,10 @@
-res://frontend/event_manager.tscn
+res://frontend/character.tscn
 res://frontend/shaders/damaged.gdshader
 res://frontend/props/health_bar_theme.tres
-res://backend/event manager/events/magic_font_event.gd
-res://backend/character_script.gd
-res://frontend/boardview.tscn
-res://backend/boardview_script.gd
-res://frontend/choose_character_scene.tscn
-res://backend/event manager/event_manager_script.gd
-res://frontend/treat_tree_display.tscn
-res://frontend/treat_tree_display_script.gd
-res://frontend/character.tscn
 res://frontend/main.tscn
 res://frontend/animations/raise_shield.tscn
 res://frontend/animations/retractile_ray.tscn
 res://frontend/animations/Arrow.tscn
-res://frontend/tile.tscn
-res://frontend/treat_tree_node_display.tscn
-res://backend/event manager/events/level_up_event.gd
-res://frontend/treat_tree_node.gd
-res://frontend/character_display.gd
-res://backend/character_classes/soldier_class.gd
-res://backend/combat_scene_script.gd
-res://backend/event manager/events/game_over_event.gd
-res://backend/character_classes/archer_class.gd
 res://frontend/gui.tscn
-res://backend/experience_bar.gd
-res://frontend/combat_scene.tscn
-res://frontend/health_bar.tscn
+res://frontend/treat_tree_node_display.tscn
+res://frontend/treat_tree_display.tscn
