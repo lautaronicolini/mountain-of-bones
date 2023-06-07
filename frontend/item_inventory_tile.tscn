@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjr5rehf454iq"]
+
+[ext_resource type="Script" path="res://frontend/item_inventory_tile.gd" id="1_4rwdw"]
+[ext_resource type="Texture2D" uid="uid://gy7gg5vauo77" path="res://frontend/props/square.png" id="2_71r2l"]
+[ext_resource type="Texture2D" uid="uid://cxovxld52wcbx" path="res://frontend/props/potion_icon.png" id="3_kvgt7"]
+
+[node name="InventoryTile" type="Node2D"]
+script = ExtResource("1_4rwdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(70, 68)
+texture = ExtResource("2_71r2l")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+position = Vector2(69, 68)
+texture = ExtResource("3_kvgt7")

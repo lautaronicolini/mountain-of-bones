@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://che78b4g65x5h"]
+[gd_scene load_steps=18 format=3 uid="uid://s7wgbk0n7sbj"]
 
 [ext_resource type="Script" path="res://backend/boardview_script.gd" id="1_kyahc"]
 [ext_resource type="Texture2D" uid="uid://dbv1kcsf7b1by" path="res://Leonardo_Diffusion_Pixel_art_mountain_retro_background_for_vid_1.jpg" id="2_rn4n4"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c1gdhmp81kcqd" path="res://frontend/props/tile.png" id="5_o7lry"]
 [ext_resource type="PackedScene" uid="uid://7h30lld8lcae" path="res://frontend/tile.tscn" id="5_sgbkq"]
 [ext_resource type="PackedScene" uid="uid://hejet005bghe" path="res://frontend/gui.tscn" id="7_ail0v"]
-[ext_resource type="PackedScene" uid="uid://dtxseb078400j" path="res://frontend/event_manager.tscn" id="8_2w223"]
+[ext_resource type="PackedScene" uid="uid://dtxseb078400j" path="res://backend/event manager/event_manager.tscn" id="8_2w223"]
 [ext_resource type="Theme" uid="uid://rgabw4lp5pa1" path="res://frontend/props/health_bar_theme.tres" id="11_1hpbp"]
 [ext_resource type="Script" path="res://frontend/logger_script.gd" id="12_5kuiy"]
 

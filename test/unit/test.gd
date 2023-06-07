@@ -35,3 +35,28 @@ func test_assert_when_character_consumes_potion_gets_healed():
 	var life_after_damage = _char.life_points
 	_char.consume_item(_char.items[0])
 	assert_lt(life_after_damage, _char.life_points)
+
+func test_assert_character_buys_from_shop_potion_of_life():
+	var action_found = false
+	_char.loot_gold(100)
+	var shop = Shop.new()
+	shop.customer = _char
+	shop.sell(PotionOfLife.new())
+	var actions = _char.get_actions()
+	for action in actions:
+		action_found = action.description == "Consumir Pocion"
+	assert_true(action_found)
+	assert_lt(_char.gold, 100)
+
+func test_assert_when_character_buys_from_shop_without_funds():
+	var action_found = false
+	_char.loot_gold(45)
+	var shop = Shop.new()
+	shop.customer = _char
+	shop.sell(PotionOfLife.new())
+	assert_eq(_char.gold, 45)
+
+func test_assert_shop_has_stock():
+	var shop = Shop.new()
+	shop.add_stock(PotionOfLife.new())
+	assert_eq(shop.stock.size(), 1)

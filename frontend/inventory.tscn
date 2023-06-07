@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3f14od178ap1"]
+
+[ext_resource type="Script" path="res://frontend/inventory_scene.gd" id="1_8e2nd"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_13fuw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sc3h7"]
+font = ExtResource("2_13fuw")
+
+[node name="Inventory" type="Node2D"]
+script = ExtResource("1_8e2nd")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -17.0
+offset_right = 44.0
+offset_bottom = 6.0
+text = "Items"
+label_settings = SubResource("LabelSettings_sc3h7")
+
+[node name="ItemTiles" type="Node2D" parent="."]

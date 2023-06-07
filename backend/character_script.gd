@@ -32,6 +32,7 @@ signal gold_updated
 signal xp_updated
 signal healed
 signal dead
+signal item_looted
 signal item_consumed
 signal leveled_up
 
@@ -64,9 +65,14 @@ func heal(amount):
 func loot_gold(amount):
 	gold += amount
 	emit_signal("gold_updated")
+	
+func lose_gold(amount):
+	gold -= clamp(0, 9999, amount)
+	emit_signal("gold_updated")
 
 func loot_item(item):
 	items.append(item)
+	emit_signal("item_looted")
 	
 func attack():
 	rng.randomize()

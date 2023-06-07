@@ -1,10 +1,32 @@
-res://frontend/character.tscn
+res://frontend/item_shop_tile.tscn
 res://frontend/shaders/damaged.gdshader
 res://frontend/props/health_bar_theme.tres
+res://frontend/item_shop_tile.gd
+res://frontend/shop.tscn
+res://test/unit/test.gd
+res://frontend/character.tscn
 res://frontend/main.tscn
 res://frontend/animations/raise_shield.tscn
 res://frontend/animations/retractile_ray.tscn
 res://frontend/animations/Arrow.tscn
 res://frontend/gui.tscn
-res://frontend/treat_tree_node_display.tscn
 res://frontend/treat_tree_display.tscn
+res://frontend/treat_tree_node_display.tscn
+res://frontend/shaders/holy_ray.gdshader
+res://frontend/shop.gd
+res://backend/shop.gd
+res://backend/character_script.gd
+res://backend/items/base_item.gd
+res://backend/items/potion_of_life_item.gd
+res://backend/event manager/event_manager.tscn
+res://backend/event manager/events/shop_encounter_script.gd
+res://default_bus_layout.tres
+res://frontend/boardview.tscn
+res://frontend/shop_scene.gd
+res://backend/items/sword_item.gd
+res://frontend/shaders/greyscale.gdshader
+res://frontend/item_inventory_tile.gd
+res://frontend/inventory_scene.gd
+res://frontend/inventory.tscn
+res://backend/boardview_script.gd
+res://frontend/item_inventory_tile.tscn

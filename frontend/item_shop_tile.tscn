@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dimhqxholwl5b"]
+
+[ext_resource type="Script" path="res://frontend/item_shop_tile.gd" id="1_3f28r"]
+[ext_resource type="Shader" path="res://frontend/shaders/greyscale.gdshader" id="1_i268w"]
+[ext_resource type="Texture2D" uid="uid://ryw2u0e0dog3" path="res://frontend/props/item_tile_square.png" id="2_oe0mm"]
+[ext_resource type="Texture2D" uid="uid://dbi8jf5kdrm0y" path="res://frontend/props/attack_icon.png" id="3_4vocb"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="3_fj4lt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_upo7v"]
+shader = ExtResource("1_i268w")
+shader_parameter/on = false
+
+[sub_resource type="Theme" id="Theme_gqkdn"]
+default_font = ExtResource("3_fj4lt")
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_gkmk0"]
+default_font = ExtResource("3_fj4lt")
+
+[node name="ItemShopTile" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_3f28r")
+
+[node name="TileBackground" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_upo7v")
+position = Vector2(588, 134)
+texture = ExtResource("2_oe0mm")
+
+[node name="ItemImage" type="Sprite2D" parent="."]
+position = Vector2(587, 134)
+texture = ExtResource("3_4vocb")
+
+[node name="PriceLabel" type="Label" parent="."]
+offset_left = 527.0
+offset_top = 195.0
+offset_right = 648.0
+offset_bottom = 248.0
+theme = SubResource("Theme_gqkdn")
+text = "$200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 526.0
+offset_top = 73.0
+offset_right = 566.0
+offset_bottom = 113.0
+scale = Vector2(3.06076, 3.05338)
+tooltip_text = "Example"
+theme = SubResource("Theme_gkmk0")
+
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

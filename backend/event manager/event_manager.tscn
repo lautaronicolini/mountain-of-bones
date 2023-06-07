@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtxseb078400j"]
+
+[ext_resource type="Script" path="res://backend/event manager/event_manager_script.gd" id="1_0i0pn"]
+[ext_resource type="Script" path="res://backend/event manager/events/rock_avalanche_event_script.gd" id="2_cj1sm"]
+[ext_resource type="Script" path="res://backend/event manager/events/loot_tower_event_script.gd" id="3_gu3i0"]
+[ext_resource type="Script" path="res://backend/event manager/events/information_event_script.gd" id="4_74iqn"]
+[ext_resource type="Script" path="res://backend/event manager/events/magic_font_event.gd" id="5_jcflt"]
+[ext_resource type="Script" path="res://backend/event manager/events/enemy_soldier_battle_script.gd" id="6_c7vbr"]
+[ext_resource type="Script" path="res://backend/event manager/events/game_over_event.gd" id="7_nxosr"]
+[ext_resource type="Script" path="res://backend/event manager/events/shop_encounter_script.gd" id="8_y6pho"]
+[ext_resource type="Script" path="res://backend/event manager/events/level_up_event.gd" id="9_5u13p"]
+
+[node name="EventManager" type="Node2D"]
+script = ExtResource("1_0i0pn")
+
+[node name="RandomEvents" type="Node2D" parent="."]
+
+[node name="RockAvalanche" type="Node2D" parent="RandomEvents"]
+script = ExtResource("2_cj1sm")
+disabled = true
+
+[node name="LootTower" type="Node2D" parent="RandomEvents"]
+script = ExtResource("3_gu3i0")
+disabled = true
+
+[node name="LootedGold" type="Node2D" parent="RandomEvents/LootTower"]
+script = ExtResource("4_74iqn")
+info_description = "Encontras 12 monedas."
+event_type = "Looted Gold"
+option_description = "Que suerte!"
+
+[node name="GoYourWay" type="Node2D" parent="RandomEvents/LootTower"]
+script = ExtResource("4_74iqn")
+info_description = "Decidis no perder mas tiempo"
+event_type = "Go Your Way"
+option_description = "Ok"
+
+[node name="MagicFont" type="Node2D" parent="RandomEvents"]
+script = ExtResource("5_jcflt")
+disabled = true
+
+[node name="EnemySoldierBattle" type="Node2D" parent="RandomEvents"]
+script = ExtResource("6_c7vbr")
+disabled = true
+
+[node name="PlayerWon" type="Node2D" parent="RandomEvents/EnemySoldierBattle"]
+script = ExtResource("4_74iqn")
+info_description = "Bandido derrotado, ganas 2 XP."
+event_type = "PlayerWon"
+option_description = "Continuar"
+
+[node name="EnemyWon" type="Node2D" parent="RandomEvents/EnemySoldierBattle"]
+script = ExtResource("7_nxosr")
+
+[node name="ShopEncounter" type="Node2D" parent="RandomEvents"]
+script = ExtResource("8_y6pho")
+
+[node name="SpecificEvents" type="Node2D" parent="."]
+
+[node name="LevelUp" type="Node2D" parent="SpecificEvents"]
+script = ExtResource("9_5u13p")

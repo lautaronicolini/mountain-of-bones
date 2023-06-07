@@ -15,6 +15,10 @@ run/main_scene="res://frontend/main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://logo v1.png"
 
+[display]
+
+window/size/viewport_width=1154
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")

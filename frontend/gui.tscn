@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://hejet005bghe"]
+[gd_scene load_steps=12 format=3 uid="uid://hejet005bghe"]
 
 [ext_resource type="Texture2D" uid="uid://kgx55fghcksa" path="res://frontend/props/heart_icon.png" id="1_xkjt8"]
 [ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_k5rcu"]
 [ext_resource type="Theme" uid="uid://rgabw4lp5pa1" path="res://frontend/props/health_bar_theme.tres" id="3_vhrec"]
 [ext_resource type="Texture2D" uid="uid://cdwc5k4ioj0x6" path="res://frontend/props/coin_icon.png" id="4_ln1ic"]
 [ext_resource type="PackedScene" uid="uid://bxdopdhlbkuxo" path="res://frontend/experience_bar.tscn" id="5_c8ild"]
+[ext_resource type="PackedScene" uid="uid://b3f14od178ap1" path="res://frontend/inventory.tscn" id="6_mjm6w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m1x7l"]
 font = ExtResource("2_k5rcu")
@@ -115,3 +116,6 @@ offset_bottom = 227.0
 theme = SubResource("Theme_w8dxf")
 theme_override_styles/background = SubResource("StyleBoxFlat_d202l")
 theme_override_styles/fill = SubResource("StyleBoxFlat_s0nt8")
+
+[node name="Inventory" parent="." instance=ExtResource("6_mjm6w")]
+position = Vector2(267, 18)
