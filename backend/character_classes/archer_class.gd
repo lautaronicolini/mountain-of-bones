@@ -3,6 +3,7 @@ extends Character
 class_name ArcherClass
 
 func _init():
+	equipment_class = EquipableItem.EquipmentClassType.ARCHER
 	max_life = 10
 	min_life = 8
 	max_movement_points = 2
@@ -15,7 +16,7 @@ func _init():
 func focus_attack():
 	rng.randomize()
 	var bonus = rng.randi_range(0, 2)
-	enemy.receive_damage(bonus + strength + 3)
+	enemy.receive_damage(bonus + get_strength() + 3)
 
 func get_treat_tree():
 	var root = Treat.new(func():pass, "Clase base: Arquero", "res://frontend/props/archer_icon.png")
@@ -24,9 +25,9 @@ func get_treat_tree():
 	return [[root], [node1, node2]]
 	
 func gain_strength():
-	strength += 2
+	modifiers[stats.STR] += 2
 
 func gain_life():
 	life_points += 5
-	max_life += 5
+	modifiers[stats.LIF] += 5
 	emit_signal("healed")

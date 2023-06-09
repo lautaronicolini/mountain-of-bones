@@ -1,4 +1,4 @@
-extends BaseItem
+extends ConsumableItem
 
 class_name PotionOfLife
 

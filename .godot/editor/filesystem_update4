@@ -13,3 +13,14 @@ res://frontend/shield_bar.tscn
 res://frontend/health_bar.tscn
 res://backend/combat_scene_script.gd
 res://backend/health_bar.gd
+res://test/unit/test.gd
+res://backend/boardview_script.gd
+res://backend/character_script.gd
+res://backend/items/base_item.gd
+res://backend/items/equipable_item.gd
+res://backend/items/consumable_item.gd
+res://backend/items/potion_of_life_item.gd
+res://backend/items/sword_item.gd
+res://frontend/inventory_scene.gd
+res://backend/character_classes/soldier_class.gd
+res://backend/character_classes/archer_class.gd

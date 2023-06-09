@@ -3,9 +3,10 @@ extends GutTest
 var Char = load("res://frontend/character.tscn")
 var _char = null
 var _enemy = null
+var sword = Sword.new()
 
 func before_each():
-	_char = ArcherClass.new()
+	_char = SoldierClass.new()
 	_enemy = SoldierClass.new()
 	_char.set_enemy(_enemy)
 
@@ -60,3 +61,18 @@ func test_assert_shop_has_stock():
 	var shop = Shop.new()
 	shop.add_stock(PotionOfLife.new())
 	assert_eq(shop.stock.size(), 1)
+
+func test_assert_when_character_equips_sword_its_attack_raises_by_one_and_item_leaves_inventory():
+	var previous_strength = _char.get_strength()
+	_char.loot_item(sword)
+	_char.equip(sword)
+	assert_eq(_char.get_strength(), previous_strength + 1)
+	assert_does_not_have(_char.items, sword)
+
+func test_assert_when_archer_class_character_tries_to_equip_sword_its_attack_stays_the_same_and_item_does_not_equip():
+	var archer = ArcherClass.new()
+	var previous_strength = archer.get_strength()
+	archer.loot_item(sword)
+	archer.equip(sword)
+	assert_eq(archer.get_strength(), previous_strength)
+	assert_null(archer.equiped_items[sword.equipment_slot])

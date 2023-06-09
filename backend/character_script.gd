@@ -2,25 +2,36 @@ extends Node2D
 
 class_name Character
 
+#STATS
+enum stats {STR, LIF}
+@export var max_life = 0
+@export var strength = 0
+
+#MODIFIERS
+var modifiers = {stats.STR: 0, stats.LIF: 0}
+
+#STATUS TRACKING
 @export var life_points = 0
 @export var movement_points = 0
-@export var max_life = 0
-@export var min_life = 0
-@export var max_movement_points = 0
-@export var min_movement_points = 0
 @export var gold = 0
 @export var defense = 0
 @export var current_tile = 0
-@export var strength = 0
-@export var sprite_path = ""
 @export var items = []
+var equiped_items = [null, null, null]
 @export var level = 1
 @export var experience_points = 0
+
+@export var min_life = 0
+@export var max_movement_points = 0
+@export var min_movement_points = 0
+@export var sprite_path = ""
+
 var enemy
 var current_display
 var _movement_points_left = 0
 var logger
 var rng = RandomNumberGenerator.new()
+var equipment_class
 
 var actions = [Action.new(attack,"Atacar", "Ataque básico en base a la fuerza del personaje", "res://frontend/props/attack_icon.png", [], func(character_display, action): character_display.attack_movement(action))]
 var xp_needed_by_level = {1: 3, 2: 6, 3: 10}
@@ -48,7 +59,30 @@ func _init():
 
 func set_logger(_logger):
 	logger = _logger
+	
+func set_enemy(_enemy):
+	enemy = _enemy
 
+#GETTERS
+func get_actions():
+	return actions
+
+func get_strength():
+	return strength + modifiers[stats.STR]
+
+func get_max_life():
+	return max_life + modifiers[stats.LIF]
+
+
+#MOVEMENT
+func update_post_movement():
+	_movement_points_left -= 1
+	current_tile += 1
+
+func reset_move_points():
+	_movement_points_left = movement_points
+
+#COMBAT
 func receive_damage(amount):
 	life_points = life_points - (amount - defense)
 	defense = clamp(defense - amount, 0, defense)
@@ -57,12 +91,15 @@ func receive_damage(amount):
 		emit_signal("dead")
 
 func heal(amount):
-	if life_points + amount > max_life:
-		life_points = max_life
-	else:
-		life_points = life_points + amount
+	life_points = clamp(life_points + amount, 0, get_max_life())
 	emit_signal("healed")
 
+func attack():
+	rng.randomize()
+	var bonus = rng.randi_range(0, 2)
+	enemy.receive_damage(bonus + get_strength())
+
+#GOLD
 func loot_gold(amount):
 	gold += amount
 	emit_signal("gold_updated")
@@ -71,36 +108,22 @@ func lose_gold(amount):
 	gold -= clamp(0, 9999, amount)
 	emit_signal("gold_updated")
 
+#ITEMS
 func loot_item(item):
 	items.append(item)
 	emit_signal("item_looted")
-	var consumable_item_action = Action.new(consume_item, item.action_description, item.tooltip_description, item.image_path, [item], func (character_display, _action): character_display.item_animation(item))
-	actions.append(consumable_item_action)
-	item.action_object = consumable_item_action
-
-func attack():
-	rng.randomize()
-	var bonus = rng.randi_range(0, 2)
-	enemy.receive_damage(bonus + strength)
-
-func set_enemy(_enemy):
-	enemy = _enemy
-
-func update_post_movement():
-	_movement_points_left -= 1
-	current_tile += 1
-
-func reset_move_points():
-	_movement_points_left = movement_points
+	item.generate_action_for_character(self, consume_item)
 
 func consume_item(item):
 	item.apply_effect(self)
 	items.erase(item)
 	actions.erase(item.action_object)
+	emit_signal("item_consumed")
+	
+func equip(item):
+	return item.be_equiped(self)
 
-func get_actions():
-	return actions
-
+#LEVEL
 func gain_xp(amount_gained):
 	experience_points += amount_gained
 	if experience_points >= xp_needed_by_level[level]:

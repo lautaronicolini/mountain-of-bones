@@ -3,6 +3,7 @@ extends Character
 class_name SoldierClass
 
 func _init():
+	equipment_class = EquipableItem.EquipmentClassType.SOLDIER
 	max_life = 12
 	min_life = 10
 	max_movement_points = 2
@@ -30,7 +31,7 @@ func evolve_to_paladin():
 	actions[0] = Action.new(ray_of_light, "Rayo de luz", "Golpea con un rayo de luz divina más fuerte que un ataque normal", "res://frontend/props/ray_of_light.png", [], func(character_display, action): character_display.character.enemy.current_display.play_animation("res://frontend/animations/retractile_ray.tscn", "RayEffectSpawnPoint", action))
 
 func ray_of_light():
-	enemy.receive_damage(2 + strength + 3)
+	enemy.receive_damage(2 + get_strength() + 3)
 
 #Barbarian
 func evolve_to_barbarian():
@@ -40,4 +41,4 @@ func evolve_to_barbarian():
 	
 func brute_force():
 	receive_damage(2)
-	enemy.receive_damage(4 + strength + 3)
+	enemy.receive_damage(4 + get_strength() + 3)

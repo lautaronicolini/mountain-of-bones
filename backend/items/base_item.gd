@@ -12,3 +12,9 @@ var action_object
 
 func apply_effect(_character):
 	pass
+
+func be_equiped(_character):
+	pass
+
+func generate_action_for_character(character, character_function):
+	pass

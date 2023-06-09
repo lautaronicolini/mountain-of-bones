@@ -16,7 +16,6 @@ func _ready():
 	gui.get_node("Reiniciar").pressed.connect(restart_game)
 	gui.get_node("Timer").timeout.connect(_on_timer_timeout)
 
-
 func _on_character_select_character_chosen(selected_character_scene):
 	var selected_character = selected_character_scene.character
 	logger.log("Personaje elegido. Vida: " + str(selected_character.life_points) + " - Puntos de movimiento: " + str(selected_character.movement_points))

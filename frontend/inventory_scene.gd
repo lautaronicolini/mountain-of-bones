@@ -7,6 +7,7 @@ var character
 func set_character(_character):
 	character = _character
 	character.item_looted.connect(update)
+	character.item_consumed.connect(update)
 	update()
 
 func update():
