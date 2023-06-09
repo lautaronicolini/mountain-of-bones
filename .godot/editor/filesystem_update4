@@ -1,31 +1,15 @@
-res://backend/event manager/event_manager.tscn
+res://default_bus_layout.tres
+res://frontend/combat_scene.tscn
 res://frontend/shaders/damaged.gdshader
 res://frontend/props/health_bar_theme.tres
-res://frontend/combat_scene.tscn
+res://frontend/props/xp_bar_theme.tres
+res://backend/event manager/event_manager.tscn
 res://frontend/character.tscn
 res://frontend/action.tscn
-res://frontend/animations/Arrow.tscn
-res://frontend/animations/retractile_ray.tscn
-res://frontend/animations/raise_shield.tscn
-res://backend/character_script.gd
-res://frontend/character_display.gd
 res://frontend/boardview.tscn
-res://frontend/tile.tscn
-res://backend/combat_scene_script.gd
-res://frontend/animations/Arrow.gd
-res://frontend/action_display_script.gd
-res://backend/items/base_item.gd
-res://backend/event manager/event_manager_script.gd
-res://default_bus_layout.tres
-res://frontend/animations/raise_shield.gd
-res://backend/shield_bar.gd
+res://frontend/animations/Arrow.tscn
+res://frontend/animations/raise_shield.tscn
 res://frontend/shield_bar.tscn
-res://backend/character_classes/soldier_class.gd
 res://frontend/health_bar.tscn
-res://frontend/props/xp_bar_theme.tres
-res://backend/boardview_script.gd
-res://backend/event manager/events/enemy_soldier_battle_script.gd
+res://backend/combat_scene_script.gd
 res://backend/health_bar.gd
-res://backend/event manager/events/game_over_event.gd
-res://backend/event manager/events/information_event_script.gd
-res://frontend/animations/retractile_ray.gd

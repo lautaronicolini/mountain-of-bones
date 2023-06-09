@@ -32,7 +32,9 @@ func set_battle(character):
 	$HealthBar2.empty.connect(func () : 
 		player.current_display = get_node("/root/BoardViewScene/Path2D/PathFollow2D").character_scene
 		player.current_display.disable_collition_monitoring()
-		emit_signal("player_won"))
+		$AudioStreamPlayer2D.play()
+		$Timer.start()
+		$DisableActionsTimer.stop())
 	$HealthBar.request_connect(player)
 	$HealthBar2.request_connect(enemy)
 	$ShieldBar.request_connect(player)
@@ -66,3 +68,7 @@ func _physics_process(_delta):
 			for child in $ActionContainer.get_children():
 				child.queue_free()
 			load_actions()
+
+
+func _on_music_timer_timeout():
+	emit_signal("player_won")

@@ -14,6 +14,7 @@ anchors_preset = 0
 script = ExtResource("1_q4e6j")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_top = 43.0
 offset_right = 328.0

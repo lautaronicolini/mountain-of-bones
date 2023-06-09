@@ -21,9 +21,3 @@ offset_bottom = 86.0
 tooltip_text = "Vida"
 theme = ExtResource("1_a7gwk")
 value = 100.0
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
