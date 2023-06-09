@@ -28,10 +28,13 @@ func trigger_battle_scene():
 	get_tree().root.add_child(battle_scene, 0)
 
 func player_won_outcome():
+	get_node("/root/CombatScene").queue_free()
 	options_array[0].close_display()
 	character.gain_xp(2)
 	get_children()[0].execute_event(character, main_scene)
+	character.current_display.disable_collition_monitoring()
 
 func enemy_won_outcome():
+	get_node("/root/CombatScene").queue_free()
 	options_array[0].close_display()
 	get_children()[1].execute_event(character, main_scene)

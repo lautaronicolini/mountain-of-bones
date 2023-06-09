@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbhywwadlm7je"]
+
+[ext_resource type="Script" path="res://backend/shield_bar.gd" id="1_q4e6j"]
+[ext_resource type="Theme" uid="uid://cgn0wlmwyvytd" path="res://frontend/props/xp_bar_theme.tres" id="2_wvqbm"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="3_78cev"]
+
+[sub_resource type="Theme" id="Theme_n0ui5"]
+default_font = ExtResource("3_78cev")
+default_font_size = 32
+
+[node name="ShieldBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q4e6j")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 72.0
+offset_top = 43.0
+offset_right = 328.0
+offset_bottom = 86.0
+tooltip_text = "Escudo"
+theme = ExtResource("2_wvqbm")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 45.0
+offset_right = 328.0
+offset_bottom = 88.0
+theme = SubResource("Theme_n0ui5")
+text = "2/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

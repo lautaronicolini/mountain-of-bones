@@ -9,7 +9,7 @@ func _init():
 	min_movement_points = 1
 	strength = 2
 	sprite_path = "res://frontend/props/archer.png"
-	actions = [Action.new(focus_attack, "Ataque+", "Ataque más fuerte que el común, varía en intensidad", [], func(character_display): character_display.shoot_arrow())]
+	actions = [Action.new(focus_attack, "Ataque+", "Ataque más fuerte que el común, varía en intensidad", "res://frontend/props/ataque_+_icon.png", [], func(character_display, action): character_display.play_animation("res://frontend/animations/Arrow.tscn", "ArrowSpawnPoint", action))]
 	super()
 
 func focus_attack():
@@ -30,7 +30,3 @@ func gain_life():
 	life_points += 5
 	max_life += 5
 	emit_signal("healed")
-	
-func brute_force():
-	receive_damage(2)
-	enemy.receive_damage(4 + strength + 3)

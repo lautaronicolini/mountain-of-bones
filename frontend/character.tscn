@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://01sfvluvxleh"]
+[gd_scene load_steps=8 format=3 uid="uid://01sfvluvxleh"]
 
 [ext_resource type="Script" path="res://frontend/character_display.gd" id="1_0tqyn"]
 [ext_resource type="Shader" path="res://frontend/shaders/damaged.gdshader" id="1_ljuxb"]
 [ext_resource type="Texture2D" uid="uid://clsiq2d27ljtl" path="res://frontend/props/archer.png" id="2_hjo0c"]
+[ext_resource type="AudioStream" uid="uid://b5yuy1o2yrwp3" path="res://frontend/props/SFX/sword.wav" id="4_vhyym"]
 
 [sub_resource type="Curve2D" id="Curve2D_of2lw"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, -2.38419e-06, 53)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, -0.000191689, 53)
 }
 point_count = 3
 
@@ -15,7 +16,7 @@ shader = ExtResource("1_ljuxb")
 shader_parameter/on = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dxl6"]
-size = Vector2(17, 10.5)
+size = Vector2(9.25, 7.625)
 
 [node name="Character" type="Node2D"]
 position = Vector2(0, -6)
@@ -35,6 +36,15 @@ position = Vector2(0, -3)
 scale = Vector2(0.100397, 0.100397)
 texture = ExtResource("2_hjo0c")
 
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+z_as_relative = false
+position = Vector2(-2.86102e-05, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+z_as_relative = false
+position = Vector2(-1.625, 1.8125)
+shape = SubResource("RectangleShape2D_1dxl6")
+
 [node name="DamageAnimationTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
@@ -48,10 +58,8 @@ position = Vector2(5, 19)
 [node name="ArrowSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(8, 8)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vhyym")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 10)
-shape = SubResource("RectangleShape2D_1dxl6")
-
+[connection signal="area_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="DamageAnimationTimer" to="." method="_on_timer_timeout"]

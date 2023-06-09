@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhrpqjhwmm76l"]
+[gd_scene load_steps=5 format=3 uid="uid://bhrpqjhwmm76l"]
 
 [ext_resource type="Script" path="res://backend/combat_scene_script.gd" id="1_kx4jc"]
 [ext_resource type="Texture2D" uid="uid://bj4ca5d8acjt" path="res://frontend/props/fight_scene_background_alt.jpg" id="2_phfyb"]
 [ext_resource type="PackedScene" uid="uid://0qgbbwsrg7dx" path="res://frontend/health_bar.tscn" id="4_kt6v4"]
+[ext_resource type="PackedScene" uid="uid://bbhywwadlm7je" path="res://frontend/shield_bar.tscn" id="4_lnn5g"]
 
 [node name="CombatScene" type="Node2D"]
 position = Vector2(580, 313)
@@ -29,15 +30,28 @@ offset_right = 33.0
 offset_bottom = 141.0
 scale = Vector2(0.681, 0.681)
 
-[node name="ActionContainer" type="VBoxContainer" parent="."]
-offset_left = -182.0
-offset_top = 88.0
-offset_right = -102.0
-offset_bottom = 145.0
-pivot_offset = Vector2(231, 189)
+[node name="ActionContainer" type="GridContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -334.0
+offset_top = -61.0
+offset_right = -48.0
+offset_bottom = 143.0
+grow_vertical = 2
+pivot_offset = Vector2(144, 91)
+columns = 3
 
 [node name="DisableActionsTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="ShieldBar" parent="." instance=ExtResource("4_lnn5g")]
+visible = false
+offset_left = -315.0
+offset_top = 107.0
+offset_right = -315.0
+offset_bottom = 107.0
+scale = Vector2(0.681, 0.681)
 
 [connection signal="timeout" from="DisableActionsTimer" to="." method="_on_timer_timeout"]

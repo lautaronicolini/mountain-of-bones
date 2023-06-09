@@ -7,9 +7,8 @@ func _init():
 	tooltip_description = "Pocion\nCura 5 puntos de vida"
 	price = 50
 	image_path = "res://frontend/props/potion_icon.png"
+	animation_path = "res://frontend/animations/retractile_ray.tscn"
+	spawn_point = "RayEffectSpawnPoint"
 
 func apply_effect(character):
 	character.heal(5)
-
-func animation_effect(character_display):
-	character_display.ray_of_light()

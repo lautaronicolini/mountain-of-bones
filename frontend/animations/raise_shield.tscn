@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drl1twmhbl4th"]
+[gd_scene load_steps=4 format=3 uid="uid://drl1twmhbl4th"]
 
 [ext_resource type="Texture2D" uid="uid://bjltkm5lb60y0" path="res://frontend/props/shield.png" id="1_gh4o2"]
 [ext_resource type="Script" path="res://frontend/animations/raise_shield.gd" id="1_w7odn"]
+[ext_resource type="AudioStream" uid="uid://xym8m0ogtgq4" path="res://frontend/props/SFX/410516__inspectorj__snare-drum-multi-hits-a-h1.wav" id="3_pccoc"]
 
 [node name="RaiseShield" type="Node2D"]
 script = ExtResource("1_w7odn")
@@ -11,7 +12,10 @@ scale = Vector2(0.09, 0.09)
 texture = ExtResource("1_gh4o2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 1.15
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pccoc")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

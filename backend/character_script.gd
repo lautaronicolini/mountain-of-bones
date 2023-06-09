@@ -22,7 +22,7 @@ var _movement_points_left = 0
 var logger
 var rng = RandomNumberGenerator.new()
 
-var actions = [Action.new(attack,"Atacar", "Ataque básico en base a la fuerza del personaje", [], func(character_display): character_display.attack_movement())]
+var actions = [Action.new(attack,"Atacar", "Ataque básico en base a la fuerza del personaje", "res://frontend/props/attack_icon.png", [], func(character_display, action): character_display.attack_movement(action))]
 var xp_needed_by_level = {1: 3, 2: 6, 3: 10}
 var xp_worth = 2
 
@@ -35,6 +35,7 @@ signal dead
 signal item_looted
 signal item_consumed
 signal leveled_up
+signal shield_raised
 
 func _init():
 	rng.randomize()
@@ -61,7 +62,7 @@ func heal(amount):
 	else:
 		life_points = life_points + amount
 	emit_signal("healed")
-	
+
 func loot_gold(amount):
 	gold += amount
 	emit_signal("gold_updated")
@@ -73,7 +74,10 @@ func lose_gold(amount):
 func loot_item(item):
 	items.append(item)
 	emit_signal("item_looted")
-	
+	var consumable_item_action = Action.new(consume_item, item.action_description, item.tooltip_description, item.image_path, [item], func (character_display, _action): character_display.item_animation(item))
+	actions.append(consumable_item_action)
+	item.action_object = consumable_item_action
+
 func attack():
 	rng.randomize()
 	var bonus = rng.randi_range(0, 2)
@@ -91,15 +95,11 @@ func reset_move_points():
 
 func consume_item(item):
 	item.apply_effect(self)
-	emit_signal("item_consumed", item)
 	items.erase(item)
+	actions.erase(item.action_object)
 
 func get_actions():
-	##TODO: cambiar por fold
-	var result = actions.duplicate()
-	for item in items:
-		result.append(Action.new(consume_item, item.action_description, item.tooltip_description, [item]))
-	return result
+	return actions
 
 func gain_xp(amount_gained):
 	experience_points += amount_gained

@@ -11,11 +11,8 @@ func set_battle(character):
 	add_child(player)
 	player.set_position(Vector2(-172,262))
 	player.scale = Vector2(6, 6)
-	var potion = PotionOfLife.new()
-	character.loot_item(potion)
 	player.set_character(character)
 	player.connect_action_animations()
-	player.connect_item_animations()
 	add_child(enemy)
 	enemy.set_position(Vector2(170,262))
 	enemy.scale = Vector2(-6, 6)
@@ -23,32 +20,35 @@ func set_battle(character):
 	enemy.connect_action_animations()
 	player.set_sprite()
 	enemy.set_sprite()
-
+	player.enable_collition_monitoring()
+	enemy.disable_collition_monitoring()
+	
 	player = player.character
 	enemy = enemy.character
 	player.set_enemy(enemy)
 	enemy.set_enemy(player)
-	player.dead.connect(func () : 
-		queue_free()
+	$HealthBar.empty.connect(func () : 
 		emit_signal("enemy_won"))
-	enemy.dead.connect(func () : 
-		queue_free()
+	$HealthBar2.empty.connect(func () : 
 		player.current_display = get_node("/root/BoardViewScene/Path2D/PathFollow2D").character_scene
+		player.current_display.disable_collition_monitoring()
 		emit_signal("player_won"))
 	$HealthBar.request_connect(player)
 	$HealthBar2.request_connect(enemy)
+	$ShieldBar.request_connect(player)
 	load_actions()
 	disabled = false
 
 func start_enemy_attack_timer():
+	enemy.current_display.disable_collition_monitoring()
 	for action in $ActionContainer.get_children():
 		action.disable_button()
 	$DisableActionsTimer.start()
 
 func _on_timer_timeout():
+	enemy.current_display.enable_collition_monitoring()
 	var attack = enemy.actions[0]
 	attack.emit_signal("execute_action", attack)
-	attack.action_function.callv(attack.parameters)
 	for action in $ActionContainer.get_children():
 		action.enable_button()
 
@@ -57,6 +57,7 @@ func load_actions():
 		var action_display = load("res://frontend/action.tscn").instantiate()
 		action_display.initialize(action)
 		action_display.connect_to_press(start_enemy_attack_timer)
+		action_display.scale = Vector2(0.3,0.3)
 		$ActionContainer.add_child(action_display)
 
 func _physics_process(_delta):

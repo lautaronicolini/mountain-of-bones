@@ -30,6 +30,7 @@ func _on_character_select_character_chosen(selected_character_scene):
 	camera.set_position_smoothing_speed(5)
 	camera.set_zoom(Vector2(3.324, 3.324))
 	selected_character_scene.add_child(camera)
+	selected_character_scene.disable_collition_monitoring()
 	
 	selected_character.damage_received.connect(update_life_gui)
 	selected_character.healed.connect(update_life_gui)
