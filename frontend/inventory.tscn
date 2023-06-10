@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3f14od178ap1"]
+[gd_scene load_steps=5 format=3 uid="uid://b3f14od178ap1"]
 
 [ext_resource type="Script" path="res://frontend/inventory_scene.gd" id="1_8e2nd"]
 [ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_13fuw"]
+[ext_resource type="PackedScene" uid="uid://dhu4jkynce774" path="res://frontend/item_grid.tscn" id="3_rj65t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sc3h7"]
 font = ExtResource("2_13fuw")
@@ -16,4 +17,5 @@ offset_bottom = 6.0
 text = "Items"
 label_settings = SubResource("LabelSettings_sc3h7")
 
-[node name="ItemTiles" type="Node2D" parent="."]
+[node name="ItemGrid" parent="." instance=ExtResource("3_rj65t")]
+tile_scale = Vector2(0.15, 0.15)

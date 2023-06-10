@@ -1,26 +1,22 @@
-res://default_bus_layout.tres
-res://frontend/combat_scene.tscn
-res://frontend/shaders/damaged.gdshader
+res://frontend/equipment_menu.tscn
 res://frontend/props/health_bar_theme.tres
-res://frontend/props/xp_bar_theme.tres
-res://backend/event manager/event_manager.tscn
-res://frontend/character.tscn
-res://frontend/action.tscn
+res://frontend/shaders/damaged.gdshader
+res://frontend/shaders/greyscale.gdshader
+res://frontend/equipment_tile.tscn
+res://frontend/item_grid.tscn
+res://frontend/inventory.tscn
+res://frontend/stat_sheet.tscn
+res://frontend/equipment_slot.tscn
+res://frontend/gui.tscn
 res://frontend/boardview.tscn
-res://frontend/animations/Arrow.tscn
-res://frontend/animations/raise_shield.tscn
-res://frontend/shield_bar.tscn
-res://frontend/health_bar.tscn
-res://backend/combat_scene_script.gd
-res://backend/health_bar.gd
-res://test/unit/test.gd
-res://backend/boardview_script.gd
-res://backend/character_script.gd
-res://backend/items/base_item.gd
+res://backend/event manager/event_manager.tscn
+res://frontend/item_shop_tile.tscn
+res://frontend/item_shop_tile.gd
 res://backend/items/equipable_item.gd
-res://backend/items/consumable_item.gd
-res://backend/items/potion_of_life_item.gd
-res://backend/items/sword_item.gd
-res://frontend/inventory_scene.gd
-res://backend/character_classes/soldier_class.gd
-res://backend/character_classes/archer_class.gd
+res://frontend/shop.tscn
+res://frontend/shop_scene.gd
+res://backend/character_script.gd
+res://frontend/equipment_menu.gd
+res://backend/items/bow_item.gd
+res://backend/event manager/events/shop_encounter_script.gd
+res://backend/items/axe_item.gd

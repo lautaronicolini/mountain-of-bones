@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://c25tmamt1h5wh"]
+
+[ext_resource type="Script" path="res://frontend/equipment_menu.gd" id="1_infyf"]
+[ext_resource type="Texture2D" uid="uid://gto5vixhfn56" path="res://frontend/props/frame_filled.png" id="2_haayg"]
+[ext_resource type="Texture2D" uid="uid://clsiq2d27ljtl" path="res://frontend/props/archer.png" id="2_xgobd"]
+[ext_resource type="PackedScene" uid="uid://ttbqywhecn1b" path="res://frontend/equipment_slot.tscn" id="3_ffpmp"]
+[ext_resource type="PackedScene" uid="uid://dhu4jkynce774" path="res://frontend/item_grid.tscn" id="4_4fyce"]
+[ext_resource type="PackedScene" uid="uid://chu5vd40w4nl5" path="res://frontend/stat_sheet.tscn" id="5_sxvte"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="7_ab1sc"]
+
+[sub_resource type="Theme" id="Theme_8rsqr"]
+default_font = ExtResource("7_ab1sc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1wdxt"]
+font = ExtResource("7_ab1sc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjtr7"]
+font = ExtResource("7_ab1sc")
+font_color = Color(1, 0, 0, 1)
+
+[node name="EquipmentMenu" type="Node2D"]
+position = Vector2(585, 406)
+script = ExtResource("1_infyf")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(-73, -6)
+rotation = 1.5708
+scale = Vector2(1.42287, 1.42287)
+texture = ExtResource("2_haayg")
+
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xgobd")
+
+[node name="EquipmentSlots" type="Node2D" parent="."]
+
+[node name="EquipmentSlot" parent="EquipmentSlots" instance=ExtResource("3_ffpmp")]
+position = Vector2(-193, 74)
+slot_type = 1
+
+[node name="EquipmentSlot2" parent="EquipmentSlots" instance=ExtResource("3_ffpmp")]
+position = Vector2(-1, -86)
+
+[node name="EquipmentSlot3" parent="EquipmentSlots" instance=ExtResource("3_ffpmp")]
+position = Vector2(199, 74)
+slot_type = 2
+
+[node name="ItemGrid" parent="." instance=ExtResource("4_4fyce")]
+position = Vector2(111, -166)
+tile_scale = Vector2(0.75, 0.75)
+columns = 2
+
+[node name="StatSheet" parent="." instance=ExtResource("5_sxvte")]
+position = Vector2(-205, -45)
+
+[node name="Close" type="Button" parent="."]
+offset_left = -321.0
+offset_top = -198.0
+offset_right = -302.0
+offset_bottom = -174.0
+theme = SubResource("Theme_8rsqr")
+text = "X"
+
+[node name="B" type="Label" parent="."]
+offset_left = -249.0
+offset_top = -6.0
+offset_right = -170.0
+offset_bottom = 17.0
+text = "Armadura
+"
+label_settings = SubResource("LabelSettings_1wdxt")
+
+[node name="H" type="Label" parent="."]
+offset_left = -57.0
+offset_top = -166.0
+offset_right = -8.0
+offset_bottom = -143.0
+text = "Casco"
+label_settings = SubResource("LabelSettings_1wdxt")
+
+[node name="W" type="Label" parent="."]
+offset_left = 143.0
+offset_top = -6.0
+offset_right = 187.0
+offset_bottom = 17.0
+text = "Arma
+"
+label_settings = SubResource("LabelSettings_1wdxt")
+
+[node name="ClassErrorLabel" type="Label" parent="."]
+visible = false
+offset_left = -217.0
+offset_top = 178.0
+offset_right = 100.0
+offset_bottom = 201.0
+text = "No se puede equipar ese item en la clase "
+label_settings = SubResource("LabelSettings_vjtr7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

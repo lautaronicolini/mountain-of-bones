@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr2rvfhwujlei"]
+
+[ext_resource type="Texture2D" uid="uid://ryw2u0e0dog3" path="res://frontend/props/item_tile_square.png" id="1_fj33p"]
+[ext_resource type="Script" path="res://frontend/equipment_tile.gd" id="2_ynpn2"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="3_62c56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jak03"]
+size = Vector2(121, 122)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hneg"]
+font = ExtResource("3_62c56")
+
+[node name="EquipmentTile" type="Sprite2D"]
+position = Vector2(576, 128)
+texture = ExtResource("1_fj33p")
+script = ExtResource("2_ynpn2")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_jak03")
+
+[node name="Type" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -4.0
+offset_bottom = -25.0
+text = "?"
+label_settings = SubResource("LabelSettings_8hneg")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

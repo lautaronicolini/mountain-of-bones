@@ -1,7 +1,7 @@
-res://frontend/props/SFX
-res://frontend
-res://backend
 res://frontend/props
+res://frontend
+res://frontend/props/SFX
+res://backend
 res://frontend/shaders
 res://backend/event manager/events
 res://frontend/animations

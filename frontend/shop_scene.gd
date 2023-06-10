@@ -14,9 +14,18 @@ func set_shop(_shop):
 		$ItemDisplays.get_children()[index].disabled = false
 		$ItemDisplays.get_children()[index].set_item(item)
 		index += 1
+	validate_funds()
 
 func _on_button_pressed():
 	queue_free()
 
 func update_gold_ui():
 	$Gold.set_text("Tu oro: %s" % shop.customer.gold)
+	validate_funds()
+
+func validate_funds():
+	var index = 0
+	for item in shop.stock:
+		if shop.customer.gold <= item.price:
+			$ItemDisplays.get_children()[index].set_price_label_red()
+		index += 1

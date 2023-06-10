@@ -2,6 +2,8 @@ extends Node
 
 class_name BaseItem
 
+enum ItemType {EQUIPABLE, CONSUMABLE}
+
 var action_description
 var tooltip_description
 var price
@@ -17,4 +19,7 @@ func be_equiped(_character):
 	pass
 
 func generate_action_for_character(character, character_function):
+	pass
+
+func get_item_type():
 	pass

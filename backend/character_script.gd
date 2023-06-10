@@ -3,18 +3,18 @@ extends Node2D
 class_name Character
 
 #STATS
-enum stats {STR, LIF}
-@export var max_life = 0
+enum stats {STR, MOV, LIF, DEF}
 @export var strength = 0
+@export var movement_points = 0
+@export var max_life = 0
+@export var defense = 0
 
 #MODIFIERS
-var modifiers = {stats.STR: 0, stats.LIF: 0}
+var modifiers = {stats.STR: 0, stats.MOV: 0, stats.LIF: 0, stats.DEF:0}
 
 #STATUS TRACKING
 @export var life_points = 0
-@export var movement_points = 0
 @export var gold = 0
-@export var defense = 0
 @export var current_tile = 0
 @export var items = []
 var equiped_items = [null, null, null]
@@ -44,9 +44,11 @@ signal xp_updated
 signal healed
 signal dead
 signal item_looted
+signal item_equiped
 signal item_consumed
 signal leveled_up
 signal shield_raised
+signal could_not_equip_on_class
 
 func _init():
 	rng.randomize()

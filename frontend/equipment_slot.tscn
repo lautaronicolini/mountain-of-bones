@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ttbqywhecn1b"]
+
+[ext_resource type="Texture2D" uid="uid://ryw2u0e0dog3" path="res://frontend/props/item_tile_square.png" id="1_xm5en"]
+[ext_resource type="Script" path="res://frontend/equipment_slot.gd" id="2_nxssr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jak03"]
+size = Vector2(121, 122)
+
+[node name="EquipmentSlot" type="Sprite2D"]
+position = Vector2(569, 115)
+texture = ExtResource("1_xm5en")
+script = ExtResource("2_nxssr")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_jak03")

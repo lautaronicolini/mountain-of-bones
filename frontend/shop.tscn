@@ -40,22 +40,22 @@ texture = ExtResource("2_miwd6")
 [node name="ItemDisplays" type="Node2D" parent="."]
 
 [node name="Item1" parent="ItemDisplays" instance=ExtResource("3_bv7ic")]
-position = Vector2(0, 0)
+position = Vector2(0, -24)
 
 [node name="Item2" parent="ItemDisplays" instance=ExtResource("3_bv7ic")]
-position = Vector2(200, 0)
+position = Vector2(200, -24)
 
 [node name="Item3" parent="ItemDisplays" instance=ExtResource("3_bv7ic")]
-position = Vector2(400, 0)
+position = Vector2(400, -24)
 
 [node name="Item4" parent="ItemDisplays" instance=ExtResource("3_bv7ic")]
-position = Vector2(0, 172)
+position = Vector2(0, 184)
 
 [node name="Item5" parent="ItemDisplays" instance=ExtResource("3_bv7ic")]
-position = Vector2(200, 172)
+position = Vector2(200, 184)
 
 [node name="Item6" parent="ItemDisplays" instance=ExtResource("3_bv7ic")]
-position = Vector2(400, 172)
+position = Vector2(400, 184)
 
 [node name="ButtonErrorStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_2xter")

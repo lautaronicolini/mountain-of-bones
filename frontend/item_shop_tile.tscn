@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dimhqxholwl5b"]
+[gd_scene load_steps=10 format=3 uid="uid://dimhqxholwl5b"]
 
 [ext_resource type="Script" path="res://frontend/item_shop_tile.gd" id="1_3f28r"]
 [ext_resource type="Shader" path="res://frontend/shaders/greyscale.gdshader" id="1_i268w"]
@@ -16,6 +16,9 @@ default_font_size = 24
 
 [sub_resource type="Theme" id="Theme_gkmk0"]
 default_font = ExtResource("3_fj4lt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_owawd"]
+font = ExtResource("3_fj4lt")
 
 [node name="ItemShopTile" type="Node2D"]
 position = Vector2(-1, 0)
@@ -50,5 +53,19 @@ offset_bottom = 113.0
 scale = Vector2(3.06076, 3.05338)
 tooltip_text = "Example"
 theme = SubResource("Theme_gkmk0")
+
+[node name="EquipSlot" type="Label" parent="."]
+offset_left = 529.0
+offset_top = 40.0
+offset_right = 608.0
+offset_bottom = 63.0
+label_settings = SubResource("LabelSettings_owawd")
+
+[node name="Class" type="Label" parent="."]
+offset_left = 529.0
+offset_top = 56.0
+offset_right = 608.0
+offset_bottom = 79.0
+label_settings = SubResource("LabelSettings_owawd")
 
 [connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]

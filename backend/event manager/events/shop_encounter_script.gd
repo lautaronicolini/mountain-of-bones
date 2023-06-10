@@ -22,7 +22,7 @@ func trigger_shop_scene():
 	var shop_scene = load("res://frontend/shop.tscn").instantiate()
 	var shop = Shop.new()
 	shop.customer = character
-	shop.stock = [PotionOfLife.new(), Sword.new()]
+	shop.stock = [PotionOfLife.new(), Sword.new(), Bow.new(), Axe.new()]
 	shop_scene.set_shop(shop)
 	shop_scene.set_position(Vector2(-25,434))
 	shop_scene.scale = Vector2(0.25, 0.25)

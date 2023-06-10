@@ -15,6 +15,7 @@ func _ready():
 	gui.get_node("Button").pressed.connect(start_turn)
 	gui.get_node("Reiniciar").pressed.connect(restart_game)
 	gui.get_node("Timer").timeout.connect(_on_timer_timeout)
+	gui.get_node("Equipamiento").pressed.connect(show_equipment_menu)
 
 func _on_character_select_character_chosen(selected_character_scene):
 	var selected_character = selected_character_scene.character
@@ -46,8 +47,6 @@ func _on_character_select_character_chosen(selected_character_scene):
 	
 	character.loot_item(PotionOfLife.new())
 	character.loot_gold(30)
-	
-	start_turn()
 	
 func update_life_gui():
 	logger.log("Vida del personaje: " + str(character.life_points))
@@ -98,3 +97,9 @@ func _show_restart_button():
 func show_treat_tree():
 	$EventManager.trigger_level_up_event(character)
 	
+func show_equipment_menu():
+	var equip_scene = load("res://frontend/equipment_menu.tscn").instantiate()
+	equip_scene.set_character(character)
+	equip_scene.set_position(Vector2(117,510))
+	equip_scene.scale = Vector2(0.3, 0.3)
+	get_tree().root.add_child(equip_scene)
