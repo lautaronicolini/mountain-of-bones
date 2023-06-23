@@ -15,20 +15,19 @@ default_font = ExtResource("2_2w7pe")
 default_font_size = 33
 
 [node name="Intro" type="Node2D"]
-position = Vector2(0, -40)
-scale = Vector2(1.13543, 1.13543)
 script = ExtResource("1_qoqgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(504, 375)
+position = Vector2(641, 405)
+scale = Vector2(1.27787, 1.27787)
 texture = ExtResource("1_xqm5l")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 13.2108
-offset_top = 52.8433
-offset_right = 930.211
-offset_bottom = 484.843
-scale = Vector2(1.07083, 1.07083)
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 950.0
+offset_bottom = 451.0
+scale = Vector2(1.18238, 1.18238)
 text = "Cuenta la leyenda de una montaña mas vieja que el tiempo mismo, protegida
 por un poder misterioso, ya que su entrada solo es accesible durante poco
 tiempo, una vez  cada quinientos años.
@@ -47,10 +46,10 @@ Esta es la historia de uno de ellos..."
 label_settings = SubResource("LabelSettings_oat45")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 721.0
-offset_top = 496.0
-offset_right = 974.0
-offset_bottom = 592.0
+offset_left = 861.0
+offset_top = 519.0
+offset_right = 1114.0
+offset_bottom = 615.0
 theme = SubResource("Theme_xavev")
 text = "Continuar"
 

@@ -6,7 +6,7 @@ func _init():
 	equipment_class = EquipableItem.EquipmentClassType.SOLDIER
 	max_life = 12
 	min_life = 10
-	max_movement_points = 2
+	max_movement_points = 1
 	min_movement_points = 1
 	strength = 2
 	sprite_path = "res://frontend/props/soldier.png"
@@ -23,6 +23,10 @@ func get_treat_tree():
 func defense_skill():
 	defense += 2
 	emit_signal("shield_raised")
+	
+func enemy_action():
+	var attack = actions[0]
+	attack.emit_signal("execute_action", attack)
 
 #Paladin
 func evolve_to_paladin():

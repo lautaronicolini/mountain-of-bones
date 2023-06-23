@@ -14,8 +14,7 @@ func _ready():
 func generate_characters():
 	for i in range(2):
 		rng.randomize()
-		var character_class_index = rng.randi_range(0, character_classes.size() - 1)
-		var char_instance = character_classes[character_class_index].new()
+		var char_instance = character_classes[i].new()
 		var char_scene = character_scene.instantiate()
 		char_scene.set_character(char_instance)
 		char_scene.set_sprite()

@@ -27,7 +27,7 @@ func update_interface():
 	$ItemGrid.update_items(equipable_items)
 
 func _on_close_pressed():
-	queue_free()
+	hide()
 
 func equip_class_error(class_text):
 	$ClassErrorLabel.set_text(class_error_label_template_text % class_text)

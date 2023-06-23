@@ -24,7 +24,7 @@ func trigger_shop_scene():
 	shop.customer = character
 	shop.stock = [PotionOfLife.new(), Sword.new(), Bow.new(), Axe.new()]
 	shop_scene.set_shop(shop)
-	shop_scene.set_position(Vector2(-25,434))
-	shop_scene.scale = Vector2(0.25, 0.25)
+	shop_scene.board_view = main_scene
 	get_tree().root.add_child(shop_scene, 0)
 	options_array[0].close_display()
+	main_scene.disable_start_camera()

@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://hejet005bghe"]
+[gd_scene load_steps=15 format=3 uid="uid://hejet005bghe"]
 
+[ext_resource type="Script" path="res://frontend/gui.gd" id="1_evr6w"]
 [ext_resource type="Texture2D" uid="uid://kgx55fghcksa" path="res://frontend/props/heart_icon.png" id="1_xkjt8"]
+[ext_resource type="PackedScene" uid="uid://c25tmamt1h5wh" path="res://frontend/equipment_menu.tscn" id="2_jrruo"]
 [ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="2_k5rcu"]
 [ext_resource type="Theme" uid="uid://rgabw4lp5pa1" path="res://frontend/props/health_bar_theme.tres" id="3_vhrec"]
 [ext_resource type="Texture2D" uid="uid://cdwc5k4ioj0x6" path="res://frontend/props/coin_icon.png" id="4_ln1ic"]
 [ext_resource type="PackedScene" uid="uid://bxdopdhlbkuxo" path="res://frontend/experience_bar.tscn" id="5_c8ild"]
 [ext_resource type="PackedScene" uid="uid://b3f14od178ap1" path="res://frontend/inventory.tscn" id="6_mjm6w"]
+[ext_resource type="PackedScene" uid="uid://xcvldta1mh2" path="res://backend/logger.tscn" id="8_i35ix"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m1x7l"]
 font = ExtResource("2_k5rcu")
@@ -18,7 +21,6 @@ outline_color = Color(0.45098, 0.721569, 0.960784, 1)
 font = ExtResource("2_k5rcu")
 font_color = Color(0, 0, 0, 1)
 outline_size = 4
-outline_color = Color(0.352941, 0.498039, 0.658824, 1)
 
 [sub_resource type="Theme" id="Theme_w8dxf"]
 
@@ -41,22 +43,47 @@ bg_color = Color(0.854902, 0.494118, 0.282353, 1)
 [node name="GUI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -150.0
-offset_top = -83.0
-offset_right = -150.0
-offset_bottom = -82.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 24.0
+offset_bottom = 25.0
+scale = Vector2(5.72131, 5.72131)
+script = ExtResource("1_evr6w")
+
+[node name="EquipmentMenu" parent="." instance=ExtResource("2_jrruo")]
+visible = false
+position = Vector2(173.911, 85.6447)
+scale = Vector2(0.253983, 0.253983)
 
 [node name="Heart" type="Sprite2D" parent="."]
-position = Vector2(16, 14.375)
-scale = Vector2(0.269802, 0.269802)
+position = Vector2(14.3467, 10.3554)
+scale = Vector2(0.121992, 0.121992)
 texture = ExtResource("1_xkjt8")
 
 [node name="LifeLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 2.0
-offset_right = 70.0
-offset_bottom = 37.0
+offset_left = 22.7364
+offset_top = 4.76233
+offset_right = 60.7364
+offset_bottom = 39.7623
+scale = Vector2(0.413409, 0.413409)
+text = "49
+"
+label_settings = SubResource("LabelSettings_m1x7l")
+vertical_alignment = 1
+
+[node name="Gold" type="Sprite2D" parent="."]
+position = Vector2(14.1576, 23.7708)
+scale = Vector2(0.136719, 0.136719)
+texture = ExtResource("4_ln1ic")
+
+[node name="GoldLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.7364
+offset_top = 19.8732
+offset_right = 60.7364
+offset_bottom = 54.8732
+scale = Vector2(0.413, 0.413)
 text = "49
 "
 label_settings = SubResource("LabelSettings_m1x7l")
@@ -64,10 +91,11 @@ label_settings = SubResource("LabelSettings_m1x7l")
 [node name="TurnLabel" type="Label" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 89.0
-offset_top = 12.0
-offset_right = 248.0
-offset_bottom = 35.0
+offset_left = 92.2865
+offset_top = 6.9914
+offset_right = 251.287
+offset_bottom = 29.9914
+scale = Vector2(0.83788, 0.83788)
 text = "Comienza el turno: 0"
 label_settings = SubResource("LabelSettings_51r5h")
 
@@ -76,34 +104,21 @@ wait_time = 1.5
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 65.0
-offset_right = 78.0
-offset_bottom = 90.0
+offset_left = 8.38968
+offset_top = 40.5501
+offset_right = 84.3897
+offset_bottom = 65.5501
+scale = Vector2(0.585754, 0.585754)
 theme = ExtResource("3_vhrec")
 text = "Avanzar"
 
-[node name="Gold" type="Sprite2D" parent="."]
-position = Vector2(17, 47)
-scale = Vector2(0.115091, 0.115091)
-texture = ExtResource("4_ln1ic")
-
-[node name="GoldLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 33.0
-offset_right = 70.0
-offset_bottom = 68.0
-text = "49
-"
-label_settings = SubResource("LabelSettings_m1x7l")
-
 [node name="Reiniciar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 99.0
-offset_right = 79.0
-offset_bottom = 124.0
+offset_left = 8.38968
+offset_top = 60.1261
+offset_right = 85.3897
+offset_bottom = 85.1261
+scale = Vector2(0.579674, 0.579674)
 theme = ExtResource("3_vhrec")
 text = "Reiniciar"
 
@@ -118,13 +133,20 @@ theme_override_styles/background = SubResource("StyleBoxFlat_d202l")
 theme_override_styles/fill = SubResource("StyleBoxFlat_s0nt8")
 
 [node name="Inventory" parent="." instance=ExtResource("6_mjm6w")]
-position = Vector2(267, 18)
+position = Vector2(267, 12.5845)
+scale = Vector2(0.724567, 0.724567)
 
 [node name="Equipamiento" type="Button" parent="."]
 layout_mode = 0
-offset_left = 267.0
-offset_top = 65.0
-offset_right = 326.0
-offset_bottom = 89.0
+offset_left = 8.38968
+offset_top = 79.702
+offset_right = 67.3897
+offset_bottom = 103.702
+scale = Vector2(0.58, 0.58)
 theme = ExtResource("3_vhrec")
-text = "Equipo"
+text = "Equipamiento"
+
+[node name="Logger" parent="." instance=ExtResource("8_i35ix")]
+
+[connection signal="pressed" from="Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Equipamiento" to="." method="_on_equipamiento_pressed"]

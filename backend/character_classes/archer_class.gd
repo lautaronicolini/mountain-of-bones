@@ -4,10 +4,10 @@ class_name ArcherClass
 
 func _init():
 	equipment_class = EquipableItem.EquipmentClassType.ARCHER
-	max_life = 10
+	max_life = 9
 	min_life = 8
 	max_movement_points = 2
-	min_movement_points = 1
+	min_movement_points = 2
 	strength = 2
 	sprite_path = "res://frontend/props/archer.png"
 	actions = [Action.new(focus_attack, "Ataque+", "Ataque más fuerte que el común, varía en intensidad", "res://frontend/props/ataque_+_icon.png", [], func(character_display, action): character_display.play_animation("res://frontend/animations/Arrow.tscn", "ArrowSpawnPoint", action))]

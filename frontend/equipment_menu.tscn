@@ -19,7 +19,7 @@ font = ExtResource("7_ab1sc")
 font_color = Color(1, 0, 0, 1)
 
 [node name="EquipmentMenu" type="Node2D"]
-position = Vector2(585, 406)
+position = Vector2(32, 0)
 script = ExtResource("1_infyf")
 
 [node name="BG" type="Sprite2D" parent="."]

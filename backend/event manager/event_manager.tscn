@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtxseb078400j"]
+[gd_scene load_steps=11 format=3 uid="uid://dtxseb078400j"]
 
 [ext_resource type="Script" path="res://backend/event manager/event_manager_script.gd" id="1_0i0pn"]
 [ext_resource type="Script" path="res://backend/event manager/events/rock_avalanche_event_script.gd" id="2_cj1sm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://backend/event manager/events/game_over_event.gd" id="7_nxosr"]
 [ext_resource type="Script" path="res://backend/event manager/events/shop_encounter_script.gd" id="8_y6pho"]
 [ext_resource type="Script" path="res://backend/event manager/events/level_up_event.gd" id="9_5u13p"]
+[ext_resource type="Script" path="res://backend/event manager/dungeon_event.gd" id="10_08ld5"]
 
 [node name="EventManager" type="Node2D"]
 script = ExtResource("1_0i0pn")
@@ -37,7 +38,6 @@ option_description = "Ok"
 
 [node name="MagicFont" type="Node2D" parent="RandomEvents"]
 script = ExtResource("5_jcflt")
-disabled = true
 
 [node name="EnemySoldierBattle" type="Node2D" parent="RandomEvents"]
 script = ExtResource("6_c7vbr")
@@ -54,9 +54,12 @@ script = ExtResource("7_nxosr")
 
 [node name="ShopEncounter" type="Node2D" parent="RandomEvents"]
 script = ExtResource("8_y6pho")
-disabled = null
+disabled = true
 
 [node name="SpecificEvents" type="Node2D" parent="."]
 
 [node name="LevelUp" type="Node2D" parent="SpecificEvents"]
 script = ExtResource("9_5u13p")
+
+[node name="Dungeon" type="Node2D" parent="SpecificEvents"]
+script = ExtResource("10_08ld5")

@@ -7,7 +7,10 @@ var disabled = true
 signal player_won
 signal enemy_won
 
-func set_battle(character):
+func _ready():
+	$Camera2D.enabled = true
+
+func set_battle(character, oponent):
 	add_child(player)
 	player.set_position(Vector2(-172,262))
 	player.scale = Vector2(6, 6)
@@ -16,7 +19,7 @@ func set_battle(character):
 	add_child(enemy)
 	enemy.set_position(Vector2(170,262))
 	enemy.scale = Vector2(-6, 6)
-	enemy.set_character(SoldierClass.new())
+	enemy.set_character(oponent)
 	enemy.connect_action_animations()
 	player.set_sprite()
 	enemy.set_sprite()
@@ -43,16 +46,13 @@ func set_battle(character):
 
 func start_enemy_attack_timer():
 	enemy.current_display.disable_collition_monitoring()
-	for action in $ActionContainer.get_children():
-		action.disable_button()
+	disable_actions()
 	$DisableActionsTimer.start()
 
 func _on_timer_timeout():
 	enemy.current_display.enable_collition_monitoring()
-	var attack = enemy.actions[0]
-	attack.emit_signal("execute_action", attack)
-	for action in $ActionContainer.get_children():
-		action.enable_button()
+	enemy.enemy_action()
+	enable_actions()
 
 func load_actions():
 	for action in player.get_actions():
@@ -68,7 +68,15 @@ func _physics_process(_delta):
 			for child in $ActionContainer.get_children():
 				child.queue_free()
 			load_actions()
-
+			disable_actions()
 
 func _on_music_timer_timeout():
 	emit_signal("player_won")
+
+func disable_actions():
+	for action in $ActionContainer.get_children():
+		action.disable_button()
+
+func enable_actions():
+	for action in $ActionContainer.get_children():
+		action.enable_button()

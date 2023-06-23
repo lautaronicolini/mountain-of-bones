@@ -85,4 +85,8 @@ theme = SubResource("Theme_cavvl")
 theme_override_font_sizes/font_size = 24
 text = "Salir"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(600, 336)
+zoom = Vector2(1.6, 1.6)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

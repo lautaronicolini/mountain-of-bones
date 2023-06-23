@@ -9,7 +9,7 @@ font = ExtResource("2_j2s7q")
 font_size = 50
 
 [node name="EventDisplay" type="Node2D"]
-position = Vector2(-62, -36)
+position = Vector2(-34, -28)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_43fo5")
 
@@ -23,7 +23,11 @@ offset_left = 60.0
 offset_top = 40.0
 offset_right = 1087.0
 offset_bottom = 202.0
-text = "Encontras un torreon abandonado, la
-puerta esta cerrada pero se ve deteriora- 
-da por el paso del tiempo."
+text = "¡Bienvenido a la cueva de entrada!
+Este es un evento especial llamado
+MAZMORRA, donde podés elegir entre dos
+caminos posibles uno más sencillo y rápido,
+y el otro más difícil pero con más 
+recompensas. ¿Qué camino deseas 
+tomar?"
 label_settings = SubResource("LabelSettings_durse")

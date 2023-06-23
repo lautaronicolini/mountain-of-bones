@@ -1,6 +1,7 @@
 extends Node2D
 
 var shop
+var board_view
 
 func set_shop(_shop):
 	shop = _shop
@@ -17,6 +18,7 @@ func set_shop(_shop):
 	validate_funds()
 
 func _on_button_pressed():
+	board_view.enable_start_camera()
 	queue_free()
 
 func update_gold_ui():

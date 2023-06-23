@@ -12,11 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://hejet005bghe" path="res://frontend/gui.tscn" id="7_ail0v"]
 [ext_resource type="PackedScene" uid="uid://dtxseb078400j" path="res://backend/event manager/event_manager.tscn" id="8_2w223"]
 [ext_resource type="Theme" uid="uid://rgabw4lp5pa1" path="res://frontend/props/health_bar_theme.tres" id="11_1hpbp"]
-[ext_resource type="Script" path="res://frontend/logger_script.gd" id="12_5kuiy"]
+[ext_resource type="PackedScene" uid="uid://xcvldta1mh2" path="res://backend/logger.tscn" id="11_5k70t"]
 
 [sub_resource type="Curve2D" id="Curve2D_vb01e"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -3, 79, 0, 0, 0, 0, -60, 35, 0, 0, 0, 0, -23, -12, 0, 0, 0, 0, 34, -49, 0, 0, 0, 0, 67, -76, 0, 0, 0, 0, 93, -139, 0, 0, 0, 0, 155, -173)
+"points": PackedVector2Array(0, 0, 0, 0, -3, 79, 0, 0, 0, 0, -60, 35, 0, 0, 0, 0, -23, -12, 0, 0, 0, 0, 34, -49, 0, 0, 0, 0, 67, -76, 0, 0, 0, 0, 93, -139, 0, 0, 0, 0, 127, -149)
 }
 point_count = 7
 
@@ -35,12 +35,12 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="BoardViewScene" type="Node2D"]
-position = Vector2(96, 504)
+position = Vector2(547, 415)
 script = ExtResource("1_kyahc")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-13, -284)
+position = Vector2(-13, -276)
 scale = Vector2(0.296281, 0.296281)
 texture = ExtResource("2_rn4n4")
 
@@ -80,26 +80,29 @@ position = Vector2(34, -43)
 [node name="Tile5" parent="Path2D" instance=ExtResource("5_sgbkq")]
 position = Vector2(73, -76)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(21, 13)
-scale = Vector2(-0.832158, -0.154884)
-zoom = Vector2(3.324, 3.324)
-
 [node name="GUI" parent="." instance=ExtResource("7_ail0v")]
+offset_left = -169.0
+offset_top = -96.0
+offset_right = -169.0
+offset_bottom = -95.0
+scale = Vector2(1.14, 1.14)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(21, 8)
+zoom = Vector2(5, 5)
 
 [node name="CharacterSelect" parent="." instance=ExtResource("5_lrotp")]
-position = Vector2(-64, -44)
-scale = Vector2(0.15, 0.15)
+position = Vector2(-68, -56)
+scale = Vector2(0.152525, 0.152525)
 
 [node name="FalseWall" type="Sprite2D" parent="."]
-position = Vector2(160, -167)
+position = Vector2(157, -151)
 scale = Vector2(0.539086, 0.539086)
 texture = ExtResource("3_pq3du")
 
 [node name="EventManager" parent="." instance=ExtResource("8_2w223")]
 
-[node name="Logger" type="Node" parent="."]
-script = ExtResource("12_5kuiy")
+[node name="Logger" parent="." instance=ExtResource("11_5k70t")]
 
 [node name="Path2D2" type="Path2D" parent="."]
 curve = SubResource("Curve2D_k548d")
@@ -150,36 +153,32 @@ position = Vector2(36, -392)
 position = Vector2(-14, -391)
 
 [node name="Outro" type="Node2D" parent="."]
+position = Vector2(-48, -104)
+scale = Vector2(0.647785, 0.647785)
 
 [node name="OutroLabel" type="Label" parent="Outro"]
-offset_left = 64.0
-offset_top = -255.0
-offset_right = 240.0
-offset_bottom = -203.0
+offset_left = 56.0
+offset_top = -267.0
+offset_right = 298.0
+offset_bottom = -184.0
 scale = Vector2(0.859205, 0.859205)
-text = "Y así... comienza tu 
-aventura épica en la..."
-label_settings = SubResource("LabelSettings_i1fkg")
-
-[node name="OutroLabel2" type="Label" parent="Outro"]
-offset_left = 65.0
-offset_top = -216.0
-offset_right = 331.0
-offset_bottom = -164.0
-text = "Montaña de Huesos"
+text = "Continuas subiendo la montaña hasta encontrarte de frente con 
+la entrada a una cueva gigantezca. Un peligroso camino te 
+aguarda."
 label_settings = SubResource("LabelSettings_i1fkg")
 
 [node name="Timer" type="Timer" parent="Outro"]
 wait_time = 2.5
+one_shot = true
 
-[node name="Reiniciar" type="Button" parent="Outro"]
+[node name="Continuar" type="Button" parent="Outro"]
 visible = false
-offset_left = 136.0
-offset_top = -176.0
-offset_right = 213.0
-offset_bottom = -151.0
+offset_left = 414.0
+offset_top = -199.0
+offset_right = 491.0
+offset_bottom = -174.0
 theme = ExtResource("11_1hpbp")
-text = "Reiniciar"
+text = "Entrar"
 
 [connection signal="trigger_random_event" from="Path2D/Tile2" to="EventManager" method="_on_trigger_random_event"]
 [connection signal="trigger_random_event" from="Path2D/Tile3" to="EventManager" method="_on_trigger_random_event"]
@@ -202,4 +201,4 @@ text = "Reiniciar"
 [connection signal="trigger_random_event" from="Path2D2/Tile15" to="EventManager" method="_on_trigger_random_event"]
 [connection signal="trigger_random_event" from="Path2D2/Tile16" to="EventManager" method="_on_trigger_random_event"]
 [connection signal="timeout" from="Outro/Timer" to="." method="_show_restart_button"]
-[connection signal="pressed" from="Outro/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Outro/Continuar" to="." method="_on_continuar_pressed"]

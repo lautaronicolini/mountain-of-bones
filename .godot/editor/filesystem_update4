@@ -1,22 +1,22 @@
-res://frontend/equipment_menu.tscn
-res://frontend/props/health_bar_theme.tres
+res://frontend/cave_dungeon.tscn
 res://frontend/shaders/damaged.gdshader
+res://frontend/props/health_bar_theme.tres
+res://frontend/props/xp_bar_theme.tres
 res://frontend/shaders/greyscale.gdshader
-res://frontend/equipment_tile.tscn
-res://frontend/item_grid.tscn
-res://frontend/inventory.tscn
-res://frontend/stat_sheet.tscn
-res://frontend/equipment_slot.tscn
-res://frontend/gui.tscn
-res://frontend/boardview.tscn
 res://backend/event manager/event_manager.tscn
-res://frontend/item_shop_tile.tscn
-res://frontend/item_shop_tile.gd
-res://backend/items/equipable_item.gd
+res://backend/event manager/dungeon_event.gd
+res://frontend/boardview.tscn
+res://frontend/event_display.tscn
+res://frontend/gui.tscn
+res://frontend/combat_scene.tscn
+res://frontend/main.tscn
 res://frontend/shop.tscn
-res://frontend/shop_scene.gd
-res://backend/character_script.gd
+res://frontend/choose_character_scene.tscn
+res://frontend/cave_dungeon.gd
+res://frontend/character_holder.tscn
+res://frontend/character.tscn
+res://frontend/tile.tscn
+res://frontend/gui.gd
+res://backend/boardview_script.gd
+res://frontend/equipment_menu.tscn
 res://frontend/equipment_menu.gd
-res://backend/items/bow_item.gd
-res://backend/event manager/events/shop_encounter_script.gd
-res://backend/items/axe_item.gd

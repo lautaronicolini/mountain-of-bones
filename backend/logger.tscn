@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xcvldta1mh2"]
+
+[ext_resource type="Script" path="res://frontend/logger_script.gd" id="1_jv4sc"]
+
+[node name="Logger" type="Node"]
+script = ExtResource("1_jv4sc")

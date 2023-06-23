@@ -10,3 +10,6 @@ func _on_trigger_random_event(character):
 
 func trigger_level_up_event(character):
 	$SpecificEvents/LevelUp.execute_event(character, get_parent())
+
+func trigger_dungeon_event(character):
+	$SpecificEvents/Dungeon.execute_event(character, get_parent())

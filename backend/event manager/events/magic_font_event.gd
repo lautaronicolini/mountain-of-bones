@@ -5,8 +5,9 @@ var main_scene
 
 func _ready():
 	type = "Magic Font"
-	description = "Encontras una fuente y decidís
-tomar de ella. Sentís como tu fuerza aumenta.
+	description = "Encontras una fuente y decidís tomar de 
+	ella. 
+Sentís como tu fuerza aumenta.
 Ganás 3 puntos de experiencia."
 
 func execute_event(_character, scene_node):

@@ -15,7 +15,8 @@ texture = ExtResource("2_phfyb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 96)
-zoom = Vector2(1.125, 1.125)
+enabled = false
+zoom = Vector2(2.043, 2.043)
 
 [node name="HealthBar" parent="." instance=ExtResource("4_kt6v4")]
 offset_left = -315.0
