@@ -1,18 +1,26 @@
-[gd_scene load_steps=14 format=3 uid="uid://ceernwywdql5y"]
+[gd_scene load_steps=22 format=3 uid="uid://ceernwywdql5y"]
 
 [ext_resource type="Script" path="res://frontend/cave_dungeon.gd" id="1_566l7"]
 [ext_resource type="Texture2D" uid="uid://c0881j0fyuv1o" path="res://frontend/props/rocky cave wall.jpg" id="1_x2lmv"]
 [ext_resource type="PackedScene" uid="uid://7h30lld8lcae" path="res://frontend/tile.tscn" id="2_6jn0e"]
+[ext_resource type="Script" path="res://backend/event manager/events/bat_battle_script.gd" id="3_8iyfk"]
+[ext_resource type="Script" path="res://backend/event manager/events/player_won_battle_event_script.gd" id="4_4rty7"]
 [ext_resource type="Texture2D" uid="uid://6p7bgd2i4gm5" path="res://frontend/props/gain_health_icon.png" id="4_suwhg"]
+[ext_resource type="Script" path="res://backend/event manager/events/game_over_cave_event.gd" id="5_pdpsg"]
 [ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="5_wp60l"]
+[ext_resource type="Script" path="res://backend/event manager/events/forgotten_camp_event_script.gd" id="6_ccpp3"]
 [ext_resource type="Texture2D" uid="uid://cdwc5k4ioj0x6" path="res://frontend/props/coin_icon.png" id="7_41fqs"]
+[ext_resource type="Script" path="res://backend/event manager/events/random_chest_event.gd" id="7_h840j"]
 [ext_resource type="Texture2D" uid="uid://hnyymt70i01t" path="res://frontend/props/bat-1.png" id="8_4ouly"]
+[ext_resource type="Script" path="res://backend/event manager/events/information_event_cave_script.gd" id="8_evdfm"]
 [ext_resource type="Texture2D" uid="uid://naluuh0w5gx1" path="res://frontend/props/skull_icon.png" id="9_6y2v6"]
+[ext_resource type="Script" path="res://backend/event manager/events/shop_preboss_encounter_script.gd" id="9_qvy75"]
 [ext_resource type="PackedScene" uid="uid://hejet005bghe" path="res://frontend/gui.tscn" id="9_t7crp"]
+[ext_resource type="Texture2D" uid="uid://cjabu3lnqojgg" path="res://frontend/props/chest.png" id="11_v4i3k"]
 
 [sub_resource type="Curve2D" id="Curve2D_ggckl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 201, 395, 0, 0, 0, 0, 468, 264, 0, 0, 0, 0, 697, 264, 0, 0, 0, 0, 927, 338, 0, 0, 0, 0, 1082, 336)
+"points": PackedVector2Array(0, 0, 0, 0, 201, 395, 0, 0, 0, 0, 463.5, 257, 0, 0, 0, 0, 692.5, 255, 0, 0, 0, 0, 918.5, 328, 0, 0, 0, 0, 1082.5, 331)
 }
 point_count = 5
 
@@ -21,7 +29,7 @@ size = Vector2(5.5, 4.5)
 
 [sub_resource type="Curve2D" id="Curve2D_57rau"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 200, 395, 0, 0, 0, 0, 596, 441, 0, 0, 0, 0, 927, 337, 0, 0, 0, 0, 1082, 337)
+"points": PackedVector2Array(0, 0, 0, 0, 200, 395, 0, 0, 0, 0, 588.5, 438, 0, 0, 0, 0, 921.5, 329, 0, 0, 0, 0, 1082.5, 331)
 }
 point_count = 4
 
@@ -35,16 +43,56 @@ script = ExtResource("1_566l7")
 
 [node name="RockyCaveWall" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(576, 323)
+position = Vector2(116.5, 69)
 scale = Vector2(1.219, 1.45679)
 texture = ExtResource("1_x2lmv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(566, 332)
+position = Vector2(106.5, 77.9999)
 enabled = false
 zoom = Vector2(1.8, 1.8)
 
+[node name="Events" type="Node2D" parent="."]
+position = Vector2(-459.5, -254)
+
+[node name="HardPath" type="Node2D" parent="Events"]
+
+[node name="BatBattle" type="Node2D" parent="Events/HardPath"]
+script = ExtResource("3_8iyfk")
+
+[node name="PlayerWon" type="Node2D" parent="Events/HardPath/BatBattle"]
+script = ExtResource("4_4rty7")
+info_description = "Derrotaste al murciélago, ganaste 3
+puntos de experiencia."
+event_type = "Player Won Battle"
+option_description = "Bien"
+
+[node name="EnemyWon" type="Node2D" parent="Events/HardPath/BatBattle"]
+script = ExtResource("5_pdpsg")
+
+[node name="ForgottenCamp" type="Node2D" parent="Events/HardPath"]
+script = ExtResource("6_ccpp3")
+
+[node name="EasyPath" type="Node2D" parent="Events"]
+
+[node name="RandomChest" type="Node2D" parent="Events/EasyPath"]
+script = ExtResource("7_h840j")
+
+[node name="LootedGold" type="Node2D" parent="Events/EasyPath/RandomChest"]
+script = ExtResource("8_evdfm")
+
+[node name="Healed" type="Node2D" parent="Events/EasyPath/RandomChest"]
+script = ExtResource("8_evdfm")
+
+[node name="FinalEvents" type="Node2D" parent="Events"]
+
+[node name="ShopPreBoss" type="Node2D" parent="Events/FinalEvents"]
+script = ExtResource("9_qvy75")
+
+[node name="FinalBossFight" type="Node2D" parent="Events/FinalEvents"]
+
 [node name="Tiles" type="Node2D" parent="."]
+position = Vector2(-459.5, -254)
 
 [node name="Tile" parent="Tiles" instance=ExtResource("2_6jn0e")]
 position = Vector2(123, 424)
@@ -72,7 +120,7 @@ position = Vector2(1006, 351)
 scale = Vector2(2.44, 2.44)
 
 [node name="HardPath" type="Path2D" parent="."]
-position = Vector2(-76, -7)
+position = Vector2(-535.5, -261)
 curve = SubResource("Curve2D_ggckl")
 
 [node name="HPathFollow2D" type="PathFollow2D" parent="HardPath"]
@@ -81,13 +129,14 @@ rotates = false
 loop = false
 
 [node name="CollitionCharacter" type="Area2D" parent="HardPath/HPathFollow2D"]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HardPath/HPathFollow2D/CollitionCharacter"]
 position = Vector2(-1, -15)
 shape = SubResource("RectangleShape2D_xfnme")
 
 [node name="EasyPath" type="Path2D" parent="."]
-position = Vector2(-76, -7)
+position = Vector2(-535.5, -261)
 curve = SubResource("Curve2D_57rau")
 
 [node name="EPathFollow2D" type="PathFollow2D" parent="EasyPath"]
@@ -96,74 +145,71 @@ rotates = false
 loop = false
 
 [node name="CollitionCharacter" type="Area2D" parent="EasyPath/EPathFollow2D"]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EasyPath/EPathFollow2D/CollitionCharacter"]
 position = Vector2(-1, -15)
 shape = SubResource("RectangleShape2D_xfnme")
 
 [node name="Props" type="Node2D" parent="."]
+position = Vector2(-459.5, -254)
 
 [node name="HelingEventIcon" type="Sprite2D" parent="Props"]
-position = Vector2(622, 168)
+position = Vector2(622, 189)
 scale = Vector2(0.429863, 0.429863)
 texture = ExtResource("4_suwhg")
 
 [node name="HealLabel" type="Label" parent="Props"]
 offset_left = 579.0
-offset_top = 109.0
+offset_top = 130.0
 offset_right = 667.0
-offset_bottom = 156.0
+offset_bottom = 177.0
 text = "Curación"
 label_settings = SubResource("LabelSettings_xqaa5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ShopEventIcon" type="Sprite2D" parent="Props"]
-position = Vector2(850, 257)
+position = Vector2(850, 264)
 scale = Vector2(0.429863, 0.429863)
 texture = ExtResource("7_41fqs")
 
 [node name="ShopLabel" type="Label" parent="Props"]
 offset_left = 805.0
-offset_top = 198.0
+offset_top = 210.0
 offset_right = 893.0
-offset_bottom = 245.0
+offset_bottom = 257.0
 text = "Tienda"
 label_settings = SubResource("LabelSettings_xqaa5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EncounterEventIcon" type="Sprite2D" parent="Props"]
-position = Vector2(394, 176)
+position = Vector2(392.5, 191)
 scale = Vector2(0.464245, 0.464245)
 texture = ExtResource("8_4ouly")
 
 [node name="EncounterLabel" type="Label" parent="Props"]
 offset_left = 347.0
-offset_top = 117.0
+offset_top = 135.0
 offset_right = 435.0
-offset_bottom = 164.0
+offset_bottom = 182.0
 text = "Batalla"
 label_settings = SubResource("LabelSettings_xqaa5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HelingEventIcon2" type="Sprite2D" parent="Props"]
-position = Vector2(494, 357)
+[node name="RandomChestEventIcon" type="Sprite2D" parent="Props"]
+position = Vector2(518.5, 363)
 scale = Vector2(0.429863, 0.429863)
-texture = ExtResource("4_suwhg")
+texture = ExtResource("11_v4i3k")
 
-[node name="ShopEventIcon2" type="Sprite2D" parent="Props"]
-position = Vector2(548, 358)
-scale = Vector2(0.429863, 0.429863)
-texture = ExtResource("7_41fqs")
-
-[node name="HealLootLabel" type="Label" parent="Props"]
-offset_left = 459.0
-offset_top = 297.0
-offset_right = 576.0
-offset_bottom = 344.0
-text = "Curación / oro"
+[node name="RandomChest" type="Label" parent="Props"]
+offset_left = 458.5
+offset_top = 305.0
+offset_right = 575.5
+offset_bottom = 352.0
+text = "Cofre"
 label_settings = SubResource("LabelSettings_xqaa5")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -184,6 +230,8 @@ scale = Vector2(0.464245, 0.464245)
 texture = ExtResource("9_6y2v6")
 
 [node name="GUI" parent="." instance=ExtResource("9_t7crp")]
-offset_top = 40.0
-offset_bottom = 41.0
+offset_left = -435.5
+offset_top = -214.0
+offset_right = -435.5
+offset_bottom = -213.0
 scale = Vector2(3.1756, 3.1756)

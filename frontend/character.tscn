@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://frontend/character_display.gd" id="1_0tqyn"]
 [ext_resource type="Shader" path="res://frontend/shaders/damaged.gdshader" id="1_ljuxb"]
-[ext_resource type="Texture2D" uid="uid://clsiq2d27ljtl" path="res://frontend/props/archer.png" id="2_hjo0c"]
+[ext_resource type="Texture2D" uid="uid://d2cqkk7rhssse" path="res://frontend/props/paladin.png" id="3_8dw0n"]
 [ext_resource type="AudioStream" uid="uid://b5yuy1o2yrwp3" path="res://frontend/props/SFX/sword.wav" id="4_vhyym"]
 
 [sub_resource type="Curve2D" id="Curve2D_of2lw"]
@@ -34,7 +34,7 @@ loop = false
 material = SubResource("ShaderMaterial_wxgpl")
 position = Vector2(0, -3)
 scale = Vector2(0.100397, 0.100397)
-texture = ExtResource("2_hjo0c")
+texture = ExtResource("3_8dw0n")
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
 z_as_relative = false

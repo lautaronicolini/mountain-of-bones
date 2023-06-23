@@ -10,6 +10,7 @@ func set_character(_character):
 	character.gold_updated.connect(update_gold_gui)
 	get_node("ExperienceBar").request_connect(character)
 	get_node("Inventory").set_character(character)
+	character.leveled_up.connect(show_treat_tree)
 	update_life_gui()
 	update_gold_gui()
 
@@ -21,7 +22,13 @@ func update_gold_gui():
 	logger.log("Oro del personaje: " + str(character.gold))
 	$GoldLabel.set_text(str(character.gold))
 
+func show_treat_tree():
+	LevelUpEvent.new().execute_event(character, self)
+
 func _on_reiniciar_pressed():
+	restart_game()
+	
+func restart_game():
 	var intro = load("res://frontend/intro.tscn").instantiate()
 	intro.set_scale(Vector2(1.645, 1.645))
 	for child in get_tree().get_root().get_children():

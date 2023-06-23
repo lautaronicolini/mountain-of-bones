@@ -67,7 +67,7 @@ offset_top = 4.76233
 offset_right = 60.7364
 offset_bottom = 39.7623
 scale = Vector2(0.413409, 0.413409)
-text = "49
+text = "00
 "
 label_settings = SubResource("LabelSettings_m1x7l")
 vertical_alignment = 1
@@ -84,7 +84,7 @@ offset_top = 19.8732
 offset_right = 60.7364
 offset_bottom = 54.8732
 scale = Vector2(0.413, 0.413)
-text = "49
+text = "00
 "
 label_settings = SubResource("LabelSettings_m1x7l")
 

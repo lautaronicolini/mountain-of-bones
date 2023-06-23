@@ -15,5 +15,5 @@ func setup_with_options(option_array, description):
 func set_description_text(text):
 	description_label.set_text(text)
 
-func set_font_size(size):
+func set_text_font_size(size):
 	description_label.add_theme_font_size_override("font_size", size)

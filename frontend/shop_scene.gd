@@ -21,6 +21,9 @@ func _on_button_pressed():
 	board_view.enable_start_camera()
 	queue_free()
 
+func set_shop_text(text):
+	$Label.set_text(text)
+
 func update_gold_ui():
 	$Gold.set_text("Tu oro: %s" % shop.customer.gold)
 	validate_funds()

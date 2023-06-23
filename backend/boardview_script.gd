@@ -7,7 +7,6 @@ extends Node2D
 @onready var logger = $Logger
 @onready var start_camera = $Camera2D
 
-var event_display_scene = "res://frontend/event_display.tscn"
 var character
 var character_camera
 
@@ -32,7 +31,6 @@ func _on_character_select_character_chosen(selected_character_scene):
 	selected_character_scene.disable_collition_monitoring()
 	
 	selected_character.out_of_sight.connect(camera_follow_character)
-	selected_character.leveled_up.connect(show_treat_tree)
 	gui.set_character(selected_character)
 	
 	character = selected_character
@@ -41,12 +39,12 @@ func _on_character_select_character_chosen(selected_character_scene):
 	character.loot_item(PotionOfLife.new())
 	character.loot_gold(30)
 
-func show_event_display_with_options(event):
-	logger.log("Comienza evento: " + event.type)
-	var event_scene_instance = load(event_display_scene)
-	event_scene_instance = event_scene_instance.instantiate()
-	add_child(event_scene_instance, 0)
-	event_scene_instance.setup_with_options(event.options_array, event.description)
+#func show_event_display_with_options(event):
+#	logger.log("Comienza evento: " + event.type)
+#	var event_scene_instance = load(event_display_scene)
+#	event_scene_instance = event_scene_instance.instantiate()
+#	add_child(event_scene_instance, 0)
+#	event_scene_instance.setup_with_options(event.options_array, event.description)
 
 func start_turn():
 	turn = turn + 1
@@ -85,5 +83,3 @@ func _on_continuar_pressed():
 func _show_restart_button():
 	$Outro/Continuar.show()
 
-func show_treat_tree():
-	$EventManager.trigger_level_up_event(character)

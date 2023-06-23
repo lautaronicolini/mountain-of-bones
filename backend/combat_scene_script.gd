@@ -3,6 +3,7 @@ extends Node2D
 var player = load("res://frontend/character.tscn").instantiate()
 var enemy = load("res://frontend/character.tscn").instantiate()
 var disabled = true
+var previous_display
 
 signal player_won
 signal enemy_won
@@ -11,6 +12,7 @@ func _ready():
 	$Camera2D.enabled = true
 
 func set_battle(character, oponent):
+	previous_display = character.current_display
 	add_child(player)
 	player.set_position(Vector2(-172,262))
 	player.scale = Vector2(6, 6)
@@ -33,7 +35,7 @@ func set_battle(character, oponent):
 	$HealthBar.empty.connect(func () : 
 		emit_signal("enemy_won"))
 	$HealthBar2.empty.connect(func () : 
-		player.current_display = get_node("/root/BoardViewScene/Path2D/PathFollow2D").character_scene
+		player.current_display = previous_display
 		player.current_display.disable_collition_monitoring()
 		$AudioStreamPlayer2D.play()
 		$Timer.start()

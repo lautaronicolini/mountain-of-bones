@@ -1,9 +1,9 @@
-res://backend
+res://backend/event manager/events
 res://frontend/props
+res://backend
 res://frontend
 res://frontend/props/SFX
 res://frontend/shaders
-res://backend/event manager/events
 res://frontend/animations
 res://backend/character_classes
 res://

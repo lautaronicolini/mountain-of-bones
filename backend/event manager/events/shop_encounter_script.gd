@@ -16,7 +16,7 @@ func execute_event(_character, scene_node):
 	character = _character
 	var option_0 = create_option("Entrar", trigger_shop_scene)
 	options_array.append(option_0)
-	scene_node.show_event_display_with_options(self)
+	show_event_display_with_options(scene_node)
 
 func trigger_shop_scene():
 	var shop_scene = load("res://frontend/shop.tscn").instantiate()

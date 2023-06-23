@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtxseb078400j"]
+[gd_scene load_steps=12 format=3 uid="uid://dtxseb078400j"]
 
 [ext_resource type="Script" path="res://backend/event manager/event_manager_script.gd" id="1_0i0pn"]
 [ext_resource type="Script" path="res://backend/event manager/events/rock_avalanche_event_script.gd" id="2_cj1sm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://backend/event manager/events/magic_font_event.gd" id="5_jcflt"]
 [ext_resource type="Script" path="res://backend/event manager/events/enemy_soldier_battle_script.gd" id="6_c7vbr"]
 [ext_resource type="Script" path="res://backend/event manager/events/game_over_event.gd" id="7_nxosr"]
+[ext_resource type="Script" path="res://backend/event manager/events/player_won_battle_event_script.gd" id="7_nykaj"]
 [ext_resource type="Script" path="res://backend/event manager/events/shop_encounter_script.gd" id="8_y6pho"]
 [ext_resource type="Script" path="res://backend/event manager/events/level_up_event.gd" id="9_5u13p"]
 [ext_resource type="Script" path="res://backend/event manager/dungeon_event.gd" id="10_08ld5"]
@@ -38,16 +39,17 @@ option_description = "Ok"
 
 [node name="MagicFont" type="Node2D" parent="RandomEvents"]
 script = ExtResource("5_jcflt")
+disabled = true
 
 [node name="EnemySoldierBattle" type="Node2D" parent="RandomEvents"]
 script = ExtResource("6_c7vbr")
-disabled = true
 
 [node name="PlayerWon" type="Node2D" parent="RandomEvents/EnemySoldierBattle"]
-script = ExtResource("4_74iqn")
-info_description = "Bandido derrotado, ganas 2 XP."
-event_type = "PlayerWon"
-option_description = "Continuar"
+script = ExtResource("7_nykaj")
+info_description = "Derrotaste al bandido. Ganas 2 puntos de
+experiencia"
+event_type = "Player Won"
+option_description = "Bien"
 
 [node name="EnemyWon" type="Node2D" parent="RandomEvents/EnemySoldierBattle"]
 script = ExtResource("7_nxosr")
@@ -59,6 +61,7 @@ disabled = true
 [node name="SpecificEvents" type="Node2D" parent="."]
 
 [node name="LevelUp" type="Node2D" parent="SpecificEvents"]
+visible = false
 script = ExtResource("9_5u13p")
 
 [node name="Dungeon" type="Node2D" parent="SpecificEvents"]

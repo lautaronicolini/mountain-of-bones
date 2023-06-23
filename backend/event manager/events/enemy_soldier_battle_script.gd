@@ -16,8 +16,8 @@ func execute_event(_character, scene_node):
 	var option_0 = create_option("Hora de la 
 	batalla", trigger_battle_scene)
 	options_array.append(option_0)
-	scene_node.show_event_display_with_options(self)
-	
+	show_event_display_with_options(scene_node)
+
 func trigger_battle_scene():
 	var battle_scene = load("res://frontend/combat_scene.tscn").instantiate()
 	battle_scene.set_battle(character, SoldierClass.new())
@@ -29,7 +29,6 @@ func trigger_battle_scene():
 func player_won_outcome():
 	get_node("/root/CombatScene").queue_free()
 	options_array[0].close_display()
-	character.gain_xp(2)
 	get_children()[0].execute_event(character, main_scene)
 	character.current_display.disable_collition_monitoring()
 	main_scene.enable_start_camera()

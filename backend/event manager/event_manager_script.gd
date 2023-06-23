@@ -8,8 +8,5 @@ func _on_trigger_random_event(character):
 	enabled_events[index].execute_event(character, get_parent())
 	events.erase(enabled_events[index])
 
-func trigger_level_up_event(character):
-	$SpecificEvents/LevelUp.execute_event(character, get_parent())
-
 func trigger_dungeon_event(character):
 	$SpecificEvents/Dungeon.execute_event(character, get_parent())

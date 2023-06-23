@@ -8,8 +8,8 @@ func _ready():
 func execute_event(_character, scene_node):
 	var option = create_option("Fin del juego", end_game)
 	options_array = [option]
-	scene_node.show_event_display_with_options(self)
+	show_event_display_with_options(scene_node)
 	
 func end_game():
 	options_array[0].close_display()
-	get_node("/root/BoardViewScene").restart_game()
+	get_node("/root/BoardViewScene/GUI").restart_game()

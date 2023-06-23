@@ -12,7 +12,7 @@ func execute_event(_character, scene_node):
 	character = _character
 	var option = create_option("De acuerdo", event_outcome)
 	options_array = [option]
-	scene_node.show_event_display_with_options(self)
+	show_event_display_with_options(scene_node)
 	
 func event_outcome():
 	options_array[0].close_display()

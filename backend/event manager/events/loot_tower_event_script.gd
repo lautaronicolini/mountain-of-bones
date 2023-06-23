@@ -19,8 +19,8 @@ func execute_event(_character, scene_node):
 	var option_1 = create_option("No hay tiempo,
 	seguis tu camino", ignore_outcome)
 	options_array.append(option_1)
-	scene_node.show_event_display_with_options(self)
-	
+	show_event_display_with_options(scene_node)
+
 func loot_outcome():
 	options_array[0].close_display()
 	character.loot_gold(12)

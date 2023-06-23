@@ -25,7 +25,7 @@ func execute_event(_character, _scene_node):
 	main_scene.disable_character_camera()
 	main_scene.disable_start_camera()
 	
-	main_scene.add_child(cave_dungeon, 0)
+	get_tree().root.add_child(cave_dungeon, 0)
 	dungeon_scene = cave_dungeon
 	
 	var option_0 = create_option("Camino difícil", hard_way)
@@ -36,9 +36,8 @@ func execute_event(_character, _scene_node):
 	var event_scene_instance = load("res://frontend/event_display.tscn").instantiate()
 	cave_dungeon.add_child(event_scene_instance, 0)
 	event_scene_instance.setup_with_options(options_array, description)
-	event_scene_instance.set_position(Vector2(229, 112))
-	event_scene_instance.set_scale(Vector2(0.6, 0.6))
-	event_scene_instance.set_font_size(46)
+	event_scene_instance.set_scale(Vector2(0.2, 0.2))
+	event_scene_instance.set_text_font_size(46)
 
 func hard_way():
 	dungeon_scene.set_way(character, "HardPath")
