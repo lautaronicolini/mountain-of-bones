@@ -4,6 +4,7 @@ var Char = load("res://frontend/character.tscn")
 var _char = null
 var _enemy = null
 var sword = Sword.new()
+var crown = CrownOfFire.new()
 
 func before_each():
 	_char = SoldierClass.new()
@@ -76,3 +77,11 @@ func test_assert_when_archer_class_character_tries_to_equip_sword_its_attack_sta
 	archer.equip(sword)
 	assert_eq(archer.get_strength(), previous_strength)
 	assert_null(archer.equiped_items[sword.equipment_slot])
+
+func test_assert_when_character_equips_item_that_reduces_fire_damage_it_receives_less_damage_from_fire():
+	_char.loot_item(crown)
+	_char.equip(crown)
+	var previous_life = _char.life_points
+	_char.receive_damage(10, Character.damage_type.FIRE)
+	assert_eq(_char.life_points, previous_life - 2)
+	

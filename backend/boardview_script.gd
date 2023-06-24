@@ -37,6 +37,7 @@ func _on_character_select_character_chosen(selected_character_scene):
 	path_follow_node.toggle_movement()
 	
 	character.loot_item(PotionOfLife.new())
+	character.loot_item(CrownOfFire.new())
 	character.loot_gold(30)
 
 #func show_event_display_with_options(event):

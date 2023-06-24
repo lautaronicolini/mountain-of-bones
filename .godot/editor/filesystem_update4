@@ -1,49 +1,15 @@
-res://frontend/cave_dungeon.tscn
-res://frontend/shaders/damaged.gdshader
-res://frontend/props/health_bar_theme.tres
-res://frontend/props/xp_bar_theme.tres
-res://frontend/shaders/greyscale.gdshader
 res://backend/event manager/event_manager.tscn
+res://frontend/shaders/greyscale.gdshader
+res://frontend/props/health_bar_theme.tres
+res://frontend/shaders/damaged.gdshader
 res://backend/event manager/dungeon_event.gd
-res://frontend/boardview.tscn
-res://frontend/event_display.tscn
+res://frontend/cave_dungeon.tscn
 res://frontend/gui.tscn
-res://frontend/combat_scene.tscn
-res://frontend/main.tscn
 res://frontend/shop.tscn
-res://frontend/choose_character_scene.tscn
-res://frontend/cave_dungeon.gd
-res://frontend/character_holder.tscn
-res://frontend/character.tscn
-res://frontend/tile.tscn
-res://frontend/gui.gd
-res://backend/boardview_script.gd
-res://frontend/equipment_menu.tscn
-res://frontend/equipment_menu.gd
-res://backend/tile_script.gd
-res://frontend/inventory.tscn
-res://backend/event manager/events/bat_battle_script.gd
-res://backend/event manager/events/event_script.gd
-res://backend/event manager/events/rock_avalanche_event_script.gd
-res://backend/event manager/events/loot_tower_event_script.gd
-res://frontend/event_option.tscn
-res://backend/event manager/events/information_event_script.gd
-res://backend/event manager/events/shop_encounter_script.gd
-res://backend/event manager/events/magic_font_event.gd
-res://backend/event manager/events/game_over_event.gd
-res://backend/event manager/events/enemy_soldier_battle_script.gd
+res://frontend/item_shop_tile.tscn
+res://frontend/boardview.tscn
+res://backend/mobs/fire_lich.gd
+res://test/unit/test.gd
+res://backend/character_script.gd
+res://backend/event manager/events/final_boss_battle_script.gd
 res://backend/mobs/bat.gd
-res://backend/combat_scene_script.gd
-res://default_bus_layout.tres
-res://backend/event manager/events/level_up_event.gd
-res://frontend/treat_tree_display.tscn
-res://backend/map_character_script.gd
-res://backend/event manager/events/player_won_battle_event_script.gd
-res://backend/event manager/event_manager_script.gd
-res://backend/event manager/events/game_over_cave_event.gd
-res://backend/event manager/events/forgotten_camp_event_script.gd
-res://backend/event manager/events/random_chest_event.gd
-res://backend/event manager/events/information_event_cave_script.gd
-res://backend/event manager/event_display_script.gd
-res://frontend/shop_scene.gd
-res://backend/event manager/events/shop_preboss_encounter_script.gd

@@ -1,6 +1,6 @@
 2a60927148abd1d33b818b535e306557
-::res://::1687545982
-.gut_editor_config.json::JSON::-1::1686404530::0::1::::<><>::
+::res://::1687582007
+.gut_editor_config.json::JSON::-1::1687575215::0::1::::<><>::
 456965__funwithsound__short-success-sound-glockenspiel-treasure-video-game.mp3::AudioStreamMP3::7443918458086209503::1686281780::1686281780::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::2107939885983547411::1687545982::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1681529553::0::1::::<><>::
@@ -107,10 +107,10 @@ ShortcutButton.tscn::PackedScene::1273828520004261174::1681253100::0::1::::<><>:
 green.png::CompressedTexture2D::3896279560051998512::1681253100::1681253146::1::::<><>::
 red.png::CompressedTexture2D::2443263267725858415::1681253100::1681253146::1::::<><>::
 yellow.png::CompressedTexture2D::1043265824178416429::1681253100::1681253146::1::::<><>::
-::res://backend/::1687547685
-boardview_script.gd::GDScript::-1::1687546900::0::1::::<>Node2D<>::
+::res://backend/::1687578966
+boardview_script.gd::GDScript::-1::1687574648::0::1::::<>Node2D<>::
 character_holder_script.gd::GDScript::-1::1682708180::0::1::::<>Control<>::
-character_script.gd::GDScript::-1::1687318880::0::1::::Character<>Node2D<>::
+character_script.gd::GDScript::-1::1687578966::0::1::::Character<>Node2D<>::
 character_selection_script.gd::GDScript::-1::1687449537::0::1::::<>Node2D<>::
 combat_scene_script.gd::GDScript::-1::1687545341::0::1::::<>Node2D<>::
 experience_bar.gd::GDScript::-1::1684566248::0::1::::<>ProgressBar<>::
@@ -119,7 +119,7 @@ intro_script.gd::GDScript::-1::1681510623::0::1::::<>Node2D<>::
 logger.tscn::PackedScene::47640207256484521::1687484550::0::1::::<><>::res://frontend/logger_script.gd
 map_character_script.gd::GDScript::-1::1687547685::0::1::::<>PathFollow2D<>::
 shield_bar.gd::GDScript::-1::1686276936::0::1::::<>Control<>::
-shop.gd::GDScript::-1::1685766652::0::1::::Shop<>Node<>::
+shop.gd::GDScript::-1::1687568540::0::1::::Shop<>Node<>::
 sprite_script.gd::GDScript::-1::1680100753::0::1::::<>RefCounted<>::
 tile_script.gd::GDScript::-1::1687533245::0::1::::<>Area2D<>::
 ::res://backend/character_classes/::1687449473
@@ -127,45 +127,54 @@ archer_class.gd::GDScript::-1::1687449460::0::1::::ArcherClass<>Character<>::
 soldier_class.gd::GDScript::-1::1687449473::0::1::::SoldierClass<>Character<>::
 ::res://backend/combat_actions/::1686194938
 action_script.gd::GDScript::-1::1686184220::0::1::::Action<>Control<>::
-::res://backend/event manager/::1687553683
-dungeon_event.gd::GDScript::-1::1687546666::0::1::::<>Event<>::
-event_display_script.gd::GDScript::-1::1687449317::0::1::::<>Node2D<>::
-event_manager.tscn::PackedScene::8541430910233372023::1687553683::0::1::::<><>::res://backend/event manager/event_manager_script.gd<>res://backend/event manager/events/rock_avalanche_event_script.gd<>res://backend/event manager/events/loot_tower_event_script.gd<>res://backend/event manager/events/information_event_script.gd<>res://backend/event manager/events/magic_font_event.gd<>res://backend/event manager/events/enemy_soldier_battle_script.gd<>res://backend/event manager/events/game_over_event.gd<>res://backend/event manager/events/player_won_battle_event_script.gd<>res://backend/event manager/events/shop_encounter_script.gd<>res://backend/event manager/events/level_up_event.gd<>res://backend/event manager/dungeon_event.gd
+::res://backend/event manager/::1687582007
+dungeon_event.gd::GDScript::-1::1687578387::0::1::::<>Event<>::
+event_display_script.gd::GDScript::-1::1687556316::0::1::::<>Node2D<>::
+event_manager.tscn::PackedScene::8541430910233372023::1687582007::0::1::::<><>::res://backend/event manager/event_manager_script.gd<>res://backend/event manager/events/rock_avalanche_event_script.gd<>res://backend/event manager/events/loot_tower_event_script.gd<>res://backend/event manager/events/information_event_script.gd<>res://backend/event manager/events/magic_font_event.gd<>res://backend/event manager/events/enemy_soldier_battle_script.gd<>res://backend/event manager/events/game_over_event.gd<>res://backend/event manager/events/player_won_battle_event_script.gd<>res://backend/event manager/events/shop_encounter_script.gd<>res://backend/event manager/events/level_up_event.gd<>res://backend/event manager/dungeon_event.gd
 event_manager_script.gd::GDScript::-1::1687550216::0::1::::<>Node2D<>::
 event_option_script.gd::GDScript::-1::1681335550::0::1::::<>Node2D<>::
-::res://backend/event manager/events/::1687554004
-bat_battle_script.gd::GDScript::-1::1687554004::0::1::::<>Event<>::
+::res://backend/event manager/events/::1687575700
+bat_battle_script.gd::GDScript::-1::1687554383::0::1::::<>Event<>::
 enemy_soldier_battle_script.gd::GDScript::-1::1687549375::0::1::::<>Event<>::
 event_script.gd::GDScript::-1::1687541582::0::1::::Event<>Node<>::
+final_boss_battle_script.gd::GDScript::-1::1687575700::0::1::::<>Event<>::
+forgotten_camp_event_script.gd::GDScript::-1::1687555091::0::1::::<>Event<>::
+game_over_cave_event.gd::GDScript::-1::1687555725::0::1::::<>Event<>::
 game_over_event.gd::GDScript::-1::1687553006::0::1::::<>Event<>::
-information_event_script.gd::GDScript::-1::1687549793::0::1::::<>Event<>::
+information_event_cave_script.gd::GDScript::-1::1687555642::0::1::::<>Event<>::
+information_event_script.gd::GDScript::-1::1687555504::0::1::::<>Event<>::
 level_up_event.gd::GDScript::-1::1687547038::0::1::::LevelUpEvent<>Event<>::
 loot_tower_event_script.gd::GDScript::-1::1687537996::0::1::::<>Event<>::
 magic_font_event.gd::GDScript::-1::1687538432::0::1::::<>Event<>::
-player_won_battle_event_script.gd::GDScript::-1::1687553662::0::1::::<>Event<>::
-game_over_cave_event.gd::GDScript::-1::1687553981::0::1::::<>Event<>::
+player_won_battle_event_script.gd::GDScript::-1::1687554421::0::1::::<>Event<>::
+random_chest_event.gd::GDScript::-1::1687571631::0::1::::<>Event<>::
 rock_avalanche_event_script.gd::GDScript::-1::1687537972::0::1::::<>Event<>::
 shop_encounter_script.gd::GDScript::-1::1687538413::0::1::::<>Event<>::
+shop_preboss_encounter_script.gd::GDScript::-1::1687573972::0::1::::<>Event<>::
 slip_on_ice_event_script.gd::GDScript::-1::1681335499::0::1::::<>Event<>::
-::res://backend/items/::1687319058
-axe_item.gd::GDScript::-1::1686379615::0::1::::Axe<>EquipableItem<>::
-base_item.gd::GDScript::-1::1686364353::0::1::::BaseItem<>Node<>::
-bow_item.gd::GDScript::-1::1686379558::0::1::::Bow<>EquipableItem<>::
-consumable_item.gd::GDScript::-1::1686364353::0::1::::ConsumableItem<>BaseItem<>::
-equipable_item.gd::GDScript::-1::1687319058::0::1::::EquipableItem<>BaseItem<>::
+::res://backend/items/::1687575419
+axe_item.gd::GDScript::-1::1687573668::0::1::::Axe<>BuffItem<>::
+base_item.gd::GDScript::-1::1687568342::0::1::::BaseItem<>Node<>::
+bow_item.gd::GDScript::-1::1687573674::0::1::::Bow<>BuffItem<>::
+buff_item.gd::GDScript::-1::1687573661::0::1::::BuffItem<>EquipableItem<>::
+consumable_item.gd::GDScript::-1::1687568503::0::1::::ConsumableItem<>BaseItem<>::
+crown_of_fire_item.gd::GDScript::-1::1687574028::0::1::::CrownOfFire<>ResistanceItem<>::
+equipable_item.gd::GDScript::-1::1687575419::0::1::::EquipableItem<>BaseItem<>::
 potion_of_life_item.gd::GDScript::-1::1686327529::0::1::::PotionOfLife<>ConsumableItem<>::
-sword_item.gd::GDScript::-1::1686343878::0::1::::Sword<>EquipableItem<>::
-::res://backend/mobs/::1687553175
+resistance_item.gd::GDScript::-1::1687573755::0::1::::ResistanceItem<>EquipableItem<>::
+sword_item.gd::GDScript::-1::1687573699::0::1::::Sword<>BuffItem<>::
+::res://backend/mobs/::1687579187
 bat.gd::GDScript::-1::1687553175::0::1::::Bat<>Character<>::
+fire_lich.gd::GDScript::-1::1687579187::0::1::::Bat<>Character<>::
 ::res://backend/treats/::1684548161
 treat.gd::GDScript::-1::1684548161::0::1::::Treat<>Node<>::
-::res://frontend/::1687554004
+::res://frontend/::1687582007
 action.tscn::PackedScene::3058236784775524485::1686344291::0::1::::<><>::uid://rgabw4lp5pa1<>res://frontend/action_display_script.gd<>uid://cqrvlsqnoxhc0
 action_display_script.gd::GDScript::-1::1686237357::0::1::::<>Button<>::
-boardview.tscn::PackedScene::1330805831344718179::1687549209::0::1::::<><>::res://backend/boardview_script.gd<>uid://dbv1kcsf7b1by<>res://backend/map_character_script.gd<>uid://cmqkbi8wcqcm7<>uid://01sfvluvxleh<>uid://bu5bpxl6utbrq<>uid://rq382y6yiwho<>uid://c1gdhmp81kcqd<>uid://7h30lld8lcae<>uid://hejet005bghe<>uid://dtxseb078400j<>uid://rgabw4lp5pa1<>uid://xcvldta1mh2
+boardview.tscn::PackedScene::1330805831344718179::1687582007::0::1::::<><>::res://backend/boardview_script.gd<>uid://dbv1kcsf7b1by<>res://backend/map_character_script.gd<>uid://cmqkbi8wcqcm7<>uid://01sfvluvxleh<>uid://bu5bpxl6utbrq<>uid://rq382y6yiwho<>uid://c1gdhmp81kcqd<>uid://7h30lld8lcae<>uid://hejet005bghe<>uid://dtxseb078400j<>uid://rgabw4lp5pa1<>uid://xcvldta1mh2
 boss_combat_scene.tscn::PackedScene::1497097219804077047::1687398751::0::1::::<><>::res://backend/combat_scene_script.gd<>uid://bj4ca5d8acjt<>uid://0qgbbwsrg7dx<>uid://bbhywwadlm7je<>uid://cc46vgduur72j
-cave_dungeon.gd::GDScript::-1::1687545001::0::1::::<>Node2D<>::
-cave_dungeon.tscn::PackedScene::5062910850745604400::1687554004::0::1::::<><>::res://frontend/cave_dungeon.gd<>uid://c0881j0fyuv1o<>uid://7h30lld8lcae<>res://backend/event manager/events/bat_battle_script.gd<>res://backend/event manager/events/player_won_battle_event_script.gd<>uid://6p7bgd2i4gm5<>res://backend/event manager/events/game_over_cave_event.gd<>uid://bu5bpxl6utbrq<>uid://cdwc5k4ioj0x6<>uid://hnyymt70i01t<>uid://naluuh0w5gx1<>uid://hejet005bghe
+cave_dungeon.gd::GDScript::-1::1687570194::0::1::::<>Node2D<>::
+cave_dungeon.tscn::PackedScene::5062910850745604400::1687582007::0::1::::<><>::res://frontend/cave_dungeon.gd<>uid://c0881j0fyuv1o<>uid://7h30lld8lcae<>res://backend/event manager/events/bat_battle_script.gd<>res://backend/event manager/events/player_won_battle_event_script.gd<>uid://6p7bgd2i4gm5<>res://backend/event manager/events/game_over_cave_event.gd<>uid://bu5bpxl6utbrq<>res://backend/event manager/events/forgotten_camp_event_script.gd<>uid://cdwc5k4ioj0x6<>res://backend/event manager/events/random_chest_event.gd<>uid://hnyymt70i01t<>res://backend/event manager/events/information_event_cave_script.gd<>uid://naluuh0w5gx1<>res://backend/event manager/events/shop_preboss_encounter_script.gd<>uid://hejet005bghe<>res://backend/event manager/events/final_boss_battle_script.gd<>uid://cjabu3lnqojgg
 character.tscn::PackedScene::1809497868316574595::1687549210::0::1::::<><>::res://frontend/character_display.gd<>res://frontend/shaders/damaged.gdshader<>uid://d2cqkk7rhssse<>uid://b5yuy1o2yrwp3
 character_display.gd::GDScript::-1::1686273958::0::1::::<>Node2D<>::
 character_holder.tscn::PackedScene::6173099376539086404::1687549210::0::1::::<><>::res://backend/character_holder_script.gd<>uid://fdf4oahhylgk<>uid://bu5bpxl6utbrq<>uid://clsiq2d27ljtl
@@ -181,7 +190,7 @@ event_display.tscn::PackedScene::7619534101357126901::1687538470::0::1::::<><>::
 event_option.tscn::PackedScene::5715378329375358465::1687540958::0::1::::<><>::res://backend/event manager/event_option_script.gd<>uid://j8rxwog8xbei<>uid://bu5bpxl6utbrq
 experience_bar.tscn::PackedScene::4007834214322553452::1684518657::0::1::::<><>::res://backend/experience_bar.gd<>uid://bu5bpxl6utbrq
 gui.gd::GDScript::-1::1687546979::0::1::::<>Control<>::
-gui.tscn::PackedScene::500134050332768850::1687553683::0::1::::<><>::res://frontend/gui.gd<>uid://kgx55fghcksa<>uid://c25tmamt1h5wh<>uid://bu5bpxl6utbrq<>uid://rgabw4lp5pa1<>uid://cdwc5k4ioj0x6<>uid://bxdopdhlbkuxo<>uid://b3f14od178ap1<>uid://xcvldta1mh2
+gui.tscn::PackedScene::500134050332768850::1687582007::0::1::::<><>::res://frontend/gui.gd<>uid://kgx55fghcksa<>uid://c25tmamt1h5wh<>uid://bu5bpxl6utbrq<>uid://rgabw4lp5pa1<>uid://cdwc5k4ioj0x6<>uid://bxdopdhlbkuxo<>uid://b3f14od178ap1<>uid://xcvldta1mh2
 health_bar.tscn::PackedScene::1788117310116145277::1686344291::0::1::::<><>::res://backend/health_bar.gd<>uid://rgabw4lp5pa1
 intro.tscn::PackedScene::4574690417589657153::1687452909::0::1::::<><>::res://backend/intro_script.gd<>uid://c6wu86o1a2tl5<>uid://bu5bpxl6utbrq
 inventory.tscn::PackedScene::4363661365350173344::1687538470::0::1::::<><>::res://frontend/inventory_scene.gd<>uid://bu5bpxl6utbrq<>uid://dhu4jkynce774
@@ -190,13 +199,13 @@ item_grid.gd::GDScript::-1::1686372374::0::1::::<>Node2D<>::
 item_grid.tscn::PackedScene::7693648939464432829::1686404530::0::1::::<><>::res://frontend/item_grid.gd
 item_inventory_tile.gd::GDScript::-1::1685766767::0::1::::<>Node2D<>::
 item_inventory_tile.tscn::PackedScene::3055066787707961140::1685792478::0::1::::<><>::res://frontend/item_inventory_tile.gd<>uid://gy7gg5vauo77<>uid://cxovxld52wcbx
-item_shop_tile.gd::GDScript::-1::1686378670::0::1::::<>Node2D<>::
-item_shop_tile.tscn::PackedScene::7746000144386481417::1687446569::0::1::::<><>::res://frontend/item_shop_tile.gd<>res://frontend/shaders/greyscale.gdshader<>uid://ryw2u0e0dog3<>uid://dbi8jf5kdrm0y<>uid://bu5bpxl6utbrq
+item_shop_tile.gd::GDScript::-1::1687574151::0::1::::<>Node2D<>::
+item_shop_tile.tscn::PackedScene::7746000144386481417::1687582007::0::1::::<><>::res://frontend/item_shop_tile.gd<>res://frontend/shaders/greyscale.gdshader<>uid://ryw2u0e0dog3<>uid://dbi8jf5kdrm0y<>uid://bu5bpxl6utbrq
 logger_script.gd::GDScript::-1::1681529452::0::1::::<>Node<>::
 main.tscn::PackedScene::3678618088719518564::1687478321::0::1::::<><>::uid://b6gaqoeip2fc8<>uid://dnrempx7son8p
 shield_bar.tscn::PackedScene::2472557822567072806::1686344291::0::1::::<><>::res://backend/shield_bar.gd<>uid://cgn0wlmwyvytd<>uid://bu5bpxl6utbrq
-shop.tscn::PackedScene::8894030818115346676::1687478321::0::1::::<><>::res://frontend/shop_scene.gd<>uid://tvta1f3ilc7h<>uid://b4d3g32oopvs<>uid://dfvcf8oqiye8o<>uid://dimhqxholwl5b<>uid://bu5bpxl6utbrq<>uid://cek6cgnj72qq4
-shop_scene.gd::GDScript::-1::1687464689::0::1::::<>Node2D<>::
+shop.tscn::PackedScene::8894030818115346676::1687582007::0::1::::<><>::res://frontend/shop_scene.gd<>uid://tvta1f3ilc7h<>uid://b4d3g32oopvs<>uid://dfvcf8oqiye8o<>uid://dimhqxholwl5b<>uid://bu5bpxl6utbrq<>uid://cek6cgnj72qq4
+shop_scene.gd::GDScript::-1::1687574594::0::1::::<>Node2D<>::
 stat_sheet.gd::GDScript::-1::1686370352::0::1::::<>Node2D<>::
 stat_sheet.tscn::PackedScene::5307310042924439792::1686404530::0::1::::<><>::res://frontend/stat_sheet.gd<>uid://j8rxwog8xbei<>uid://bu5bpxl6utbrq
 tile.tscn::PackedScene::2262238956271078292::1687549210::0::1::::<><>::uid://c1gdhmp81kcqd<>res://backend/tile_script.gd
@@ -211,7 +220,7 @@ raise_shield.gd::GDScript::-1::1686267504::0::1::::<>Node2D<>::
 raise_shield.tscn::PackedScene::8376794294487839305::1686344291::0::1::::<><>::uid://bjltkm5lb60y0<>res://frontend/animations/raise_shield.gd<>uid://xym8m0ogtgq4
 retractile_ray.gd::GDScript::-1::1686279795::0::1::::<>Node2D<>::
 retractile_ray.tscn::PackedScene::8834429499226383422::1687446224::0::1::::<><>::res://frontend/animations/retractile_ray.gd<>res://frontend/shaders/holy_ray.gdshader<>uid://d22ac14am86t4
-::res://frontend/props/::1687554067
+::res://frontend/props/::1687582160
 6a795d2f-e4a8-4025-a7c5-e3dc986e13bf.jpg::CompressedTexture2D::1378094959434877543::1685547167::1685547193::1::::<><>::
 00020.png::CompressedTexture2D::1917201946415007718::1685546664::1685546707::1::::<><>::
 725d7973-c142-492a-8bfd-be7ea528902d.jpg::CompressedTexture2D::7405880537586499266::1685547117::1685547134::1::::<><>::
@@ -237,12 +246,14 @@ chest.png::CompressedTexture2D::5404638881258613318::1687554067::1687554072::1::
 choose_character_background.png::CompressedTexture2D::700898498221688476::1680212523::1680802853::1::::<><>::
 click-for-game-menu-131903.mp3::AudioStreamMP3::5076126653517819701::1685755820::1685756104::1::::<><>::
 coin_icon.png::CompressedTexture2D::5028999787107699193::1687472154::1687472160::1::::<><>::
+crown_of_fire_icon.png::CompressedTexture2D::2110533841851332877::1687572075::1687572079::1::::<><>::
 fight_scene_background.jpg::CompressedTexture2D::1294109923018802968::1681230931::1681231347::1::::<><>::
 fight_scene_background_alt.jpg::CompressedTexture2D::90532654327148093::1681231200::1681231346::1::::<><>::
+fire_lich.png::CompressedTexture2D::4648748856439826689::1687582160::1687582162::1::::<><>::
 frame.png::CompressedTexture2D::1031368637715895734::1680805905::1680805908::1::::<><>::
 frame_filled.png::CompressedTexture2D::461260967274577479::1684562165::1684562167::1::::<><>::
 gain_health_icon.png::CompressedTexture2D::2208764869665440726::1684565116::1684565120::1::::<><>::
-health_bar_theme.tres::Theme::1205599594998876502::1687477129::0::1::::<><>::uid://bu5bpxl6utbrq
+health_bar_theme.tres::Theme::1205599594998876502::1687577697::0::1::::<><>::uid://bu5bpxl6utbrq
 heart_icon.png::CompressedTexture2D::715726351262042124::1680805762::1680805799::1::::<><>::
 item_tile_square.png::CompressedTexture2D::1244140487522677256::1685550794::1685550797::1::::<><>::
 Leonardo_Diffusion_Pixel_art_mountain_retro_background_for_vid_2.jpg::CompressedTexture2D::6995386752842232824::1681506624::1681506624::1::::<><>::
@@ -273,9 +284,9 @@ xp_bar_theme.tres::Theme::5222369149629252561::1687542942::0::1::::<><>::uid://b
 bow.wav::AudioStreamWAV::5526819666193954183::1686191894::1686266957::1::::<><>::
 shield.wav::AudioStreamWAV::7045546296338508137::1686191894::1686266957::1::::<><>::
 sword.wav::AudioStreamWAV::4542889646334442202::1686191895::1686266957::1::::<><>::
-::res://frontend/shaders/::1687477129
-damaged.gdshader::Shader::-1::1687477129::0::1::::<><>::
-greyscale.gdshader::Shader::-1::1687477129::0::1::::<><>::
+::res://frontend/shaders/::1687577697
+damaged.gdshader::Shader::-1::1687577697::0::1::::<><>::
+greyscale.gdshader::Shader::-1::1687577697::0::1::::<><>::
 holy_ray.gdshader::Shader::-1::1687454070::0::1::::<><>::
 outline.gdshader::Shader::-1::1687454070::0::1::::<><>::
 ::res://logs/::1681328674
@@ -283,5 +294,5 @@ log.txt::TextFile::-1::1681513056::0::1::::<><>::
 ::res://test/::1686321687
 test.tscn::PackedScene::2571397006345632436::1682774027::0::1::::<><>::res://addons/gut/test.gd
 ::res://test/integration/::1686321687
-::res://test/unit/::1686344246
-test.gd::GDScript::-1::1686344246::0::1::::<>GutTest<>::
+::res://test/unit/::1687578999
+test.gd::GDScript::-1::1687578999::0::1::::<>GutTest<>::

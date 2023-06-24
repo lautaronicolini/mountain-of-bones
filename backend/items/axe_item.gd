@@ -1,4 +1,4 @@
-extends EquipableItem
+extends BuffItem
 
 class_name Axe
 

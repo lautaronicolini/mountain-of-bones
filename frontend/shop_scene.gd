@@ -19,6 +19,7 @@ func set_shop(_shop):
 
 func _on_button_pressed():
 	board_view.enable_start_camera()
+	board_view.get_node("GUI").show()
 	queue_free()
 
 func set_shop_text(text):
@@ -31,6 +32,6 @@ func update_gold_ui():
 func validate_funds():
 	var index = 0
 	for item in shop.stock:
-		if shop.customer.gold <= item.price:
+		if shop.customer.gold < item.price:
 			$ItemDisplays.get_children()[index].set_price_label_red()
 		index += 1

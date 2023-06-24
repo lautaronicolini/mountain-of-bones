@@ -22,7 +22,7 @@ func loot_outcome():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	if rng.randi_range(0, 1) == 0:
-		character.loot_gold(15)
+		character.loot_gold(20)
 		get_children()[0].execute_event(character, main_scene)
 	else:
 		character.heal(7)

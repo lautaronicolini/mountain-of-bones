@@ -12,12 +12,8 @@ var tile = 0
 
 func _ready():
 	$Camera2D.enabled = true
-	var soldi = ArcherClass.new()
-	soldi.loot_item(Bow.new())
-	set_way(soldi, "EasyPath")
 	$GUI.get_node("Button").pressed.connect(func (): move_active = true)
-	character.current_display.disable_collition_monitoring()
-
+	
 func set_way(_character, _challenge):
 	set_character(_character)
 	challenge = _challenge

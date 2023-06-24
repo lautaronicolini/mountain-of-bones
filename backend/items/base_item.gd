@@ -23,3 +23,6 @@ func generate_action_for_character(character, character_function):
 
 func get_item_type():
 	pass
+
+func is_valid_trade(character):
+	pass

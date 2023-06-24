@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ceernwywdql5y"]
+[gd_scene load_steps=23 format=3 uid="uid://ceernwywdql5y"]
 
 [ext_resource type="Script" path="res://frontend/cave_dungeon.gd" id="1_566l7"]
 [ext_resource type="Texture2D" uid="uid://c0881j0fyuv1o" path="res://frontend/props/rocky cave wall.jpg" id="1_x2lmv"]
@@ -16,11 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://naluuh0w5gx1" path="res://frontend/props/skull_icon.png" id="9_6y2v6"]
 [ext_resource type="Script" path="res://backend/event manager/events/shop_preboss_encounter_script.gd" id="9_qvy75"]
 [ext_resource type="PackedScene" uid="uid://hejet005bghe" path="res://frontend/gui.tscn" id="9_t7crp"]
+[ext_resource type="Script" path="res://backend/event manager/events/final_boss_battle_script.gd" id="10_b20tl"]
 [ext_resource type="Texture2D" uid="uid://cjabu3lnqojgg" path="res://frontend/props/chest.png" id="11_v4i3k"]
 
 [sub_resource type="Curve2D" id="Curve2D_ggckl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 201, 395, 0, 0, 0, 0, 463.5, 257, 0, 0, 0, 0, 692.5, 255, 0, 0, 0, 0, 918.5, 328, 0, 0, 0, 0, 1082.5, 331)
+"points": PackedVector2Array(0, 0, 0, 0, 201, 395, 0, 0, 0, 0, 463.5, 257, 0, 0, 0, 0, 692.5, 255, 0, 0, 0, 0, 918.5, 328, 0, 0, 0, 0, 1082.5, 330)
 }
 point_count = 5
 
@@ -29,7 +30,7 @@ size = Vector2(5.5, 4.5)
 
 [sub_resource type="Curve2D" id="Curve2D_57rau"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 200, 395, 0, 0, 0, 0, 588.5, 438, 0, 0, 0, 0, 921.5, 329, 0, 0, 0, 0, 1082.5, 331)
+"points": PackedVector2Array(0, 0, 0, 0, 200, 395, 0, 0, 0, 0, 588.5, 438, 0, 0, 0, 0, 921.5, 329, 0, 0, 0, 0, 1082.5, 330)
 }
 point_count = 4
 
@@ -80,9 +81,17 @@ script = ExtResource("7_h840j")
 
 [node name="LootedGold" type="Node2D" parent="Events/EasyPath/RandomChest"]
 script = ExtResource("8_evdfm")
+info_description = "El cofre contenía 20 piezas de oro."
+event_type = "Looted Gold"
+option_description = "Bien"
 
 [node name="Healed" type="Node2D" parent="Events/EasyPath/RandomChest"]
 script = ExtResource("8_evdfm")
+info_description = "El cofre contenía una poción de color
+extraño, al beberla, recuperas 7 puntos de
+vida."
+event_type = "Healed"
+option_description = "Bien"
 
 [node name="FinalEvents" type="Node2D" parent="Events"]
 
@@ -90,6 +99,7 @@ script = ExtResource("8_evdfm")
 script = ExtResource("9_qvy75")
 
 [node name="FinalBossFight" type="Node2D" parent="Events/FinalEvents"]
+script = ExtResource("10_b20tl")
 
 [node name="Tiles" type="Node2D" parent="."]
 position = Vector2(-459.5, -254)

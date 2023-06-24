@@ -8,7 +8,7 @@ var audio_player
 const SHADER = preload("res://frontend/shaders/greyscale.gdshader")
 var speed = 0
 var label_equip_slot = ["Casco", "Armadura", "Arma"]
-var label_class = ["Soldado", "Arquero"]
+var label_class = ["Soldado", "Arquero", ""]
 
 func _ready():
 	var mat = ShaderMaterial.new()

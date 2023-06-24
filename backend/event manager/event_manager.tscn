@@ -43,6 +43,7 @@ disabled = true
 
 [node name="EnemySoldierBattle" type="Node2D" parent="RandomEvents"]
 script = ExtResource("6_c7vbr")
+disabled = true
 
 [node name="PlayerWon" type="Node2D" parent="RandomEvents/EnemySoldierBattle"]
 script = ExtResource("7_nykaj")
@@ -56,7 +57,6 @@ script = ExtResource("7_nxosr")
 
 [node name="ShopEncounter" type="Node2D" parent="RandomEvents"]
 script = ExtResource("8_y6pho")
-disabled = true
 
 [node name="SpecificEvents" type="Node2D" parent="."]
 
