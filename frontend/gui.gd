@@ -25,18 +25,18 @@ func update_gold_gui():
 func show_treat_tree():
 	LevelUpEvent.new().execute_event(character, self)
 
-func _on_reiniciar_pressed():
-	restart_game()
-	
 func restart_game():
 	var intro = load("res://frontend/intro.tscn").instantiate()
 	intro.set_scale(Vector2(1.645, 1.645))
 	for child in get_tree().get_root().get_children():
-		child.queue_free()
+		if child != get_node("/root/Game"):
+			child.queue_free()
 	get_tree().get_root().add_child(intro)
 	queue_free()
+
+func _on_reiniciar_pressed():
+	restart_game()
 
 func _on_equipamiento_pressed():
 	$EquipmentMenu.set_character(character)
 	$EquipmentMenu.show()
-

@@ -37,9 +37,10 @@ func execute_event(_character, _scene_node):
 
 func continuar():
 	options_array[0].close_display()
-	description = "El camino de arriba tiene mejores recompensas
-	y es más difícil. El camino de abajo es más
-	sencillo y sus recompensas son peores.
+	description = "El camino de arriba tiene mejores 
+	recompensas y es más difícil. El camino
+	de abajo es más sencillo y sus 
+	recompensas son peores.
 	¿Por qué camino vas a ir?"
 	
 	var option_0 = create_option("Camino difícil", hard_way)

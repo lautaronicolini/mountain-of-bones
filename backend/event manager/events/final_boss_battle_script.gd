@@ -41,6 +41,7 @@ func trigger_battle_scene():
 	battle_scene.player_won.connect(player_won_outcome)
 	battle_scene.enemy_won.connect(enemy_won_outcome)
 	main_scene.disable_start_camera()
+	battle_scene.final_boss_bg = true
 	get_tree().root.add_child(battle_scene, 0)
 
 func player_won_outcome():

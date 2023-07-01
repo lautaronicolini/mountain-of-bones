@@ -22,7 +22,7 @@ func set_character_sprite():
 	$CharacterSprite.set_texture(load(character.sprite_path))
 	
 func update_interface():
-	$StatSheet.set_character(character)
+	$CharacterSheet.get_child(0).set_character(character)
 	var equipable_items = character.items.filter(func(item): return item.get_item_type() == BaseItem.ItemType.EQUIPABLE)
 	$ItemGrid.update_items(equipable_items)
 

@@ -49,7 +49,9 @@ position = Vector2(111, -166)
 tile_scale = Vector2(0.75, 0.75)
 columns = 2
 
-[node name="StatSheet" parent="." instance=ExtResource("5_sxvte")]
+[node name="CharacterSheet" type="Node2D" parent="."]
+
+[node name="StatSheet" parent="CharacterSheet" instance=ExtResource("5_sxvte")]
 position = Vector2(-205, -45)
 
 [node name="Close" type="Button" parent="."]

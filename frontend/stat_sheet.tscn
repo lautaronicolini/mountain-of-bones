@@ -173,3 +173,13 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 text = "+0"
 vertical_alignment = 1
+
+[node name="Switch" type="Button" parent="."]
+offset_left = 72.0
+offset_top = -8.00002
+offset_right = 94.0
+offset_bottom = 23.0
+scale = Vector2(0.511225, 0.511225)
+text = "⟳"
+
+[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

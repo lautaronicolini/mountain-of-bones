@@ -59,7 +59,7 @@ position = Vector2(-1, -9)
 [node name="CollitionCharacter" type="Area2D" parent="Path2D/PathFollow2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/CollitionCharacter"]
-position = Vector2(-0.75, -8.25)
+position = Vector2(-1, -9)
 shape = SubResource("RectangleShape2D_o1831")
 
 [node name="SpriteTile2" type="Sprite2D" parent="Path2D"]

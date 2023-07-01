@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hejet005bghe"]
+[gd_scene load_steps=16 format=3 uid="uid://hejet005bghe"]
 
 [ext_resource type="Script" path="res://frontend/gui.gd" id="1_evr6w"]
 [ext_resource type="Texture2D" uid="uid://kgx55fghcksa" path="res://frontend/props/heart_icon.png" id="1_xkjt8"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bxdopdhlbkuxo" path="res://frontend/experience_bar.tscn" id="5_c8ild"]
 [ext_resource type="PackedScene" uid="uid://b3f14od178ap1" path="res://frontend/inventory.tscn" id="6_mjm6w"]
 [ext_resource type="PackedScene" uid="uid://xcvldta1mh2" path="res://backend/logger.tscn" id="8_i35ix"]
+[ext_resource type="PackedScene" uid="uid://cvijcth5awgqn" path="res://music_volume_controller.tscn" id="10_4pgn6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m1x7l"]
 font = ExtResource("2_k5rcu")
@@ -147,6 +148,10 @@ theme = ExtResource("3_vhrec")
 text = "Equipamiento"
 
 [node name="Logger" parent="." instance=ExtResource("8_i35ix")]
+
+[node name="MusicVolumeController" parent="." instance=ExtResource("10_4pgn6")]
+position = Vector2(249.418, 5.24355)
+scale = Vector2(0.108223, 0.108223)
 
 [connection signal="pressed" from="Reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="Equipamiento" to="." method="_on_equipamiento_pressed"]

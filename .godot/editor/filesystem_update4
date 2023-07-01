@@ -1,15 +1,18 @@
-res://backend/event manager/event_manager.tscn
-res://frontend/shaders/greyscale.gdshader
-res://frontend/props/health_bar_theme.tres
+res://frontend/intro.tscn
 res://frontend/shaders/damaged.gdshader
-res://backend/event manager/dungeon_event.gd
-res://frontend/cave_dungeon.tscn
-res://frontend/gui.tscn
-res://frontend/shop.tscn
-res://frontend/item_shop_tile.tscn
+res://frontend/props/health_bar_theme.tres
+res://frontend/props/xp_bar_theme.tres
+res://frontend/character.tscn
 res://frontend/boardview.tscn
+res://frontend/animations/fire_spell.tscn
+res://frontend/combat_scene.tscn
+res://frontend/main.tscn
+res://frontend/cave_dungeon.tscn
+res://frontend/animations/rain_of_fire.tscn
+res://backend/event manager/event_manager.tscn
+res://backend/event manager/events/information_event_script.gd
 res://backend/mobs/fire_lich.gd
-res://test/unit/test.gd
-res://backend/character_script.gd
-res://backend/event manager/events/final_boss_battle_script.gd
-res://backend/mobs/bat.gd
+res://frontend/animations/fire_arrow.tscn
+res://backend/character_classes/archer_class.gd
+res://frontend/animations/Arrow.tscn
+res://default_bus_layout.tres

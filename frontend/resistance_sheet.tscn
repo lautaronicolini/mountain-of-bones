@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://x6dtulnurrvf"]
+
+[ext_resource type="Script" path="res://frontend/resistance_sheet.gd" id="1_fmyro"]
+[ext_resource type="Texture2D" uid="uid://j8rxwog8xbei" path="res://frontend/props/choose_character_background.png" id="2_youc5"]
+[ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="3_qdm8h"]
+
+[sub_resource type="Theme" id="Theme_hgket"]
+default_font = ExtResource("3_qdm8h")
+default_font_size = 32
+
+[node name="ResistanceSheet" type="Node2D"]
+position = Vector2(576, 144)
+script = ExtResource("1_fmyro")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(0.170991, 0.156934)
+texture = ExtResource("2_youc5")
+
+[node name="PHYSICAL" type="Label" parent="."]
+offset_left = -69.0
+offset_top = -96.0
+offset_right = 21.0
+offset_bottom = -49.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "Física"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PHY" type="Label" parent="."]
+offset_left = 48.0
+offset_top = -88.0
+offset_right = 84.0
+offset_bottom = -53.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "%"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PHYSICAL_V" type="Label" parent="."]
+offset_left = 24.0
+offset_top = -88.0
+offset_right = 60.0
+offset_bottom = -53.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "0"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FIRE" type="Label" parent="."]
+offset_left = -69.0
+offset_top = -64.0
+offset_right = 23.0
+offset_bottom = -29.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "Fuego"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FIR" type="Label" parent="."]
+offset_left = 48.0
+offset_top = -64.0
+offset_right = 84.0
+offset_bottom = -29.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "%"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="FIRE_V" type="Label" parent="."]
+offset_left = 24.0
+offset_top = -64.0
+offset_right = 62.0
+offset_bottom = -29.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "80"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HOLY" type="Label" parent="."]
+offset_left = -69.0
+offset_top = -40.0
+offset_right = 61.0
+offset_bottom = -5.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "Sagrado
+"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HOL" type="Label" parent="."]
+offset_left = 48.0
+offset_top = -40.0
+offset_right = 84.0
+offset_bottom = -5.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "%"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HOLY_V" type="Label" parent="."]
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 62.0
+offset_bottom = -5.0
+scale = Vector2(0.672001, 0.672001)
+theme = SubResource("Theme_hgket")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "0
+"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Switch" type="Button" parent="."]
+offset_left = 72.0
+offset_top = -8.00002
+offset_right = 94.0
+offset_bottom = 23.0
+scale = Vector2(0.511225, 0.511225)
+text = "⟳"
+
+[connection signal="pressed" from="Switch" to="." method="_on_switch_pressed"]

@@ -40,13 +40,6 @@ func _on_character_select_character_chosen(selected_character_scene):
 	character.loot_item(CrownOfFire.new())
 	character.loot_gold(30)
 
-#func show_event_display_with_options(event):
-#	logger.log("Comienza evento: " + event.type)
-#	var event_scene_instance = load(event_display_scene)
-#	event_scene_instance = event_scene_instance.instantiate()
-#	add_child(event_scene_instance, 0)
-#	event_scene_instance.setup_with_options(event.options_array, event.description)
-
 func start_turn():
 	turn = turn + 1
 	var info_text = "Comienza el turno: " + str(turn)

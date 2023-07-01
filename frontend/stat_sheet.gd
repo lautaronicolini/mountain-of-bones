@@ -1,6 +1,7 @@
 extends Node2D
 
 var character
+var resistance_scene = "res://frontend/resistance_sheet.tscn"
 
 func set_character(_character):
 	character = _character
@@ -26,3 +27,10 @@ func update():
 		
 		label.set_text(modifier + str(character.modifiers[Character.stats[stat]]))
 		label.set("theme_override_colors/font_color", color)
+
+func _on_switch_pressed():
+	resistance_scene = load(resistance_scene).instantiate()
+	resistance_scene.set_character(character)
+	get_parent().add_child(resistance_scene)
+	resistance_scene.set_position(get_position())
+	queue_free()

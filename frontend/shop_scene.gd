@@ -3,6 +3,9 @@ extends Node2D
 var shop
 var board_view
 
+func _ready():
+	get_tree().root.get_node("Game").pause_music()
+	
 func set_shop(_shop):
 	shop = _shop
 	update_gold_ui()
@@ -20,6 +23,7 @@ func set_shop(_shop):
 func _on_button_pressed():
 	board_view.enable_start_camera()
 	board_view.get_node("GUI").show()
+	get_tree().root.get_node("Game").play_music()
 	queue_free()
 
 func set_shop_text(text):

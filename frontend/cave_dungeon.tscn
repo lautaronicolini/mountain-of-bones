@@ -101,6 +101,19 @@ script = ExtResource("9_qvy75")
 [node name="FinalBossFight" type="Node2D" parent="Events/FinalEvents"]
 script = ExtResource("10_b20tl")
 
+[node name="PlayerWon" type="Node2D" parent="Events/FinalEvents/FinalBossFight"]
+script = ExtResource("4_4rty7")
+info_description = "Derrotaste al Lich!
+Pero este es solo el comienzo de 
+tu aventura. La 
+Montaña de Huesos 
+te espera."
+event_type = "Player Won Game"
+option_description = "Bien"
+
+[node name="EnemyWon" type="Node2D" parent="Events/FinalEvents/FinalBossFight"]
+script = ExtResource("5_pdpsg")
+
 [node name="Tiles" type="Node2D" parent="."]
 position = Vector2(-459.5, -254)
 

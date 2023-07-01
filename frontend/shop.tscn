@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyylngxpyk75i"]
+[gd_scene load_steps=12 format=3 uid="uid://dyylngxpyk75i"]
 
 [ext_resource type="Script" path="res://frontend/shop_scene.gd" id="1_5ahet"]
 [ext_resource type="Texture2D" uid="uid://tvta1f3ilc7h" path="res://frontend/props/6a795d2f-e4a8-4025-a7c5-e3dc986e13bf.jpg" id="1_wcpw7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dimhqxholwl5b" path="res://frontend/item_shop_tile.tscn" id="3_bv7ic"]
 [ext_resource type="FontFile" uid="uid://bu5bpxl6utbrq" path="res://frontend/props/Minecraft.ttf" id="4_06gq4"]
 [ext_resource type="AudioStream" uid="uid://cek6cgnj72qq4" path="res://frontend/props/click-for-game-menu-131903.mp3" id="6_2xter"]
+[ext_resource type="AudioStream" uid="uid://bvkvlv4rthw35" path="res://frontend/props/Music/Shopping Time (1).wav" id="7_2bdui"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3xvy0"]
 font = ExtResource("4_06gq4")
@@ -59,6 +60,11 @@ position = Vector2(400, 184)
 
 [node name="ButtonErrorStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_2xter")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_2bdui")
+autoplay = true
+bus = &"Music"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 495.0

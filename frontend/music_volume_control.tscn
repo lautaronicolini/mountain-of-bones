@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqq7kv3vgshp4"]
+
+[ext_resource type="Texture2D" uid="uid://c40h02dd1dswc" path="res://frontend/props/volume-up-interface-symbol.png" id="1_fxs5l"]
+
+[node name="MusicVolumeControl" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-163.5, -163.5)
+scale = Vector2(0.361328, 0.361328)
+texture = ExtResource("1_fxs5l")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 50.0
+offset_top = 46.0
+offset_right = 1021.0
+offset_bottom = 264.0
+tick_count = 2

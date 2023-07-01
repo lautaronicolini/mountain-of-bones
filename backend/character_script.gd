@@ -4,7 +4,7 @@ class_name Character
 
 #STATS
 enum stats {STR, MOV, LIF, DEF}
-enum damage_type {PHYSICAL, FIRE}
+enum damage_type {PHYSICAL, FIRE, HOLY}
 @export var strength = 0
 @export var movement_points = 0
 @export var max_life = 0
@@ -12,7 +12,7 @@ enum damage_type {PHYSICAL, FIRE}
 
 #MODIFIERS
 var modifiers = {stats.STR: 0, stats.MOV: 0, stats.LIF: 0, stats.DEF:0}
-var resistances = {damage_type.PHYSICAL: 0, damage_type.FIRE: 0}
+var resistances = {damage_type.PHYSICAL: 0, damage_type.FIRE: 0, damage_type.HOLY: 0}
 
 #STATUS TRACKING
 @export var life_points = 0
@@ -87,7 +87,7 @@ func reset_move_points():
 
 #COMBAT
 func receive_damage(amount, type = damage_type.PHYSICAL):
-	amount = amount - ceil(amount * resistances[type])
+	amount = ceil(amount - (amount * resistances[type]))
 	life_points = life_points - (amount - defense)
 	defense = clamp(defense - amount, 0, defense)
 	emit_signal("damage_received")

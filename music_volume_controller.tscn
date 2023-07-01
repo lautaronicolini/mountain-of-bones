@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvijcth5awgqn"]
+
+[ext_resource type="Script" path="res://music_volume_controller.gd" id="1_3pbiu"]
+[ext_resource type="Shader" path="res://frontend/shaders/outline.gdshader" id="2_wcjv8"]
+[ext_resource type="Texture2D" uid="uid://bc8xe84kd2k5r" path="res://frontend/props/volume-up-4-512.png" id="3_0nyvb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pk0de"]
+shader = ExtResource("2_wcjv8")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 10.0
+shader_parameter/on = false
+
+[node name="MusicVolumeController" type="Node2D"]
+position = Vector2(283, 123)
+script = ExtResource("1_3pbiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pk0de")
+scale = Vector2(0.269531, 0.269531)
+texture = ExtResource("3_0nyvb")
+
+[node name="VSlider" type="VSlider" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = 68.0
+offset_right = 33.0
+offset_bottom = 207.0
+max_value = 1.0
+step = 0.001
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = -62.0
+offset_right = 73.0
+offset_bottom = 61.0
+
+[connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]
+[connection signal="gui_input" from="Control" to="." method="_on_control_gui_input"]
